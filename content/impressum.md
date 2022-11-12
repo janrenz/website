@@ -1,8 +1,8 @@
 ## Impressum
 
 ### Angaben gemäß § 5 TMG
-Jan Renz
-Hans Thoma Str 3
+Jan Renz  
+Hans Thoma Str 3  
 14467 Potsdam
 
 ### Kontakt
