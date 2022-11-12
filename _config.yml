@@ -17,7 +17,7 @@ title: Dr. Jan Renz
 email: blog@janrenz.de
 description: >- # this means to ignore newlines until "baseurl:"
   Just my personal blog
-mastodon_username: janprenz@bildung.social
+mastodon_username: @janprenz@bildung.social
 github_username: username
 minimal_mistakes_skin: contrast
 search: false
@@ -65,7 +65,11 @@ author:
       url: "https://janrenz.de"
       target: "_blank"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
+      icon: "fab fa-fw fa-mastodon"
+      url: "https://social.bildung/"
+      target: "_blank"
+    - label: "Mastodon"
+      icon: "fab fa-fw fa-mastoodn"
       url: "https://github.com/"
       target: "_blank"
 
