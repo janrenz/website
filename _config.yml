@@ -63,18 +63,19 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://janrenz.de"
+      target: "_blank"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
+      target: "_blank"
 
 footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+  # links:
+  #   - label: "GitHub"
+  #     icon: "fab fa-fw fa-github"
+  #     url: "https://github.com/"
+  #     target: "_blank"
+
 
 defaults:
   # _posts
