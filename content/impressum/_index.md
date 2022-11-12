@@ -1,4 +1,9 @@
-## Impressum
+---
+title: Impressum
+layout: "simple"
+showReadingTime: false
+showDate: false
+---
 
 ### Angaben gemäß § 5 TMG
 Jan Renz  
