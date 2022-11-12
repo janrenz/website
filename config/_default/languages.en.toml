@@ -1,0 +1,20 @@
+languageCode = "en-us"
+languageName = "English"
+displayName = "ENG"
+isoCode = "en-en"
+weight = 1
+rtl = false
+
+copyright = "" # TODO CC BY 
+
+dateFormat = "2 January 2006"
+
+[author]
+  name = "Dr. Jan Renz"
+  image = "img/author.jpg"
+  headline = "Digitalisation and infrastructures for education"
+  bio = "" # about me
+  links = [
+    { mastodon = "https://bildung.social/@janprenz" },
+    { linkedin = "https://www.linkedin.com/in/jan-renz-7265936b/" },
+  ]

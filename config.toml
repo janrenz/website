@@ -1,0 +1,9 @@
+baseURL = 'https://janrenz.de'
+languageCode = 'de'
+title = 'Jan Renz'
+defaultContentLanguage = 'en'
+[languages]
+  [languages.de]
+    title = 'Mein Blog'
+  [languages.en]
+    title = 'My Blog'
