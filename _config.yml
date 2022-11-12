@@ -64,12 +64,14 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://janrenz.de"
+      target: "_blank"
     - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Mastodon"
       icon: "fab fa-fw fa-mastodon"
       url: "https://social.bildung/"
-    - label: "Mastodon"
-      icon: "fab fa-fw fa-mastoodn"
-      url: "https://github.com/"
+
 
 footer:
   # links:
