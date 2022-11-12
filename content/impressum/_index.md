@@ -1,6 +1,5 @@
 ---
 title: Impressum
-layout: "simple"
 showReadingTime: false
 showDate: false
 ---
