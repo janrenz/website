@@ -15,9 +15,9 @@ Hans Thoma Str. 3
 E-Mail: kontakt@janrenz.de
 
 ### Redaktionell verantwortlich
-Jan Renz
+Jan Renz  
 Hans Thoma Str. 3  
-14467 Potsdam
+14467 Potsdam  
 
 ## Hosting
 Der Hoster dieser Seite erhebt in sog. Logfiles folgende Daten, die Ihr Browser übermittelt:
