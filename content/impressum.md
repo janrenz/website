@@ -2,6 +2,7 @@
 title: Impressum und Datenschutzhinweise
 showReadingTime: false
 showDate: false
+showAuthor: false
 ---
 
 ## Impressum

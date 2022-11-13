@@ -17,8 +17,8 @@ mainSections = ["samples"]
 
 [header]
   layout = "basic" # valid options: basic, hamburger, hybrid, custom
-  logo = "jan_avatar.jpg"
-  showTitle = true
+  logo = "img/jan_avatar.jpg"
+  showTitle = false
 
 [footer]
   showCopyright = false

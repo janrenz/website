@@ -2,21 +2,22 @@
 title: Imprint & Data protection info
 showReadingTime: false
 showDate: false
+showAuthor: false
 ---
 
 ## Imprint
 
 ### Angaben gemäß § 5 TMG
 Jan Renz  
-Hans Thoma Str. 3  
+Hans Thoma Str. 3   
 14467 Potsdam
 
 ### Kontakt
 E-Mail: kontakt@janrenz.de
 
 ### Redaktionell verantwortlich
-Jan Renz
-Hans Thoma Str. 3    
+Jan Renz  
+Hans Thoma Str. 3     
 14467 Potsdam  
 
 ## Hosting

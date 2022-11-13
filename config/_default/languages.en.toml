@@ -11,7 +11,7 @@ dateFormat = "2 January 2006"
 
 [author]
   name = "Dr. Jan Renz"
-  image = "img/jan_avatar.jpg"
+  image = "/img/jan_avatar.jpg"
   headline = "Digitalisation and infrastructures for education"
   bio = "" # about me
   links = [
