@@ -3,6 +3,8 @@ title: Imprint & Data protection info
 showReadingTime: false
 showDate: false
 showAuthor: false
+showHeadingAnchors: true
+layout: "simple"
 ---
 
 ## Imprint

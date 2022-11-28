@@ -10,25 +10,25 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
-[[main]]
-  name = "Blog"
-  pageRef = "blog"
-  weight = 20
+#[[main]]
+#  name = "Blog"
+#  pageRef = "blog"
+#  weight = 20
 
-[[main]]
-  name = "Home"
-  url = "/"
-  weight = 10
+#[[main]]
+#  name = "Home"
+#  url = "/"
+#  weight = 10
 
-[[main]]
-  name = "Paper"
-  url = "paper"
-  weight = 30
+#[[main]]
+#  name = "Paper"
+#  url = "paper"
+#  weight = 30
 
-[[main]]
-  name = "Talks"
-  url = "talks"
-  weight = 40
+#[[main]]
+#  name = "Talks"
+#  url = "talks"
+#  weight = 40
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before

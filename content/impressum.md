@@ -3,6 +3,8 @@ title: Impressum und Datenschutzhinweise
 showReadingTime: false
 showDate: false
 showAuthor: false
+showHeadingAnchors: true
+layout: "simple"
 ---
 
 ## Impressum
