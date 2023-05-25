@@ -4,6 +4,6 @@ title = 'Jan Renz'
 defaultContentLanguage = 'de'
 [languages]
   [languages.de]
-    title = 'Mein Blog'
+    title = 'Mein persönlicher Blog'
   [languages.en]
-    title = 'My Blog'
+    title = 'My personal blog'
