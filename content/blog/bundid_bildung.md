@@ -1,5 +1,5 @@
 ---
-title: "Eine Betrachtung der bund.id aus Bildungsinfrastruktureller Sicht"
+title: "Eine Betrachtung der bund.id aus bildungsinfrastruktureller Sicht"
 date: 2023-05-25
 description: "bund.id und Bildung: EIn Traumpaar?"
 summary: "Einordnung der bund.id für den Bildungssektor und Ableitung von mehreren Handlungsfeldern."
@@ -25,8 +25,6 @@ Das Verfahren war dabei (meines Wissens nach)  das erste, welches das EfA (Einer
 
 Immerhin wurde die überarbeite Benutzeroberfläche von bund.id noch rechtezeitig veröffentlich, so dass man optisch aus den 90ern in die Gegenwart geholt wurde.
 
-BILDER
-
 *Kritisch betrachten muss man übrigens die sich hier einschleichende Praxis mit eigenen Top-Level-Domains zu arbeiten. Während das BSI auf Arbeitsebene empfiehlt, immer mit vertrauenswürden Top-Level-Domains wie bund.de zu arbeiten also etwa: antraege.bildung.bund.de, scheiterte dass hier an dem Fehlen einer solchen Domain die Bund und Länder inkludiert.* 
 
 Stand Ende Mai 2023 wurden über 2.500.000 Anträge (Quelle. Einmalzahlung.de)  über dieses Verfahren erfolgreich ausgezahlt. Das war gleichzeitig ein Booster für die Nutzung der bund.id. Auch wenn die Server der bund.id zum Start des Verfahrens kurz in die Knie gingen (wobei eine solche Infrastruktur ja mit Skalierbarkeit im Core konzipiert werden sollte) hat die Verwendung der bund.id zu dem Herbeiführen einer kritischen Masse an Nutzenden geführt (die vorher noch bei rund 100.000 rumdümpelte, Quelle:  [Personalausweisportal - Startseite - 100.000 Accounts im Nutzerkonto Bund](https://www.personalausweisportal.de/SharedDocs/kurzmeldungen/Webs/PA/DE/2022/02_Nutzerkonto_Bund.html)) 
@@ -47,13 +45,14 @@ Es ist zu prüfen wo auch pragmatischer gedacht werden kann. Kann man zum Beispi
 
 GVO Funktionen wie Dateneinsicht, Datenänderung und Datenlöschung müssen niedrigschwellig nutzbar sein.
 
-Gleichzeitig sind die verschiedenen **Initiativen konsequent zusammenzuführen**. So beispielsweise die kommende EU-Wallet ([European Digital Identity (europa.eu)](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-digital-identity_en)), welche auch Identifizierungsfunktionen beinhaltet.
+Gleichzeitig sind die verschiedenen **Initiativen konsequent zusammenzuführen**. So beispielsweise die kommende EU-Wallet ([European Digital Identity (europa.eu)](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-digital-identity_en), welche auch Identifizierungsfunktionen beinhaltet.
 
 Das gilt aber auch für Projekte wie die den Digitalen Bildungsraum / Nationale Bildungsplattform (NBP)  ([Nationale Bildungsplattform - Produktentwicklung - Digitaler Bildungsraum](https://bildungsraum.de/display/PROD/Nationale+Bildungsplattform)), der mit einer eigenen proprietären Wallet daherkommt. Diese ist zwar deutlich mehr als eine ID-Wallet, sondern versteht sich als  verknüpfendes Element einer Vernetzungsinfrastruktur für Bildung aber das widerspricht nicht einer ganzheitlichen Herangehensweise. Gleiches gilt für die  webbasierte Wallet des Europass ([Europass and European Digital Credentials for Learning | Europass](https://europa.eu/europass/en/europass-and-european-digital-credentials-learning)) in der ich digital verifizierbare Credentials ablegen kann.
 
 Was fehlt, ist ein offener gesellschaftlich verankerter **Diskurs über die grundsätzliche Architekturfragen**. Das gilt zum Beispiel für die Zusammenwirken bzw der Abgrenzung zwischen dezentralen Wallets (On-Device), Web-Wallets und Registern. Welche Vorteile und Risiken bringen zum Beispiel dezentrale Wallets wie die der NBP? 
 
-Grundsätzlich scheint im Moment die EU den Takt (SDG, eIDAS2) anzugeben, dass passiert zwar unter intensiver Beteiligung der Mitgliedsstaaten, aber das Zusammendenken mit den zahlreichen nationalen Initiativen und Schaufensterprojekten scheint eher durch Vernetzung und Beteiligung zu funktionieren, nicht aber durch entsprechende dauerhafte Strukturen. Gerade für den Bildungsbereich braucht es hier neue Strukturen, von bildungslagenspezifischen Standardisierungs hin zu Interoperablen IT-Architekturen die Synergien heben bis hin zu beteiligungsstrukturen für Projekte wie der NBP, wie sie etwa hier () gefordert werden (Transparenzdisclaimer: Bis vor kurzem war ich im BMBF als Referent in der hierfür zuständigen Projektgruppe angestellt).
+Grundsätzlich scheint im Moment die EU den Takt (SDG, eIDAS2) anzugeben, dass passiert zwar unter intensiver Beteiligung der Mitgliedsstaaten, aber das Zusammendenken mit den zahlreichen nationalen Initiativen und Schaufensterprojekten scheint eher durch Vernetzung und Beteiligung zu funktionieren, nicht aber durch entsprechende dauerhafte Strukturen. Gerade für den Bildungsbereich braucht es hier neue Strukturen, von bildungslagenspezifischen Standardisierungs hin zu Interoperablen IT-Architekturen die Synergien heben bis hin zu beteiligungsstrukturen für Projekte wie der NBP, wie sie etwa hier () gefordert werden
+*(Transparenzdisclaimer: Bis vor kurzem war ich im BMBF als Referent in der hierfür zuständigen Projektgruppe angestellt)*.
 
 Und letztendlich sollte pragmatisch über **neue Use Cases** nachgedacht werden. Wenn wir bspw. jetzt mit der bund.id ein Servicekonto mit Postbox haben, warum erweitert man das nicht um eine Funktion das bspw. Ausbildungsstätten Zeugnisse in diese Eingangs schicken, können bei denen festgelegt ist, das diese über ein bestimmten Zeitraum nicht veränderbar (immutable)  und nicht löschbar sind. Wenn man diese dann noch teilbar macht (das kommt eh in der EU-Wallet, am besten auch mit datensparsamen Verifiable Presentations) hat man nicht nur ein Zusammenführen mit den Wallets, sondern erspart den Ausbildungsstätten das lokale Archivieren dieser Dokumente.
 
