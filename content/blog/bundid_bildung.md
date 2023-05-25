@@ -1,27 +1,28 @@
 ---
 title: "Eine Betrachtung der bund.id aus bildungsinfrastruktureller Sicht"
 date: 2023-05-25
-description: "bund.id und Bildung: EIn Traumpaar?"
+description: "bund.id und Bildung: Ein Traumpaar?"
 summary: "Einordnung der bund.id für den Bildungssektor und Ableitung von mehreren Handlungsfeldern."
 tags: ["infrastructure", "bundid"]
 ---
 
 Mit der Novelle (also der neuen Version) des Online Zugangs Gesetzes (OZG) wird die bund.id als verpflichtendes Onlinezugangskonto inkl. Postfachfunktion eingeführt. So heißt es in den „Eckpunkte für eine moderne und zukunftsgerichtete Verwaltung“ des BMI [(eckpunkte-ozg.pdf](https://www.bmi.bund.de/SharedDocs/gesetzgebungsverfahren/DE/Downloads/kabinettsfassung/eckpunkte-ozg.pdf))
 
-„Der digitale Identitätsnachweis (elektronischer Personalausweis) ist der Schlüssel zu staatlichen (aber auch privaten) Leistungen und wird über konkrete Anwendungsfälle nutzerfreundlich etabliert.“
+*„Der digitale Identitätsnachweis (elektronischer Personalausweis) ist der Schlüssel zu staatlichen (aber auch privaten) Leistungen und wird über konkrete Anwendungsfälle nutzerfreundlich etabliert.“*
 
-Neu im OZG ist dabei, dass statt verschiedener bundesland-spezifischen Servicekonten nun die bund.id also für alle Verfahren, sei es von Bund, Land oder Kommune angeboten verpflichtend zum Einsatz kommen soll. Die bund.id hat dabei verschiedene Vertrauensstufen, inkl. einem sog. hohen Vertrauensniveau, welches eine rechtssichere Identitätsfeststellung erlaubt. Hierfür kommt momentan entweder ein Ausweisdokument mit eID-Funktion zum Einsatz oder ein aus dem Steuerbereich stammendes Elsterzertifikat (siehe auch was ist die bund.id). Die Handhabung ist dabei noch anspruchsvoll. Zwar benötigt man heute kein extra Lesegerät mehr um die Daten aus seinem „Online Ausweis“ auszulesen, sondern es reicht ein aktuelles Smartphone mit NFC Lesefunktion. Trotzdem ist der Prozess, vielleicht auch weil er eben noch nicht erlernt ist erklärungsbedürftig. Man muss eine extra App installieren (siehe bspw. [Antrag stellen - Anleitung (einmalzahlung200.de)](https://www.einmalzahlung200.de/eppsg-de/anleitung-antrag)). Benutzt man Laptop und Smartphone parallel wird es nochmal komplizierter.
+Neu im OZG ist dabei, dass statt verschiedener bundesland-spezifischen Servicekonten nun die bund.id  für alle Verfahren, sei es von Bund, Land oder Kommune angeboten, verpflichtend zum Einsatz kommen soll. Die bund.id hat dabei verschiedene Vertrauensstufen, inkl. einem sog. hohen Vertrauensniveau, welche eine rechtssichere Identitätsfeststellung erlaubt. Hierfür kommt momentan entweder ein Ausweisdokument mit eID-Funktion ("Online-Asuweis") zum Einsatz oder ein aus dem Steuerbereich stammendes Elsterzertifikat. 
+Die Handhabung ist dabei noch anspruchsvoll. Zwar benötigt man heute kein extra Lesegerät mehr, um die Daten aus seinem „Online Ausweis“ auszulesen, sondern es reicht ein aktuelles Smartphone mit NFC Lesefunktion. Trotzdem ist der Prozess, vielleicht auch weil er eben noch nicht erlernt ist erklärungsbedürftig. Man muss u.a. eine extra App installieren (siehe bspw. [Antrag stellen - Anleitung (einmalzahlung200.de)](https://www.einmalzahlung200.de/eppsg-de/anleitung-antrag)). Benutzt man Laptop und Smartphone parallel wird es nochmal komplizierter.
 
-Bei der 200 EUR Einmalzahlung für Studierende wurde die bund.id als Loginkonto benutzt und oft auch als Zweiter Faktor zur Identitätsfeststellung *(Disclaimer: Ich war bei diesem Projekt für das BMBF als intern beratender Architekt tätig)*. 
+Bei der 200 EUR Einmalzahlung für Studierende wurde die bund.id als Loginkonto benutzt und oft auch als zweiter Faktor zur Identitätsfeststellung *(Disclaimer: Ich war bei diesem Projekt für das BMBF als intern beratender Architekt tätig)*. 
 
-Kurzer Recap: Die Herausforderung von dem Projekt einmahlzahlung200.de war, das von den Berechtigten weder die persönlichen Daten noch die Kontendaten vorlagen. Da es Keine Option war 18 Monate zu warten ([Berechnungen zur Zusammenführung von Steuernummer und IBAN - FragDenStaat](https://fragdenstaat.de/anfrage/berechnungen-zur-zusammenfuehrung-von-steuernummer-und-iban/#nachricht-731510)) wurde daher mit dem federführenden Bundesland und dem Dienstleister ein mehrstufiges Verfahren entwickelt:
+Kurzer Recap zur Einmalzahlung: Die Herausforderung von dem Projekt einmahlzahlung200.de war, das von den Berechtigten weder die persönlichen Daten noch die Kontendaten vorlagen. Da es keine Option war 18 Monate zu warten ([Berechnungen zur Zusammenführung von Steuernummer und IBAN - FragDenStaat](https://fragdenstaat.de/anfrage/berechnungen-zur-zusammenfuehrung-von-steuernummer-und-iban/#nachricht-731510)), wurde  mit dem federführenden Bundesland und dem Dienstleister ein mehrstufiges Verfahren entwickelt:
 
 1. Ausbildungsstätten laden verschlüsselte Listen der in ihrer Institution Antragsberechtigten in ein Online-System. 
 1. Sie übermitteln dem Antragsberechtigten ein lokal erzeugten Zugangstoken. Dieses Token ermöglicht dem Onlineverfahren temporär auf die verschlüsselten Datenzuzugreifen.
 1. Der Antragsberechtigte stellt ein Online-Antrag. Hierbei gibt er die Kontonummer (IBAN) an, auf die der Betrag überwiesen werden soll. Dieser wird automatisch überprüft und im Regelfall automatisch zur Auszahlung angewiesen.
 1. Um das Verfahren abzusichern, muss neben dem Zugangstoken die Identität festgestellt werden. Dies erfolgt dann eben über die via bund.id verknüpften Informationen aus dem Online-Ausweis oder dem Elster-Zertifikat. Alternativ konnte hierfür ein zweiter PIN eingesetzt werden, der durch die Ausbildungsstätte erzeugt werden konnte und bei dem die Ausbildungsstätte sicherzustellen hatte, dass der Zugang nur an die berechtigte Person erfolgte. Dies konnte bspw.  per Aushändigung im Sekretariat (gegen Vorlage des Ausweises) oder Verwendung von lokal vorhandenen sicheren Systemen erfolgen.
 
-Das Verfahren war dabei (meines Wissens nach)  das erste, welches das EfA (EinerFürAlle) Prinzip vollständig umsetze, da nicht nur das Antragsverfahren, sondern auch die Antragsabwicklung (das sogenannte Fachverfahren) durch das federführende Bundesland bereitgestellt wurde und von allen Bundesländern genutzt wurde.
+Das Verfahren war dabei (meines Wissens nach) das erste OZG Verfahren, welches das EfA (EinerFürAlle) Prinzip vollständig umsetzte, da nicht nur das Antragsverfahren, sondern auch die Antragsabwicklung (das sogenannte Fachverfahren) durch das federführende Bundesland bereitgestellt wurde und von allen Bundesländern genutzt wurde.
 
 Immerhin wurde die überarbeite Benutzeroberfläche von bund.id noch rechtezeitig veröffentlich, so dass man optisch aus den 90ern in die Gegenwart geholt wurde.
 
