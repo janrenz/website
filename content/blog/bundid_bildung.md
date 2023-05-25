@@ -1,7 +1,7 @@
 ---
-title: "Eine Betrachtung der bund.id aus bildungsinfrastruktureller Sicht"
+title: "bund.id und Bildung"
 date: 2023-05-25
-description: "bund.id und Bildung: Ein Traumpaar?"
+description: "Eine Betrachtung der bund.id aus bildungsinfrastruktureller Sich"
 summary: "Einordnung der bund.id für den Bildungssektor und Ableitung von mehreren Handlungsfeldern."
 tags: ["infrastructure", "bundid"]
 ---
