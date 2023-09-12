@@ -62,8 +62,7 @@ jobs:
           forceUpload: false                          # Optional, Force uploading all files, Default to false(upload only newer files).
           localDir: './public'                              # Required, Absolute or relative to cwd.
           remoteDir: '/'                             # Required, Absolute path only.
-          exclude: '.git*,.DS_Store'                 # Optional. exclude patterns (glob) like .gitignore, use ',' to split, Default to ''.
-
+          exclude: '.git*,.DS_Store'                 # Optional. exclude patterns (glob) like .gitignore, use ',' to split, Default to ''
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
