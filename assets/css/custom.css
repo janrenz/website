@@ -35,6 +35,35 @@ body {
 
 /* The default Congo prose width is elegant for short notes, but too narrow for
    long analytical essays with infographics. */
+.jr-article-header {
+  margin-bottom: 2.5rem;
+}
+
+.jr-article-title {
+  margin-bottom: 1.4rem;
+}
+
+.jr-article-hero {
+  width: min(100vw - 2rem, 78rem);
+  max-width: 78rem;
+  margin: 0 50% 3rem;
+  transform: translateX(-50%);
+}
+
+.jr-article-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 1.35rem;
+  border: 1px solid var(--jr-line);
+  box-shadow: 0 24px 70px rgba(11, 31, 58, 0.16);
+}
+
+:is(.dark .jr-article-hero img, .jr-article-hero.dark img) {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
 .prose {
   max-width: 86ch;
   line-height: 1.72;
@@ -117,6 +146,16 @@ article + article {
   .prose p,
   .prose li {
     font-size: 1rem;
+  }
+
+  .jr-article-hero {
+    width: 100%;
+    margin: 0 0 2rem;
+    transform: none;
+  }
+
+  .jr-article-hero img {
+    border-radius: 0.9rem;
   }
 
   .prose figure:has(img) {

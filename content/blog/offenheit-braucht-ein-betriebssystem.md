@@ -5,11 +5,11 @@ description: "Ein persönlicher Beitrag über offene Bildungsinfrastrukturen, Pu
 summary: "Offene Bildungsinfrastruktur entsteht nicht durch Regellosigkeit, sondern durch stabile Schnittstellen, transparente Governance, Public Code und nachnutzbare Systemdienste."
 tags: ["Bildungsinfrastruktur", "Public Code", "Interoperabilität", "KI", "Governance"]
 translationKey: "openness-needs-operating-system"
+heroImage: "/img/blog/offenheit-bildungsinfrastrukturen/hero-offenheit-betriebssystem.png"
+heroAlt: "Illustration einer offenen Bildungsinfrastruktur als Betriebssystem: Lernanwendungen und Bildungsdienste liegen über einer gemeinsamen, transparenten Systemschicht, darunter ein föderales Netzwerk aus Schulen und öffentlichen Institutionen."
 ---
 
 *Ein persönlicher Beitrag zur Frage, wie offene Bildungsinfrastrukturen aussehen können — und warum „offen“ nicht heißt, dass alle alles allein machen müssen.*
-
-![Illustration einer offenen Bildungsinfrastruktur als Betriebssystem: Lernanwendungen und Bildungsdienste liegen über einer gemeinsamen, transparenten Systemschicht, darunter ein föderales Netzwerk aus Schulen und öffentlichen Institutionen.](/img/blog/offenheit-bildungsinfrastrukturen/hero-offenheit-betriebssystem.png)
 
 Wenn wir über digitale Bildungsinfrastruktur sprechen, geraten wir schnell in vertraute Gegensätze. Offen oder geschlossen. Staatlich oder privat. Plattform oder Wildwuchs. Zentral oder föderal. Linux oder Apple.
 
