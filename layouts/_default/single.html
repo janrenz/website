@@ -38,7 +38,7 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
         <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-          <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+          <div class="toc jr-toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
             {{ partial "toc.html" . }}
           </div>
         </div>
@@ -65,4 +65,9 @@
       {{ end }}
     </footer>
   </article>
+  {{ $tocJS := resources.Get "js/toc-scrollspy.js" }}
+  {{ if $tocJS }}
+    {{ $tocJS = $tocJS | resources.Minify | resources.Fingerprint "sha512" }}
+    <script src="{{ $tocJS.RelPermalink }}" defer></script>
+  {{ end }}
 {{ end }}
