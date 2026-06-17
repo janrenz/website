@@ -4,6 +4,8 @@ date: 2023-05-25
 description: "Eine Betrachtung der bund.id aus bildungsinfrastruktureller Sich"
 summary: "Einordnung der bund.id für den Bildungssektor und Ableitung von mehreren Handlungsfeldern."
 tags: ["infrastructure", "bundid"]
+heroImage: "/img/blog/bundid-bildung/hero-bundid-bildung-civic-identity.png"
+heroAlt: "Abstrakte Infografik zu bund.id und Bildung: eine digitale Identitäts- und Wallet-Infrastruktur verbindet öffentliche Verwaltungsdienste mit Bildungsinstitutionen, Datenschutz, Nachweisen und interoperablen Schnittstellen."
 ---
 
 Mit der Novelle (also der neuen Version) des Online Zugangs Gesetzes (OZG) wird die [bund.id](https://id.bund.de) als verpflichtendes Onlinezugangskonto inkl. Postfachfunktion eingeführt. So heißt es in den „Eckpunkte für eine moderne und zukunftsgerichtete Verwaltung“ des BMI [(eckpunkte-ozg.pdf](https://www.bmi.bund.de/SharedDocs/gesetzgebungsverfahren/DE/Downloads/kabinettsfassung/eckpunkte-ozg.pdf))

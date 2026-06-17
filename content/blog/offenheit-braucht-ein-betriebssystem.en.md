@@ -5,8 +5,8 @@ description: "A personal essay on open educational infrastructures, Public Money
 summary: "Open educational infrastructure does not emerge from the absence of rules, but from stable interfaces, transparent governance, public code, and reusable system services."
 tags: ["educational infrastructure", "public code", "interoperability", "AI", "governance"]
 translationKey: "openness-needs-operating-system"
-heroImage: "/img/blog/offenheit-bildungsinfrastrukturen/hero-offenheit-betriebssystem.png"
-heroAlt: "Illustration of open educational infrastructure as an operating system: learning applications and educational services sit above a shared transparent system layer, with a federal network of schools and public institutions below."
+heroImage: "/img/blog/offenheit-bildungsinfrastrukturen/hero-civic-os-map.png"
+heroAlt: "Abstract infographic of open educational infrastructure as a federated operating system: diverse educational applications build on shared system services, standards, governance, and reusable public foundations."
 ---
 
 *A personal reflection on what open educational infrastructures could look like — and why “open” does not mean that everyone has to do everything on their own.*
