@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = false
 enableCodeCopy = true
 
-mainSections = ["samples"]
+mainSections = ["blog"]
 # robots = ""
 
 [header]
@@ -28,7 +28,7 @@ mainSections = ["samples"]
 
 [homepage]
   layout = "profile" # valid options: page, profile, custom
-  showRecent = false
+  showRecent = true
 
 [article]
   showDate = true
@@ -51,7 +51,7 @@ mainSections = ["samples"]
 
 [list]
   showBreadcrumbs = true
-  showSummary = false
+  showSummary = true
   showTableOfContents = true
   showTaxonomies = false
   groupByYear = false
