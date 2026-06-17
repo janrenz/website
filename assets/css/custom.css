@@ -13,16 +13,24 @@ html {
 }
 
 body {
-  background:
+  background-color: #ffffff;
+  background-image:
     radial-gradient(circle at top left, rgba(215, 38, 56, 0.04), transparent 28rem),
     linear-gradient(180deg, var(--jr-paper), #ffffff 18rem);
+  background-repeat: no-repeat;
+  background-size: 42rem 42rem, 100% 18rem;
+  background-position: top left, top left;
 }
 
 :is(.dark body, body.dark) {
   --jr-line: rgba(255, 255, 255, 0.16);
-  background:
+  background-color: #0b1020;
+  background-image:
     radial-gradient(circle at top left, rgba(215, 38, 56, 0.09), transparent 30rem),
     linear-gradient(180deg, #07111f, #0b1020 18rem);
+  background-repeat: no-repeat;
+  background-size: 44rem 44rem, 100% 18rem;
+  background-position: top left, top left;
 }
 
 /* The default Congo prose width is elegant for short notes, but too narrow for
