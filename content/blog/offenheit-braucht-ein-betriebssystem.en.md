@@ -116,6 +116,8 @@ The benchmark should be: Does this infrastructure lower the barriers for good of
 
 If the answer is yes, then it is not curating against openness, but for openness.
 
+![Infographic of AI infrastructure as a system service: a teacher account in a state identity provider flows through VIDIS into pseudonymisation and data-processing agreements; education apps use personal user context, guardrails, monitoring, billing, MCP, and different model and cloud providers through a shared API layer.](/img/blog/offenheit-bildungsinfrastrukturen/05-ai-infrastruktur-systemdienst-en.png)
+
 ## AI makes the infrastructure question more urgent
 
 With the growing use of AI, educational infrastructure is no longer only a matter of login and licenses.
