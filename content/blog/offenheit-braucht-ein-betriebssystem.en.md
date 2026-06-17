@@ -9,9 +9,6 @@ translationKey: "openness-needs-operating-system"
 
 *A personal reflection on what open educational infrastructures could look like — and why “open” does not mean that everyone has to do everything on their own.*
 
-![Infographic of open educational infrastructure as an operating system: various educational applications sit above a shared system layer for identity, rights, data, assessment, and AI; below it is a federal network of schools and public institutions.](/img/blog/offenheit-bildungsinfrastrukturen/01-hero-bildungs-os-infografik.png)
-
-
 When we talk about digital educational infrastructure, we quickly fall into familiar oppositions. Open or closed. Public or private. Platform or fragmentation. Centralized or federal. Linux or Apple.
 
 I believe these oppositions are misleading. At least if we genuinely want digital education to work not only in strategy papers, but in everyday practice: for schools, teachers, learners, states, municipalities, providers, and civil society actors.
@@ -67,8 +64,6 @@ Are they transparent? Are they proportionate? Can they be discussed publicly? Ca
 If yes — and that has to be the goal — then rules are not a barrier. They are the infrastructure on which a market and an ecosystem can emerge in the first place.
 
 If no, curation becomes gatekeeping. And that is exactly what we have to guard against.
-
-![Infographic on Public Money, Public Code: reusable building blocks for code, infrastructure, standards, processes, and knowledge flow from a shared public repository into different educational services.](/img/blog/offenheit-bildungsinfrastrukturen/02-public-code-nachnutzung-infografik.png)
 
 ## Public Money, Public Code — but understood more broadly
 
@@ -127,8 +122,6 @@ If every application builds its own AI integration, new dependencies, new data p
 A shared AI layer could provide relief: with pseudonymization, clear contracts, monitoring, guardrails, billing, access to models, and standardized interfaces for applications. Not every educational app has to build its own AI infrastructure. It can rely on vetted system services. Economically, this may also make sense through economies of scale.
 
 But here, too, the same principle applies: precisely because such a layer is powerful, it has to be designed openly and accountably. AI in and as educational infrastructure must not become a new black box.
-
-![Infographic on the tension between open and curated systems: branching modular openness on the left, an ordered curated system on the right, and federal governance as a balancing mechanism in the middle.](/img/blog/offenheit-bildungsinfrastrukturen/04-linux-apple-balance-infografik.png)
 
 ## Linux or Apple?
 

@@ -9,9 +9,6 @@ translationKey: "openness-needs-operating-system"
 
 *Ein persönlicher Beitrag zur Frage, wie offene Bildungsinfrastrukturen aussehen können — und warum „offen“ nicht heißt, dass alle alles allein machen müssen.*
 
-![Infografik einer offenen Bildungsinfrastruktur als Betriebssystem: Verschiedene Bildungsanwendungen liegen über einer gemeinsamen Systemschicht für Identität, Rechte, Daten, Prüfung und KI, darunter ein föderales Netzwerk aus Schulen und öffentlichen Institutionen.](/img/blog/offenheit-bildungsinfrastrukturen/01-hero-bildungs-os-infografik.png)
-
-
 Wenn wir über digitale Bildungsinfrastruktur sprechen, geraten wir schnell in vertraute Gegensätze. Offen oder geschlossen. Staatlich oder privat. Plattform oder Wildwuchs. Zentral oder föderal. Linux oder Apple.
 
 Ich glaube, diese Gegensätze führen in die Irre. Zumindest dann, wenn wir wirklich wollen, dass digitale Bildung nicht nur in Strategiepapiere passt, sondern im Alltag funktioniert: für Schulen, Lehrkräfte, Lernende, Länder, Kommunen, Anbieter und zivilgesellschaftliche Akteure.
@@ -67,8 +64,6 @@ Sind sie transparent? Sind sie verhältnismäßig? Sind sie öffentlich diskutie
 Wenn ja — und das muss das Ziel sein —, dann sind Regeln keine Barriere. Dann sind sie die Infrastruktur, auf der ein Markt und ein Ökosystem überhaupt erst entstehen können.
 
 Wenn nein, dann wird Kuration zum Gatekeeping. Und genau davor müssen wir uns schützen.
-
-![Infografik zu Public Money, Public Code: Wiederverwendbare Bausteine für Code, Infrastruktur, Standards, Prozesse und Wissen fließen aus einem gemeinsamen öffentlichen Repository in verschiedene Bildungsdienste.](/img/blog/offenheit-bildungsinfrastrukturen/02-public-code-nachnutzung-infografik.png)
 
 ## Public Money, Public Code — aber breiter gedacht
 
@@ -127,8 +122,6 @@ Wenn jede Anwendung ihre eigene KI-Integration baut, entstehen neue Abhängigkei
 Eine gemeinsame KI-Schicht könnte hier entlasten: mit Pseudonymisierung, klaren Verträgen, Monitoring, Guardrails, Abrechnung, Modellzugängen und standardisierten Schnittstellen für Anwendungen. Nicht jede Bildungs-App muss dann ihre eigene KI-Infrastruktur bauen. Sie kann auf geprüfte Systemdienste zugreifen. Auch wirtschaftlich kann dies durch Mengenrabatte sinnvoll sein.
 
 Aber auch hier gilt: Gerade weil eine solche Schicht mächtig ist, muss sie offen und kontrollierbar gestaltet werden. KI in und als Bildungsinfrastruktur darf keine neue Blackbox werden.
-
-![Infografik zum Spannungsfeld offen oder kuratiert: Links verzweigte modulare Offenheit, rechts ein geordnetes kuratiertes System, in der Mitte föderale Governance als ausgleichender Mechanismus.](/img/blog/offenheit-bildungsinfrastrukturen/04-linux-apple-balance-infografik.png)
 
 ## Linux oder Apple?
 
