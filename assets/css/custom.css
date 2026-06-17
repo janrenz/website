@@ -128,14 +128,16 @@ body {
 }
 
 .jr-toc a.jr-toc-active {
-  border-left-color: var(--jr-red);
-  color: var(--jr-red);
-  background: rgba(215, 38, 56, 0.055);
+  border-left-color: var(--jr-ink);
+  color: var(--jr-ink);
+  background: rgba(11, 31, 58, 0.06);
   font-weight: 650;
 }
 
 :is(.dark .jr-toc a.jr-toc-active, .jr-toc.dark a.jr-toc-active) {
-  background: rgba(215, 38, 56, 0.14);
+  border-left-color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Blog list: more editorial rhythm without making the design loud. */
