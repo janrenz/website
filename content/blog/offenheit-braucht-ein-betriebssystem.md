@@ -113,8 +113,6 @@ Der Maßstab sollte sein: Senkt diese Infrastruktur die Hürden für gute Angebo
 
 Wenn die Antwort ja ist, dann kuratiert sie nicht gegen Offenheit, sondern für Offenheit.
 
-![Infografik einer KI-Infrastruktur als Systemdienst: Ein Lehrkraftkonto im Landes-Identitätsprovider führt über VIDIS zu Pseudonymisierung und Vertragsmanagement; Bildungs-Apps nutzen persönlichen Nutzerkontext, Guardrails, Monitoring, Billing, MCP und verschiedene Modell- und Cloud-Anbieter über eine gemeinsame API-Schicht.](/img/blog/offenheit-bildungsinfrastrukturen/05-ai-infrastruktur-systemdienst-de.png)
-
 ## KI macht die Infrastrukturfrage dringlicher
 
 Durch den vermehrten Einsatz von KI wird Bildungsinfrastruktur nicht nur eine Frage von Login und Lizenzen.
