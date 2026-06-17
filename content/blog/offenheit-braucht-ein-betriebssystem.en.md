@@ -9,6 +9,8 @@ translationKey: "openness-needs-operating-system"
 
 *A personal reflection on what open educational infrastructures could look like — and why “open” does not mean that everyone has to do everything on their own.*
 
+![Illustration of open educational infrastructure as an operating system: learning applications and educational services sit above a shared transparent system layer, with a federal network of schools and public institutions below.](/img/blog/offenheit-bildungsinfrastrukturen/hero-offenheit-betriebssystem.png)
+
 When we talk about digital educational infrastructure, we quickly fall into familiar oppositions. Open or closed. Public or private. Platform or fragmentation. Centralized or federal. Linux or Apple.
 
 I believe these oppositions are misleading. At least if we genuinely want digital education to work not only in strategy papers, but in everyday practice: for schools, teachers, learners, states, municipalities, providers, and civil society actors.

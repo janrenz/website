@@ -9,6 +9,8 @@ translationKey: "openness-needs-operating-system"
 
 *Ein persönlicher Beitrag zur Frage, wie offene Bildungsinfrastrukturen aussehen können — und warum „offen“ nicht heißt, dass alle alles allein machen müssen.*
 
+![Illustration einer offenen Bildungsinfrastruktur als Betriebssystem: Lernanwendungen und Bildungsdienste liegen über einer gemeinsamen, transparenten Systemschicht, darunter ein föderales Netzwerk aus Schulen und öffentlichen Institutionen.](/img/blog/offenheit-bildungsinfrastrukturen/hero-offenheit-betriebssystem.png)
+
 Wenn wir über digitale Bildungsinfrastruktur sprechen, geraten wir schnell in vertraute Gegensätze. Offen oder geschlossen. Staatlich oder privat. Plattform oder Wildwuchs. Zentral oder föderal. Linux oder Apple.
 
 Ich glaube, diese Gegensätze führen in die Irre. Zumindest dann, wenn wir wirklich wollen, dass digitale Bildung nicht nur in Strategiepapiere passt, sondern im Alltag funktioniert: für Schulen, Lehrkräfte, Lernende, Länder, Kommunen, Anbieter und zivilgesellschaftliche Akteure.
