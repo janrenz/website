@@ -95,6 +95,10 @@ Diese Punkte bedeuten nicht, dass jede Bildungsanwendung sofort als native App e
 
 Ein konkretes Beispiel ist die SVS-iOS-App, die ich zunächst als Machbarkeitsstudie umgesetzt habe. Sie zeigt, welche Vorteile entstehen können, wenn Clouds nicht nur als Web-Anwendung gedacht werden, sondern als native Anwendung auf einem persönlichen Gerät.
 
+![Prototyp der Schulcloud-Brandenburg-iPad-App mit einer nativen App-Oberfläche für Bildungsmedien und Schulcloud-Funktionen.](/img/blog/letzte-meile-bildungsmedien/schulcloud-brandenburg-ipad-prototype.png)
+
+*Prototyp der Schulcloud-Brandenburg-iPad-App: Bildungsmedien und Cloud-Funktionen werden nicht nur im Browser, sondern als native Arbeitsumgebung auf dem persönlichen Gerät gedacht.*
+
 Ein wichtiger Punkt ist die Einbindung in den nativen File Provider. Dadurch können Materialien und Arbeitsstände stärker in die gewohnte Dateiumgebung von iOS integriert werden. Für Nutzerinnen und Nutzer fühlt sich das nicht wie eine Sonderwelt an, sondern wie ein Teil des Geräts: Dateien sind dort auffindbar, wo man Dateien erwartet. Sie können in andere Arbeitsprozesse einfließen. Die App wird nicht nur zu einem Ort, an dem Inhalte angezeigt werden, sondern zu einem Bestandteil der persönlichen Lern- und Arbeitsumgebung.
 
 Dazu kommt die UX-Frage. Wer mit iOS oder iPadOS vertraut ist, bringt bereits Erwartungen mit: Wie Navigation funktioniert. Wie Dokumente geöffnet werden. Wie man teilt, markiert, zurückgeht, zwischen Apps wechselt oder mit Stift und Touch arbeitet. Eine native App kann diese Erwartungen aufnehmen. Sie muss nicht alles neu erfinden, sondern kann sich in vorhandene Routinen einfügen.
