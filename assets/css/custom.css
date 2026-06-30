@@ -137,6 +137,32 @@ body {
   border-left-color: var(--jr-red);
 }
 
+.jr-transparency-note {
+  margin-top: 3rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--jr-line);
+  border-left: 4px solid var(--jr-red);
+  border-radius: 0.9rem;
+  background: rgba(11, 31, 58, 0.035);
+  color: rgba(15, 23, 42, 0.82);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.jr-transparency-note strong {
+  color: var(--jr-ink);
+  font-weight: 700;
+}
+
+:is(.dark .jr-transparency-note, .jr-transparency-note.dark) {
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+:is(.dark .jr-transparency-note strong, .jr-transparency-note.dark strong) {
+  color: rgba(255, 255, 255, 0.94);
+}
+
 .jr-toc a {
   display: block;
   border-left: 2px solid transparent;

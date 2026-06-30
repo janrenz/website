@@ -45,6 +45,12 @@
       {{ end }}
       <div class="min-w-0 min-h-0 max-w-prose grow">
         {{ .Content | emojify }}
+        {{ if eq .Section "blog" }}
+          <aside class="jr-transparency-note" aria-label="{{ if eq .Lang "de" }}Transparenzhinweis{{ else }}Transparency note{{ end }}">
+            <strong>{{ if eq .Lang "de" }}Transparenzhinweis{{ else }}Transparency note{{ end }}:</strong>
+            {{ if eq .Lang "de" }}Bei der Erstellung und redaktionellen Bearbeitung dieses Blogbeitrags wurde KI unterstützend eingesetzt. Inhaltliche Verantwortung, Auswahl und finale Freigabe liegen bei mir.{{ else }}AI was used as a supporting tool in drafting and editing this blog post. Responsibility for the content, selection, and final approval remains with me.{{ end }}
+          </aside>
+        {{ end }}
       </div>
     </section>
     <footer class="pt-8 max-w-prose print:hidden">
