@@ -95,8 +95,8 @@ These points do not mean that every educational application must immediately be 
 
 One concrete example is the SVS iOS app, which I initially implemented as a proof of concept. It shows what advantages can emerge when clouds are not thought of only as web applications, but as native applications on a personal device.
 
-<figure class="jr-prototype-screenshot">
-  <img class="jr-contain-image" src="/img/blog/letzte-meile-bildungsmedien/schulcloud-brandenburg-ipad-prototype.png" alt="Prototype of the Schulcloud Brandenburg iPad app with a native app interface for educational media and school-cloud functions.">
+<figure class="jr-prototype-screenshot" style="max-width:36rem">
+  <img class="jr-contain-image" src="/img/blog/letzte-meile-bildungsmedien/schulcloud-brandenburg-ipad-prototype-v2.png" alt="Prototype of the Schulcloud Brandenburg iPad app with a native app interface for educational media and school-cloud functions.">
 </figure>
 
 *Prototype of the Schulcloud Brandenburg iPad app: educational media and cloud functions are not only accessed through the browser, but designed as a native working environment on the personal device.*
