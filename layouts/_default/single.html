@@ -4,7 +4,6 @@
   {{- $feature := $images.GetMatch "*feature*" | default $cover }}
   {{- $heroImage := .Params.heroImage }}
   {{- $heroAlt := .Params.heroAlt | default .Title }}
-  {{- $heroSize := .Params.heroSize | default "" }}
   <article>
     <header class="jr-article-header">
       <div class="jr-article-title max-w-prose">
@@ -19,7 +18,7 @@
         </div>
       </div>
       {{ if $heroImage }}
-        <figure class="jr-article-hero{{ if eq $heroSize "compact" }} jr-article-hero--compact{{ end }} print:hidden">
+        <figure class="jr-article-hero print:hidden">
           <img src="{{ $heroImage | safeURL }}" alt="{{ $heroAlt }}" loading="eager" />
         </figure>
       {{ else }}

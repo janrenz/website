@@ -7,7 +7,6 @@ tags: ["Bildungsmedien", "Interoperabilität", "H5P", "KI", "Lerninfrastruktur"]
 translationKey: "is-h5p-dead"
 heroImage: "/img/blog/ist-h5p-tot/hero-open-package-no-text.png"
 heroAlt: "Abstrakte redaktionelle Illustration eines geöffneten digitalen Lernpakets, das sich in modulare Schichten, Karten und Verbindungslinien für semantische Aufgaben, Skills und Renderer auflöst."
-heroSize: "compact"
 ---
 
 > Arbeitsthese: H5P ist nicht deshalb überholt, weil niemand mehr interaktive Aufgaben braucht. Im Gegenteil: Interaktive, adaptive und KI-gestützte Lernaufgaben werden wichtiger. Überholt ist eher die Vorstellung, dass diese Aufgaben als manuell zusammengeklickte Tool-Pakete entstehen müssen.
@@ -206,7 +205,9 @@ So entsteht Dynamik, ohne die Qualitätssicherung aufzugeben.
 
 ## Schema: Wie die Ebenen zusammenspielen
 
-![Schema: Semantisches Aufgabenformat, KI-Skills, Runtime Wrapper und Renderer](/img/blog/ist-h5p-tot/schema.svg)
+<figure class="jr-contained-figure jr-schema-figure">
+  <img class="jr-contain-image" src="/img/blog/ist-h5p-tot/schema.svg" alt="Schema: Semantisches Aufgabenformat, KI-Skills, Runtime Wrapper und Renderer">
+</figure>
 
 Die zugrunde liegende Grafik zeigt die geplante Schichtung: Semantik, KI-Skills für Authoring und Portierung, Runtime Wrapper, Renderer sowie optionale KI-/Tutor- und Analytics-Anbindungen.
 
