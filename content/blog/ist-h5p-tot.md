@@ -1,12 +1,12 @@
 ---
 title: "Ist H5P tot?"
 date: 2026-07-09
-description: "Ein öffentlicher Entwurf zur Frage, warum interaktive Lerninhalte künftig eher semantische Aufgabenformate, KI-gestützte Authoring- und Portierungs-Skills, Renderer und optionale Tutor-Anbindungen brauchen als ein monolithisches Autorentool."
+description: "Ein Beitrag zur Frage, warum interaktive Lerninhalte künftig eher semantische Aufgabenformate, KI-gestützte Authoring- und Portierungs-Skills, Renderer und optionale Tutor-Anbindungen brauchen als ein monolithisches Autorentool."
 summary: "H5P war wichtig, um Interaktivität in Lernplattformen zu bringen. Der nächste Schritt könnte aber eine entkoppelte Architektur aus semantischen Aufgabenformaten, KI-gestützten Authoring- und Portierungs-Skills, Renderer-Bibliotheken und optionaler KI-/Tutor-Anbindung sein."
 tags: ["Bildungsmedien", "Interoperabilität", "H5P", "KI", "Lerninfrastruktur"]
 translationKey: "is-h5p-dead"
-heroImage: "/img/blog/ist-h5p-tot/hero-open-package-no-text.png"
-heroAlt: "Abstrakte redaktionelle Illustration eines geöffneten digitalen Lernpakets, das sich in modulare Schichten, Karten und Verbindungslinien für semantische Aufgaben, Skills und Renderer auflöst."
+heroImage: "/img/blog/ist-h5p-tot/hero-white-blue-red.png"
+heroAlt: "Abstrakte redaktionelle Illustration eines geöffneten digitalen Lernpakets auf hellem Hintergrund, das sich in blaue und rote modulare Schichten, Karten und Verbindungslinien für semantische Aufgaben, Komponenten und optionale Tutor-Anbindungen auflöst."
 ---
 
 > These: H5P ist nicht deshalb überholt, weil niemand mehr interaktive Aufgaben braucht. Im Gegenteil: Interaktive, adaptive und KI-gestützte Lernaufgaben werden wichtiger. Überholt ist eher die Vorstellung, dass diese Aufgaben als manuell zusammengeklickte Tool-Pakete entstehen müssen.
