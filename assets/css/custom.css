@@ -276,3 +276,116 @@ article + article {
     border-radius: 0.85rem;
   }
 }
+
+.jr-article-hero--compact {
+  width: min(100vw - 2rem, 58rem);
+  max-width: 58rem;
+  margin-bottom: 2.2rem;
+}
+
+.prose .jr-code-details {
+  margin: 1.2rem 0 1.8rem;
+  border: 1px solid var(--jr-line);
+  border-radius: 0.9rem;
+  background: rgba(11, 31, 58, 0.025);
+  overflow: hidden;
+}
+
+.prose .jr-code-details summary {
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  color: var(--jr-ink);
+}
+
+.prose .jr-code-details pre {
+  margin: 0;
+  border-radius: 0;
+  border-top: 1px solid var(--jr-line);
+}
+
+.prose .jr-qx-demo {
+  width: min(100vw - 2rem, 48rem);
+  margin: 2rem auto;
+  padding: 1.35rem;
+  border: 1px solid var(--jr-line);
+  border-radius: 1.15rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,251,255,0.96));
+  box-shadow: 0 18px 45px rgba(11, 31, 58, 0.10);
+}
+
+.prose .jr-qx-demo h3 {
+  margin-top: 0.35rem;
+}
+
+.prose .jr-qx-demo__meta {
+  color: #52637a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.prose .jr-qx-demo label {
+  display: flex;
+  gap: 0.65rem;
+  margin: 0.65rem 0;
+  padding: 0.75rem;
+  border: 1px solid rgba(11, 31, 58, 0.12);
+  border-radius: 0.8rem;
+  background: #fff;
+  line-height: 1.45;
+}
+
+.prose .jr-qx-demo input {
+  margin-top: 0.25rem;
+  flex: none;
+}
+
+.prose .jr-qx-demo button {
+  margin-top: 0.7rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--jr-ink);
+  color: #fff;
+  font-weight: 800;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.prose .jr-qx-demo__result {
+  margin-top: 1rem;
+}
+
+.prose .jr-qx-demo__result.is-success,
+.prose .jr-qx-demo__result.is-partial {
+  padding: 0.9rem 1rem;
+  border-radius: 0.85rem;
+}
+
+.prose .jr-qx-demo__result.is-success {
+  background: #e7f8ee;
+  border: 1px solid #9bdab2;
+}
+
+.prose .jr-qx-demo__result.is-partial {
+  background: #fff4ea;
+  border: 1px solid #efbe91;
+}
+
+.prose .jr-qx-demo__result span {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+:is(.dark .prose .jr-code-details, .dark .prose .jr-qx-demo) {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+:is(.dark .prose .jr-code-details summary) {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+:is(.dark .prose .jr-qx-demo label) {
+  background: rgba(255, 255, 255, 0.055);
+}

@@ -5,8 +5,9 @@ description: "Ein öffentlicher Entwurf zur Frage, warum interaktive Lerninhalte
 summary: "H5P war wichtig, um Interaktivität in Lernplattformen zu bringen. Der nächste Schritt könnte aber eine entkoppelte Architektur aus semantischen Aufgabenformaten, Skills, Renderer-Bibliotheken und optionaler KI-/Tutor-Anbindung sein."
 tags: ["Bildungsmedien", "Interoperabilität", "H5P", "KI", "Lerninfrastruktur"]
 translationKey: "is-h5p-dead"
-heroImage: "/img/blog/ist-h5p-tot/hero-runtime-wrapper.png"
-heroAlt: "Abstrakte Systemillustration mit einem semantischen Aufgabenkern, umgeben von Skill-, Runtime- und Renderer-Schichten sowie feinen Verbindungen zu KI und Tutor-Systemen."
+heroImage: "/img/blog/ist-h5p-tot/hero-open-package-no-text.png"
+heroAlt: "Abstrakte redaktionelle Illustration eines geöffneten digitalen Lernpakets, das sich in modulare Schichten, Karten und Verbindungslinien für semantische Aufgaben, Skills und Renderer auflöst."
+heroSize: "compact"
 ---
 
 > Arbeitsthese: H5P ist nicht deshalb überholt, weil niemand mehr interaktive Aufgaben braucht. Im Gegenteil: Interaktive, adaptive und KI-gestützte Lernaufgaben werden wichtiger. Überholt ist eher die Vorstellung, dass diese Aufgaben als manuell zusammengeklickte Tool-Pakete entstehen müssen.
@@ -26,14 +27,7 @@ Die spannendere Frage lautet: Ist H5P tot? Und was bleibt übrig, wenn man H5P i
 
 ## H5P bündelt Dinge, die künftig getrennt werden sollten
 
-H5P verbindet mehrere Ebenen in einem Paket:
-
-- ein Inhaltsmodell,
-- eine Autorenoberfläche,
-- eine Interaktionslogik,
-- eine Laufzeitdarstellung,
-- ein Export-/Importformat,
-- eine begrenzte Form von Auswertung und Feedback.
+H5P verbindet in einem Paket, was künftig besser getrennt werden sollte: Inhaltsmodell, Autorenoberfläche, Interaktionslogik, Laufzeitdarstellung, Exportformat und eine begrenzte Form von Auswertung und Feedback.
 
 Diese Bündelung war praktisch, solange die Alternative individuelle Softwareentwicklung war. Sie wird aber problematisch, sobald Lerninhalte stärker dynamisiert, automatisiert, qualitätsgesichert und plattformübergreifend ausgespielt werden sollen.
 
@@ -45,91 +39,70 @@ Kurz gesagt:
 
 ## Was stattdessen gebraucht wird
 
-Aus meiner Sicht braucht es künftig vor allem drei Ebenen:
+Aus meiner Sicht braucht es künftig vor allem drei Ebenen: ein semantisches Austauschformat, Skills als ausführbare didaktische und technische Logik sowie Renderer- und Komponentenbibliotheken für die Ausspielung.
 
-1. ein semantisches Austauschformat,
-2. Skills beziehungsweise ausführbare didaktische Logik,
-3. Renderer- und Komponentenbibliotheken.
-
-Dazu kommt eine vierte Schicht, die in klassischen H5P-Szenarien kaum vorgesehen ist: eine optionale Laufzeit-Anbindung an KI-Systeme und Tutor-Systeme. Optional ist hier wichtig: Dieselbe Aufgabe muss auch ohne KI lauffähig bleiben — zum Beispiel in Moodle oder einem einfachen LMS-Embed. In adaptiven Systemen kann sie zusätzliche State-, Tutor- und KI-Funktionen nutzen; in einfacheren Umgebungen läuft sie mit reduzierter Funktionalität weiter.
+Dazu kommt eine vierte, optionale Schicht, die in klassischen H5P-Szenarien kaum vorgesehen ist: eine Laufzeit-Anbindung an KI-Systeme und Tutor-Systeme. Optional ist hier wichtig. Dieselbe Aufgabe muss auch ohne KI lauffähig bleiben — zum Beispiel in Moodle oder einem einfachen LMS-Embed. In adaptiven Systemen kann sie zusätzliche State-, Tutor- und KI-Funktionen nutzen; in einfacheren Umgebungen läuft sie mit reduzierter Funktionalität weiter.
 
 ## Ebene 1: Semantisches Austauschformat
 
 Die erste Ebene beschreibt nicht, wie eine Aufgabe in einem bestimmten Tool aussieht. Sie beschreibt, was die Aufgabe didaktisch bedeutet.
 
-Ein solches Format enthält zum Beispiel:
-
-- Lernziel,
-- Kompetenzbezug,
-- Zielgruppe,
-- Aufgabentyp,
-- Aufgabenstellung,
-- Material oder Stimulus,
-- Antwortoptionen,
-- richtige Lösungen,
-- typische Fehlkonzepte,
-- Feedback,
-- Hilfen,
-- Schwierigkeitsgrad,
-- Variantenregeln,
-- Metadaten,
-- Lizenz,
-- Barrierefreiheitsinformationen,
-- Analytics- und Tutor-Anschlusspunkte.
+Ein solches Format beschreibt Lernziel, Kompetenzbezug, Zielgruppe, Aufgabentyp, Aufgabenstellung, Material, Antwortlogik, Feedback, typische Fehlkonzepte, Hilfen, Schwierigkeitsgrad, Variantenregeln, Metadaten, Lizenz, Barrierefreiheit sowie Analytics- und Tutor-Anschlusspunkte.
 
 Das Format ist nicht H5P-spezifisch. Es kann in JSON, YAML oder einem bestehenden Standardprofil beschrieben werden. Naheliegende Bezugspunkte liegen im OneEdTech-/IMS-Umfeld, etwa QTI für Aufgaben- und Testinteroperabilität. Für Lernressourcen-Metadaten kommen außerdem schema.org beziehungsweise LRMI infrage, für Lernaktivitäten xAPI oder Caliper. Entscheidend ist aber nicht ein einzelner Standardname, sondern die Architekturidee: Die Semantik muss portabel und interoperabel sein.
 
 Ein einfacher Ausschnitt könnte so aussehen:
 
-```ts
-export const sampleTask = {
-  id: "task-h5p-semantic-format-001",
-  schema: "qx.task.v0",
-  taskType: "multiple-choice",
-  title: "Was ersetzt H5P in einem modernen Produktionsmodell?",
-  stem: "Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?",
+<details class="jr-code-details">
+  <summary>Beispiel für ein semantisches Aufgabenobjekt anzeigen</summary>
+  <pre><code class="language-ts">export const sampleTask = {
+  id: &quot;task-h5p-semantic-format-001&quot;,
+  schema: &quot;qx.task.v0&quot;,
+  taskType: &quot;multiple-choice&quot;,
+  title: &quot;Was ersetzt H5P in einem modernen Produktionsmodell?&quot;,
+  stem: &quot;Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?&quot;,
   learningObjective:
-    "Lernende unterscheiden zwischen Austauschformat, Produktionsskill und Rendering-Bibliothek.",
+    &quot;Lernende unterscheiden zwischen Austauschformat, Produktionsskill und Rendering-Bibliothek.&quot;,
   choices: [
     {
-      id: "a",
-      text: "Ein semantisches Austauschformat für Aufgaben, Medien, Feedback und Metadaten.",
+      id: &quot;a&quot;,
+      text: &quot;Ein semantisches Austauschformat für Aufgaben, Medien, Feedback und Metadaten.&quot;,
       correct: true,
-      feedback: "Genau: Die Semantik muss portabel sein, nicht an ein konkretes Tool gebunden."
+      feedback: &quot;Genau: Die Semantik muss portabel sein, nicht an ein konkretes Tool gebunden.&quot;
     },
     {
-      id: "b",
-      text: "Ein standardisierter Skill, der aus der Semantik eine ausführbare Interaktion macht.",
+      id: &quot;b&quot;,
+      text: &quot;Ein standardisierter Skill, der aus der Semantik eine ausführbare Interaktion macht.&quot;,
       correct: true,
-      feedback: "Richtig: Der Skill kapselt Didaktik, Bewertung, Feedbacklogik und Qualitätssicherung."
+      feedback: &quot;Richtig: Der Skill kapselt Didaktik, Bewertung, Feedbacklogik und Qualitätssicherung.&quot;
     },
     {
-      id: "c",
-      text: "Eine Renderer- oder Komponentenbibliothek, die Aufgaben konsistent ausspielt.",
+      id: &quot;c&quot;,
+      text: &quot;Eine Renderer- oder Komponentenbibliothek, die Aufgaben konsistent ausspielt.&quot;,
       correct: true,
-      feedback: "Richtig: Die Oberfläche wird wiederverwendbar und testbar, statt pro Aufgabe geklickt."
+      feedback: &quot;Richtig: Die Oberfläche wird wiederverwendbar und testbar, statt pro Aufgabe geklickt.&quot;
     },
     {
-      id: "d",
-      text: "Möglichst viele manuell gepflegte Varianten derselben H5P-Aufgabe.",
+      id: &quot;d&quot;,
+      text: &quot;Möglichst viele manuell gepflegte Varianten derselben H5P-Aufgabe.&quot;,
       correct: false,
-      feedback: "Eher nicht: Genau diese manuelle Variantenpflege ist das Problem, das dynamische Formate vermeiden sollen."
+      feedback: &quot;Eher nicht: Genau diese manuelle Variantenpflege ist das Problem, das dynamische Formate vermeiden sollen.&quot;
     }
   ],
   metadata: {
-    subject: "Digitale Bildungsinfrastruktur",
-    targetGroup: "Bildungsmedien, OER, EdTech, Verwaltung",
+    subject: &quot;Digitale Bildungsinfrastruktur&quot;,
+    targetGroup: &quot;Bildungsmedien, OER, EdTech, Verwaltung&quot;,
     estimatedMinutes: 3,
-    license: "CC BY 4.0",
-    source: "Blog-Prototyp: Ist H5P tot?"
+    license: &quot;CC BY 4.0&quot;,
+    source: &quot;Blog-Prototyp: Ist H5P tot?&quot;
   },
   accessibility: {
     plainLanguage:
-      "Die Aufgabe fragt, welche Teile man braucht, wenn Lernaufgaben nicht mehr fest in H5P gebaut werden.",
-    ariaLabel: "Multiple-Choice-Aufgabe zum Ersatz von H5P durch semantische Formate und Skills"
+      &quot;Die Aufgabe fragt, welche Teile man braucht, wenn Lernaufgaben nicht mehr fest in H5P gebaut werden.&quot;,
+    ariaLabel: &quot;Multiple-Choice-Aufgabe zum Ersatz von H5P durch semantische Formate und Skills&quot;
   }
-};
-```
+};</code></pre>
+</details>
 
 Das Entscheidende daran: Diese Aufgabe ist noch keine H5P-Aufgabe. Sie ist auch noch keine React-Komponente. Sie ist zunächst eine semantisch beschriebene Lerninteraktion.
 
@@ -143,14 +116,7 @@ Es gibt mindestens vier unterschiedliche Skill-Rollen:
 
 Diese Skills helfen bei der Erstellung von Aufgaben. Sie kennen didaktische Muster, Fachlogiken, Zielgruppen, Schwierigkeitsgrade und typische Fehler bei der Aufgabenkonstruktion.
 
-Sie unterstützen zum Beispiel:
-
-- aus einem Fachtext geeignete Aufgabenideen abzuleiten,
-- plausible Distraktoren zu formulieren,
-- Feedback lernförderlich zu schreiben,
-- Aufgaben nach Lernziel oder Kompetenzstufe zu variieren,
-- Sprache, Niveau und Barrierefreiheit zu prüfen,
-- Quellen, Lizenzen und Metadaten vorzubereiten.
+Sie können aus einem Fachtext Aufgabenideen ableiten, plausible Distraktoren formulieren, Feedback lernförderlich schreiben, Varianten nach Lernziel oder Kompetenzstufe erzeugen und dabei Sprache, Niveau, Barrierefreiheit, Quellen, Lizenzen und Metadaten mitprüfen.
 
 Diese Skills laufen eher im Produktionsprozess, also bevor die Aufgabe veröffentlicht wird. Sie ersetzen nicht die Redaktion, sondern machen redaktionelle Arbeit schneller, konsistenter und prüfbarer.
 
@@ -158,13 +124,7 @@ Diese Skills laufen eher im Produktionsprozess, also bevor die Aufgabe veröffen
 
 Diese Skills kennen bestehende Formate und Standards. Sie wissen zum Beispiel, wie ein Aufgabenobjekt in ein QTI-Profil, ein JSON-basiertes QX-Profil, eine xAPI-/Caliper-Eventstruktur oder eine LMS-kompatible Übergabe übersetzt werden kann.
 
-Sie beantworten Fragen wie:
-
-- Welche Felder braucht dieses Aufgabenformat?
-- Welche Metadaten fehlen?
-- Welche QTI-Struktur passt zur Aufgabe?
-- Welche Analytics-Events sollten erzeugt werden?
-- Welche Informationen müssen für LTI, cmi5 oder ein anderes Zielsystem ergänzt werden?
+Sie beantworten Fragen wie: Welche Felder braucht dieses Format? Welche Metadaten fehlen? Welche QTI-Struktur passt zur Aufgabe? Welche Analytics-Events sollten erzeugt werden? Und welche Informationen müssen für LTI, cmi5 oder ein anderes Zielsystem ergänzt werden?
 
 Hier liegt ein wichtiger Unterschied zu H5P: Nicht das Autorentool ist der Standard, sondern die Transformierbarkeit zwischen semantischen Formaten, Plattformen und Laufzeiten.
 
@@ -172,14 +132,7 @@ Hier liegt ein wichtiger Unterschied zu H5P: Nicht das Autorentool ist der Stand
 
 Runtime-Skills laufen während der Nutzung. Sie kennen die bereitstehenden Aufgaben- und Medienbibliotheken, die verfügbaren Renderer, die unterstützten Interaktionstypen und die Best Practices für deren Einsatz.
 
-Ein Runtime-Skill weiß zum Beispiel:
-
-- welche React- oder Web-Component-Bibliothek eine Multiple-Choice-Aufgabe ausspielen kann,
-- welche Video-Interaktionsbibliothek Timecodes, Sprungmarken oder Overlays unterstützt,
-- welche Renderer barrierearm genug für den Zielkontext sind,
-- welche Feedbackformen zur aktuellen Aufgabe passen,
-- ob eine Aufgabe besser als Choice, Sortierung, Markierung, Dialogkarte oder Video-Checkpoint ausgespielt werden sollte,
-- welche Ereignisse an Tutor, Analytics oder Learning Record Store gemeldet werden müssen.
+Ein Runtime-Skill weiß zum Beispiel, welche React- oder Web-Component-Bibliothek eine Multiple-Choice-Aufgabe ausspielen kann, welche Video-Interaktionsbibliothek Timecodes, Sprungmarken oder Overlays unterstützt, welche Renderer barrierearm genug sind und welche Ereignisse an Tutor, Analytics oder Learning Record Store gemeldet werden müssen.
 
 Runtime-Skills sind damit nicht nur „Bewertungsfunktionen“. Sie sind Vermittler zwischen semantischem Aufgabenformat, vorhandenen Bibliotheken, didaktischen Best Practices und konkreter Ausspielung.
 
@@ -187,17 +140,7 @@ Runtime-Skills sind damit nicht nur „Bewertungsfunktionen“. Sie sind Vermitt
 
 Diese Skills prüfen, ob eine Aufgabe fachlich, didaktisch, technisch, rechtlich und barrierearm genug ist. Sie können vor der Veröffentlichung laufen, aber auch zur Laufzeit kontrollieren, welche dynamischen Anpassungen erlaubt sind.
 
-Sie prüfen zum Beispiel:
-
-- Ist die Aufgabe eindeutig lösbar?
-- Sind Distraktoren plausibel, aber nicht irreführend?
-- Passt das Feedback zum Fehler?
-- Wird nur Wissen abgefragt oder wirklich Verständnis gefördert?
-- Sind Alt-Texte, Untertitel oder Tastaturbedienung berücksichtigt?
-- Sind Lizenz und Quelle dokumentiert?
-- Darf für diese Aufgabe eine KI-Hilfe angeboten werden?
-- Darf die KI nur Hinweise geben oder auch Lösungsschritte erklären?
-- Welche Daten dürfen an Tutor oder KI übergeben werden?
+Sie prüfen etwa, ob eine Aufgabe eindeutig lösbar ist, ob Distraktoren plausibel, aber nicht irreführend sind, ob Feedback wirklich zum Fehler passt, ob Verständnis statt bloßes Wiedererkennen gefördert wird, ob Barrierefreiheit und Lizenzfragen geklärt sind und welche KI- oder Tutor-Funktionen für diese Aufgabe überhaupt erlaubt sein sollen.
 
 Damit entsteht ein hoher Standardisierungs- und Qualitätssicherungsgrad, ohne die Dynamik der Ausspielung zu verlieren.
 
@@ -205,19 +148,12 @@ Damit entsteht ein hoher Standardisierungs- und Qualitätssicherungsgrad, ohne d
 
 Im kleinen Prototyp sieht die ausführbare Schicht noch sehr einfach aus:
 
-```ts
-const executableTask = qxChoiceSkill(sampleTask);
-```
+<details class="jr-code-details">
+  <summary>Mini-Beispiel für die Skill-Ausführung anzeigen</summary>
+  <pre><code class="language-ts">const executableTask = qxChoiceSkill(sampleTask);</code></pre>
+</details>
 
-Dieser `qxChoiceSkill` macht aus der semantischen Beschreibung eine ausführbare Aufgabe. Er erzeugt unter anderem:
-
-- Renderer-Typ,
-- Auswahlmodus,
-- normalisierte Optionen,
-- Bewertungsfunktion,
-- Feedbacklogik,
-- QA-Warnungen,
-- erwartete Lösung.
+Dieser `qxChoiceSkill` macht aus der semantischen Beschreibung eine ausführbare Aufgabe. Er erzeugt Renderer-Typ, Auswahlmodus, normalisierte Optionen, Bewertungsfunktion, Feedbacklogik, QA-Warnungen und die erwartete Lösung.
 
 Für die Blogthese ist aber wichtig: Das ist nur eine Skill-Art. In einer realen Architektur gäbe es zusätzlich Produktions-Skills, Format-/Adapter-Skills, Runtime-Skills und QA-/Policy-Skills.
 
@@ -239,9 +175,10 @@ Diese Renderer bekommen nicht irgendeinen H5P-Export, sondern eine normalisierte
 
 Im Prototyp ist das eine einfache React-Komponente:
 
-```tsx
-<ChoiceTask task={executableTask} />
-```
+<details class="jr-code-details">
+  <summary>Mini-Beispiel für die Renderer-Einbettung anzeigen</summary>
+  <pre><code class="language-tsx">&lt;ChoiceTask task={executableTask} /&gt;</code></pre>
+</details>
 
 Sie rendert Checkboxen, einen Prüfen-Button, Score und Feedback. Die Komponente muss aber nicht wissen, aus welcher Quelle die Aufgabe stammt. Sie könnte dieselbe Struktur aus einem Autorensystem, einem KI-Workflow, einem QTI-Import oder einer Content-API erhalten.
 
@@ -251,55 +188,19 @@ Der nächste Schritt geht über klassische H5P-Logik hinaus. Aufgaben sollten ni
 
 Das Prinzip lautet: progressive Erweiterung statt harter Abhängigkeit.
 
-Eine Aufgabe braucht also einen stabilen Kern, der überall funktioniert:
+Eine Aufgabe braucht also einen stabilen Kern, der überall funktioniert: anzeigen, Eingaben erfassen, Antworten prüfen, Feedback geben und ein Ergebnis lokal oder an ein LMS zurückmelden.
 
-- Aufgabe anzeigen,
-- Eingaben erfassen,
-- Antwort prüfen,
-- Feedback geben,
-- Ergebnis lokal oder an ein LMS zurückmelden.
-
-Darüber können optionale Erweiterungen liegen:
-
-- Tutor-State,
-- adaptive Hinweise,
-- KI-Erklärungen,
-- Fehlkonzeptdiagnose,
-- Analytics-Events,
-- personalisierte Varianten.
+Darüber können optionale Erweiterungen liegen: Tutor-State, adaptive Hinweise, KI-Erklärungen, Fehlkonzeptdiagnose, Analytics-Events oder personalisierte Varianten.
 
 In einem adaptiven System kann die Aufgabe ihren Zustand an einen Tutor geben und kontextsensitive Unterstützung erhalten. In Moodle oder einem einfachen LMS-Embed läuft dieselbe Aufgabe dagegen mit weniger Funktion: Anzeige, Bearbeitung, Feedback, Score. Die KI-Anbindung ist dann nicht Voraussetzung, sondern Zusatzfähigkeit.
 
-Ein Tutor-System braucht zum Beispiel Informationen wie:
-
-- Welche Optionen wurden ausgewählt?
-- Welche Fehlkonzepte sind erkennbar?
-- Wie viele Versuche gab es?
-- Welche Hilfen wurden genutzt?
-- Wie sicher wirkt die Antwort?
-- Welche Feedbacks wurden bereits gezeigt?
-- Welche nächste Intervention ist sinnvoll?
+Ein Tutor-System braucht dafür Informationen darüber, welche Optionen ausgewählt wurden, welche Fehlkonzepte erkennbar sind, wie viele Versuche es gab, welche Hilfen genutzt wurden, wie sicher die Antwort wirkt und welche Intervention als nächstes sinnvoll wäre.
 
 Dafür braucht die Aufgabe einen Wrapper. Dieser Wrapper vermittelt zwischen Aufgabe, Zielumgebung, KI-Dienst und Tutor-System. Er muss aber graceful degradation unterstützen: Wenn kein Tutor, keine KI oder kein Analytics-Endpunkt vorhanden ist, bleibt die Kernaufgabe trotzdem nutzbar.
 
-Er hat mehrere Aufgaben:
+Er sammelt den State der Aufgabe, exponiert ihn kontrolliert nach außen, veröffentlicht Events, nimmt Tutor-Kontext an, spielt KI-Hinweise oder adaptive Hilfen ein und setzt Datenschutz-, Policy-, Logging- und Analytics-Regeln durch.
 
-- State der Aufgabe sammeln,
-- State nach außen exponieren,
-- Events veröffentlichen,
-- Tutor-Kontext annehmen,
-- KI-Hinweise oder adaptive Hilfen einspielen,
-- Datenschutz- und Policy-Regeln durchsetzen,
-- Logging und Analytics kontrollieren.
-
-Wichtig ist: Die Aufgabe wird dadurch nicht beliebig oder unkontrolliert. Im Gegenteil. Der Wrapper kann Standards erzwingen:
-
-- Welche Daten dürfen an die KI?
-- Welche Daten bleiben lokal?
-- Welche Prompts sind erlaubt?
-- Welche Antworttypen darf die KI zurückgeben?
-- Wann muss redaktionell freigegeben werden?
-- Wann darf der Tutor nur Hinweise, aber keine Lösung geben?
+Wichtig ist: Die Aufgabe wird dadurch nicht beliebig oder unkontrolliert. Im Gegenteil. Der Wrapper kann Standards erzwingen: Welche Daten dürfen an die KI? Welche Daten bleiben lokal? Welche Prompts sind erlaubt? Welche Antworttypen darf die KI zurückgeben? Wann muss redaktionell freigegeben werden? Und wann darf der Tutor nur Hinweise, aber keine Lösung geben?
 
 So entsteht Dynamik, ohne die Qualitätssicherung aufzugeben.
 
@@ -320,31 +221,42 @@ Kurz gelesen:
 
 ## Eingebetteter Prototyp
 
-Ein begleitender Prototyp im Arbeitsentwurf zeigt diese Architektur im Kleinen:
+Die folgende Mini-Aufgabe zeigt die These im Artikel selbst. Sie ist keine H5P-Datei, sondern eine kleine, eingebettete Demo: semantische Aufgabe, einfache Skill-Logik, standardisierte Darstellung. In einer vollständigen Architektur könnte derselbe Kern in Moodle mit reduziertem Funktionsumfang laufen oder in einem adaptiven System zusätzlichen Tutor-State exponieren.
 
-```txt
-sampleTask.ts        semantisches Austauschformat
-qxChoiceSkill.ts     Skill mit QA, Bewertung und Feedbacklogik
-ChoiceTask.tsx       React-Renderer
-App.tsx              Einbettung der Aufgabe
-```
+<div class="jr-qx-demo" data-qx-demo>
+  <div class="jr-qx-demo__meta">Demo · semantische Aufgabe → Skill → Renderer</div>
+  <h3>Was ersetzt H5P in einem modernen Produktionsmodell?</h3>
+  <p>Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?</p>
+  <label><input type="checkbox" value="a"> Ein semantisches Austauschformat für Aufgaben, Medien, Feedback und Metadaten.</label>
+  <label><input type="checkbox" value="b"> Ein standardisierter Skill, der aus der Semantik eine ausführbare Interaktion macht.</label>
+  <label><input type="checkbox" value="c"> Eine Renderer- oder Komponentenbibliothek, die Aufgaben konsistent ausspielt.</label>
+  <label><input type="checkbox" value="d"> Möglichst viele manuell gepflegte Varianten derselben H5P-Aufgabe.</label>
+  <button type="button">Prüfen</button>
+  <div class="jr-qx-demo__result" aria-live="polite"></div>
+</div>
 
-
-Die Demo-Aufgabe fragt:
-
-> Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?
-
-Richtige Antworten:
-
-- ein semantisches Austauschformat,
-- ein standardisierter Skill,
-- eine Renderer- oder Komponentenbibliothek.
-
-Falsche Antwort:
-
-- möglichst viele manuell gepflegte Varianten derselben H5P-Aufgabe.
-
-Damit zeigt die Aufgabe selbst die These des Artikels: Nicht die Interaktion verschwindet, sondern die Art, wie sie produziert und ausgeführt wird.
+<script>
+(function () {
+  document.querySelectorAll('[data-qx-demo]').forEach(function (demo) {
+    var button = demo.querySelector('button');
+    var result = demo.querySelector('.jr-qx-demo__result');
+    var feedback = {
+      a: 'Genau: Die Semantik muss portabel sein, nicht an ein konkretes Tool gebunden.',
+      b: 'Richtig: Der Skill kapselt Didaktik, Bewertung, Feedbacklogik und Qualitätssicherung.',
+      c: 'Richtig: Die Oberfläche wird wiederverwendbar und testbar, statt pro Aufgabe geklickt.',
+      d: 'Eher nicht: Genau diese manuelle Variantenpflege ist das Problem.'
+    };
+    button.addEventListener('click', function () {
+      var selected = Array.from(demo.querySelectorAll('input:checked')).map(function (input) { return input.value; });
+      var correct = ['a', 'b', 'c'];
+      var isCorrect = correct.every(function (id) { return selected.includes(id); }) && selected.every(function (id) { return correct.includes(id); });
+      var score = Math.max(0, Math.round((selected.filter(function (id) { return correct.includes(id); }).length / correct.length - (selected.includes('d') ? 0.25 : 0)) * 100));
+      result.className = 'jr-qx-demo__result ' + (isCorrect ? 'is-success' : 'is-partial');
+      result.innerHTML = '<strong>' + (isCorrect ? 'Vollständig richtig' : 'Noch nicht vollständig') + '</strong><span>Score: ' + score + '%</span><ul>' + selected.map(function (id) { return '<li>' + feedback[id] + '</li>'; }).join('') + '</ul>';
+    });
+  });
+})();
+</script>
 
 ## Warum das H5P ersetzt — nicht nur ergänzt
 
