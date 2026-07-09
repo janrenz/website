@@ -65,7 +65,7 @@ body {
 }
 
 .prose {
-  max-width: 86ch;
+  max-width: 92ch;
   line-height: 1.72;
 }
 
@@ -323,7 +323,8 @@ article + article {
 }
 
 .prose .jr-qx-demo {
-  width: min(100vw - 2rem, 48rem);
+  width: min(100%, 38rem);
+  max-width: 38rem;
   margin: 2rem auto;
   padding: 1.35rem;
   border: 1px solid var(--jr-line);
