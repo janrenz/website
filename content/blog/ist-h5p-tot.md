@@ -1,8 +1,8 @@
 ---
 title: "Ist H5P tot?"
 date: 2026-07-09
-description: "Ein öffentlicher Entwurf zur Frage, warum interaktive Lerninhalte künftig eher semantische Aufgabenformate, Skills, Renderer und optionale KI-/Tutor-Anbindungen brauchen als ein monolithisches Autorentool."
-summary: "H5P war wichtig, um Interaktivität in Lernplattformen zu bringen. Der nächste Schritt könnte aber eine entkoppelte Architektur aus semantischen Aufgabenformaten, Skills, Renderer-Bibliotheken und optionaler KI-/Tutor-Anbindung sein."
+description: "Ein öffentlicher Entwurf zur Frage, warum interaktive Lerninhalte künftig eher semantische Aufgabenformate, KI-gestützte Authoring- und Portierungs-Skills, Renderer und optionale Tutor-Anbindungen brauchen als ein monolithisches Autorentool."
+summary: "H5P war wichtig, um Interaktivität in Lernplattformen zu bringen. Der nächste Schritt könnte aber eine entkoppelte Architektur aus semantischen Aufgabenformaten, KI-gestützten Authoring- und Portierungs-Skills, Renderer-Bibliotheken und optionaler KI-/Tutor-Anbindung sein."
 tags: ["Bildungsmedien", "Interoperabilität", "H5P", "KI", "Lerninfrastruktur"]
 translationKey: "is-h5p-dead"
 heroImage: "/img/blog/ist-h5p-tot/hero-open-package-no-text.png"
@@ -31,7 +31,7 @@ H5P verbindet in einem Paket, was künftig besser getrennt werden sollte: Inhalt
 
 Diese Bündelung war praktisch, solange die Alternative individuelle Softwareentwicklung war. Sie wird aber problematisch, sobald Lerninhalte stärker dynamisiert, automatisiert, qualitätsgesichert und plattformübergreifend ausgespielt werden sollen.
 
-Denn dann möchte man nicht jede Aufgabe in einem Formular zusammenklicken. Man möchte Aufgaben semantisch beschreiben, automatisch prüfen, ihre Erstellung durch Skills standardisieren und professionalisieren — und sie anschließend über standardisierte Komponenten ausspielen.
+Denn dann möchte man nicht jede Aufgabe in einem Formular zusammenklicken. Man möchte Aufgaben semantisch beschreiben, automatisch prüfen, ihre Erstellung, Prüfung und Portierung durch KI-Skills standardisieren und professionalisieren — und sie anschließend über standardisierte Komponenten ausspielen.
 
 Kurz gesagt:
 
@@ -39,7 +39,7 @@ Kurz gesagt:
 
 ## Was stattdessen gebraucht wird
 
-Aus meiner Sicht braucht es künftig vor allem drei Ebenen: ein semantisches Austauschformat, Skills als ausführbare didaktische und technische Logik sowie Renderer- und Komponentenbibliotheken für die Ausspielung.
+Aus meiner Sicht braucht es künftig vor allem drei Ebenen: ein semantisches Austauschformat, KI-gestützte Skills für Authoring, Prüfung und Portierung sowie Renderer- und Komponentenbibliotheken für die Ausspielung. Mit Skills meine ich hier ausdrücklich nicht React-Komponenten oder Frontend-Code, sondern spezialisierte KI-Fähigkeiten, die Formate, Bibliotheken, Zielsysteme und didaktische Best Practices kennen.
 
 Dazu kommt eine vierte, optionale Schicht, die in klassischen H5P-Szenarien kaum vorgesehen ist: eine Laufzeit-Anbindung an KI-Systeme und Tutor-Systeme. Optional ist hier wichtig. Dieselbe Aufgabe muss auch ohne KI lauffähig bleiben — zum Beispiel in Moodle oder einem einfachen LMS-Embed. In adaptiven Systemen kann sie zusätzliche State-, Tutor- und KI-Funktionen nutzen; in einfacheren Umgebungen läuft sie mit reduzierter Funktionalität weiter.
 
@@ -62,7 +62,7 @@ Ein einfacher Ausschnitt könnte so aussehen:
   title: &quot;Was ersetzt H5P in einem modernen Produktionsmodell?&quot;,
   stem: &quot;Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?&quot;,
   learningObjective:
-    &quot;Lernende unterscheiden zwischen Austauschformat, Produktionsskill und Rendering-Bibliothek.&quot;,
+    &quot;Lernende unterscheiden zwischen Austauschformat, KI-gestütztem Authoring-/Portierungs-Skill und Rendering-Bibliothek.&quot;,
   choices: [
     {
       id: &quot;a&quot;,
@@ -72,9 +72,9 @@ Ein einfacher Ausschnitt könnte so aussehen:
     },
     {
       id: &quot;b&quot;,
-      text: &quot;Ein standardisierter Skill, der aus der Semantik eine ausführbare Interaktion macht.&quot;,
+      text: &quot;Ein KI-gestützter Authoring- und Portierungs-Skill, der aus der Semantik eine passende Ausspielung vorbereitet.&quot;,
       correct: true,
-      feedback: &quot;Richtig: Der Skill kapselt Didaktik, Bewertung, Feedbacklogik und Qualitätssicherung.&quot;
+      feedback: &quot;Richtig: Der Skill kennt Formate, Bibliotheken, Best Practices und Qualitätsregeln für Authoring und Portierung.&quot;
     },
     {
       id: &quot;c&quot;,
@@ -99,65 +99,65 @@ Ein einfacher Ausschnitt könnte so aussehen:
   accessibility: {
     plainLanguage:
       &quot;Die Aufgabe fragt, welche Teile man braucht, wenn Lernaufgaben nicht mehr fest in H5P gebaut werden.&quot;,
-    ariaLabel: &quot;Multiple-Choice-Aufgabe zum Ersatz von H5P durch semantische Formate und Skills&quot;
+    ariaLabel: &quot;Multiple-Choice-Aufgabe zum Ersatz von H5P durch semantische Formate, KI-Skills und Renderer&quot;
   }
 };</code></pre>
 </details>
 
 Das Entscheidende daran: Diese Aufgabe ist noch keine H5P-Aufgabe. Sie ist auch noch keine React-Komponente. Sie ist zunächst eine semantisch beschriebene Lerninteraktion.
 
-## Ebene 2: Skills — aber differenziert
+## Ebene 2: KI-Skills für Authoring, Prüfung und Portierung
 
-H5P denkt in Content Types: Multiple Choice, Drag and Drop, Interactive Video, Branching Scenario und so weiter. Ein moderneres Modell sollte nicht einfach „Content Types“ durch „Skills“ ersetzen. Der Skill-Begriff muss differenziert werden.
+H5P denkt in Content Types: Multiple Choice, Drag and Drop, Interactive Video, Branching Scenario und so weiter. Ein moderneres Modell sollte nicht einfach „Content Types“ durch Frontend-Komponenten ersetzen. Der Skill-Begriff meint hier etwas anderes: KI-Skills, die beim Authoring, bei der Portierung und bei der Qualitätssicherung eingesetzt werden.
 
-Es gibt mindestens vier unterschiedliche Skill-Rollen:
+Es gibt mindestens vier unterschiedliche Rollen solcher KI-Skills:
 
 ### 1. Produktions- und Autor:innen-Skills
 
-Diese Skills helfen bei der Erstellung von Aufgaben. Sie kennen didaktische Muster, Fachlogiken, Zielgruppen, Schwierigkeitsgrade und typische Fehler bei der Aufgabenkonstruktion.
+Diese KI-Skills helfen bei der Erstellung von Aufgaben. Sie kennen didaktische Muster, Fachlogiken, Zielgruppen, Schwierigkeitsgrade und typische Fehler bei der Aufgabenkonstruktion.
 
 Sie können aus einem Fachtext Aufgabenideen ableiten, plausible Distraktoren formulieren, Feedback lernförderlich schreiben, Varianten nach Lernziel oder Kompetenzstufe erzeugen und dabei Sprache, Niveau, Barrierefreiheit, Quellen, Lizenzen und Metadaten mitprüfen.
 
-Diese Skills laufen eher im Produktionsprozess, also bevor die Aufgabe veröffentlicht wird. Sie ersetzen nicht die Redaktion, sondern machen redaktionelle Arbeit schneller, konsistenter und prüfbarer.
+Diese Skills laufen im Produktionsprozess, also bevor die Aufgabe veröffentlicht wird. Sie ersetzen nicht die Redaktion, sondern machen redaktionelle Arbeit schneller, konsistenter und prüfbarer.
 
-### 2. Transformations- und Adapter-Skills
+### 2. Portierungs- und Adapter-Skills
 
-Diese Skills kennen bestehende Formate und Standards. Sie wissen zum Beispiel, wie ein Aufgabenobjekt in ein QTI-Profil, ein JSON-basiertes QX-Profil, eine xAPI-/Caliper-Eventstruktur oder eine LMS-kompatible Übergabe übersetzt werden kann.
+Diese Skills kennen bestehende Formate, Standards und Zielsysteme. Sie wissen zum Beispiel, wie ein Aufgabenobjekt in ein QTI-Profil, ein JSON-basiertes QX-Profil, eine xAPI-/Caliper-Eventstruktur oder eine LMS-kompatible Übergabe übersetzt werden kann.
 
 Sie beantworten Fragen wie: Welche Felder braucht dieses Format? Welche Metadaten fehlen? Welche QTI-Struktur passt zur Aufgabe? Welche Analytics-Events sollten erzeugt werden? Und welche Informationen müssen für LTI, cmi5 oder ein anderes Zielsystem ergänzt werden?
 
 Hier liegt ein wichtiger Unterschied zu H5P: Nicht das Autorentool ist der Standard, sondern die Transformierbarkeit zwischen semantischen Formaten, Plattformen und Laufzeiten.
 
-### 3. Runtime-Skills
+### 3. Ausspielungs- und Bibliotheks-Skills
 
-Runtime-Skills laufen während der Nutzung. Sie kennen die bereitstehenden Aufgaben- und Medienbibliotheken, die verfügbaren Renderer, die unterstützten Interaktionstypen und die Best Practices für deren Einsatz.
+Diese Skills laufen nicht als React-Code im Browser. Sie helfen beim Authoring und bei der Portierung zu entscheiden, welche vorhandenen Aufgaben- und Medienbibliotheken, Renderer, Interaktionstypen und Best Practices für eine bestimmte Aufgabe passen.
 
-Ein Runtime-Skill weiß zum Beispiel, welche React- oder Web-Component-Bibliothek eine Multiple-Choice-Aufgabe ausspielen kann, welche Video-Interaktionsbibliothek Timecodes, Sprungmarken oder Overlays unterstützt, welche Renderer barrierearm genug sind und welche Ereignisse an Tutor, Analytics oder Learning Record Store gemeldet werden müssen.
+Ein solcher Skill weiß zum Beispiel, welche React- oder Web-Component-Bibliothek eine Multiple-Choice-Aufgabe ausspielen kann, welche Video-Interaktionsbibliothek Timecodes, Sprungmarken oder Overlays unterstützt, welche Renderer barrierearm genug sind und welche Ereignisse für Tutor, Analytics oder Learning Record Store vorbereitet werden sollten.
 
-Runtime-Skills sind damit nicht nur „Bewertungsfunktionen“. Sie sind Vermittler zwischen semantischem Aufgabenformat, vorhandenen Bibliotheken, didaktischen Best Practices und konkreter Ausspielung.
+Diese Skills sind also keine „Bewertungsfunktionen“ in einer React-Aufgabe. Sie sind KI-gestützte Vermittler zwischen semantischem Aufgabenformat, vorhandenen Bibliotheken, didaktischen Best Practices und konkreter Zielumgebung.
 
 ### 4. Qualitätssicherungs- und Policy-Skills
 
-Diese Skills prüfen, ob eine Aufgabe fachlich, didaktisch, technisch, rechtlich und barrierearm genug ist. Sie können vor der Veröffentlichung laufen, aber auch zur Laufzeit kontrollieren, welche dynamischen Anpassungen erlaubt sind.
+Diese Skills prüfen, ob eine Aufgabe fachlich, didaktisch, technisch, rechtlich und barrierearm genug ist. Sie laufen vor allem vor der Veröffentlichung oder bei der Portierung in ein Zielsystem; optional können sie auch Policy-Regeln für spätere KI- oder Tutor-Funktionen vorbereiten.
 
 Sie prüfen etwa, ob eine Aufgabe eindeutig lösbar ist, ob Distraktoren plausibel, aber nicht irreführend sind, ob Feedback wirklich zum Fehler passt, ob Verständnis statt bloßes Wiedererkennen gefördert wird, ob Barrierefreiheit und Lizenzfragen geklärt sind und welche KI- oder Tutor-Funktionen für diese Aufgabe überhaupt erlaubt sein sollen.
 
 Damit entsteht ein hoher Standardisierungs- und Qualitätssicherungsgrad, ohne die Dynamik der Ausspielung zu verlieren.
 
-### Beispiel: Choice-Skill im Prototyp
+### Beispiel: technische Adapterlogik im Prototyp
 
-Im kleinen Prototyp sieht die ausführbare Schicht noch sehr einfach aus:
+Im kleinen Prototyp ist diese Idee noch stark vereinfacht. Dort gibt es nur eine technische Adapterlogik, die aus der semantischen Beschreibung eine ausführbare Choice-Aufgabe macht:
 
 <details class="jr-code-details">
-  <summary>Mini-Beispiel für die Skill-Ausführung anzeigen</summary>
+  <summary>Mini-Beispiel für die technische Adapterlogik anzeigen</summary>
   <pre><code class="language-ts">const executableTask = qxChoiceSkill(sampleTask);</code></pre>
 </details>
 
-Dieser `qxChoiceSkill` macht aus der semantischen Beschreibung eine ausführbare Aufgabe. Er erzeugt Renderer-Typ, Auswahlmodus, normalisierte Optionen, Bewertungsfunktion, Feedbacklogik, QA-Warnungen und die erwartete Lösung.
+Dieser `qxChoiceSkill` ist im Prototyp also kein Skill im KI-Sinne, sondern nur ein Platzhalter für technische Adapterlogik. Er erzeugt Renderer-Typ, Auswahlmodus, normalisierte Optionen, Bewertungsfunktion, Feedbacklogik, QA-Warnungen und die erwartete Lösung. Die eigentlichen KI-Skills würden vorher oder bei der Portierung helfen: beim Entwerfen, Prüfen, Übersetzen in Zielformate und beim Auswählen passender Bibliotheken.
 
-Für die Blogthese ist aber wichtig: Das ist nur eine Skill-Art. In einer realen Architektur gäbe es zusätzlich Produktions-Skills, Format-/Adapter-Skills, Runtime-Skills und QA-/Policy-Skills.
+Für die Blogthese ist wichtig: Die KI-Skills sitzen im Authoring- und Portierungsprozess. Sie kennen Formate, verfügbare Bibliotheken, Zielsysteme und Qualitätsregeln; die React-Komponente ist nur die spätere Ausspielung.
 
-Damit liegt die eigentliche Intelligenz nicht mehr in einem H5P-Paket. Sie verteilt sich auf testbare, versionierbare Skills, die wissen, welche Formate, Bibliotheken und Qualitätsregeln im jeweiligen Kontext gelten.
+Damit liegt die eigentliche Intelligenz nicht mehr in einem H5P-Paket. Sie verteilt sich auf testbare, versionierbare KI-Skills, die wissen, welche Formate, Bibliotheken und Qualitätsregeln im jeweiligen Kontext gelten.
 
 ## Ebene 3: Renderer- und Aufgabenbibliotheken
 
@@ -206,14 +206,14 @@ So entsteht Dynamik, ohne die Qualitätssicherung aufzugeben.
 
 ## Schema: Wie die Ebenen zusammenspielen
 
-![Schema: Semantisches Aufgabenformat, Skills, Runtime Wrapper und Renderer](/img/blog/ist-h5p-tot/schema.svg)
+![Schema: Semantisches Aufgabenformat, KI-Skills, Runtime Wrapper und Renderer](/img/blog/ist-h5p-tot/schema.svg)
 
-Die zugrunde liegende Grafik zeigt die geplante Schichtung: Semantik, Skills, Runtime Wrapper, Renderer sowie optionale KI-/Tutor- und Analytics-Anbindungen.
+Die zugrunde liegende Grafik zeigt die geplante Schichtung: Semantik, KI-Skills für Authoring und Portierung, Runtime Wrapper, Renderer sowie optionale KI-/Tutor- und Analytics-Anbindungen.
 
 Kurz gelesen:
 
 - Die Semantik beschreibt die Aufgabe.
-- Skills machen sie ausführbar und prüfbar.
+- KI-Skills helfen beim Authoring, bei der Prüfung und bei der Portierung in passende Zielsysteme.
 - Renderer spielen sie aus.
 - Der Runtime Wrapper verbindet Aufgabe, State, KI und Tutor, sofern die Zielumgebung diese Erweiterungen unterstützt.
 - Ohne KI-/Tutor-Anbindung läuft die Aufgabe mit reduziertem Funktionsumfang weiter, etwa in Moodle oder einem einfachen LMS-Embed.
@@ -221,14 +221,14 @@ Kurz gelesen:
 
 ## Eingebetteter Prototyp
 
-Die folgende Mini-Aufgabe zeigt die These im Artikel selbst. Sie ist keine H5P-Datei, sondern eine kleine, eingebettete Demo: semantische Aufgabe, einfache Skill-Logik, standardisierte Darstellung. In einer vollständigen Architektur könnte derselbe Kern in Moodle mit reduziertem Funktionsumfang laufen oder in einem adaptiven System zusätzlichen Tutor-State exponieren.
+Die folgende Mini-Aufgabe zeigt die These im Artikel selbst. Sie ist keine H5P-Datei, sondern eine kleine, eingebettete Demo: semantische Aufgabe, einfache technische Adapterlogik, standardisierte Darstellung. In einer vollständigen Architektur würden KI-Skills vorher beim Authoring, bei der Prüfung und bei der Portierung helfen; derselbe Kern könnte in Moodle mit reduziertem Funktionsumfang laufen oder in einem adaptiven System zusätzlichen Tutor-State exponieren.
 
 <div class="jr-qx-demo" data-qx-demo>
-  <div class="jr-qx-demo__meta">Demo · semantische Aufgabe → Skill → Renderer</div>
+  <div class="jr-qx-demo__meta">Demo · semantische Aufgabe → Adapterlogik → Renderer</div>
   <h3>Was ersetzt H5P in einem modernen Produktionsmodell?</h3>
   <p>Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?</p>
   <label><input type="checkbox" value="a"> Ein semantisches Austauschformat für Aufgaben, Medien, Feedback und Metadaten.</label>
-  <label><input type="checkbox" value="b"> Ein standardisierter Skill, der aus der Semantik eine ausführbare Interaktion macht.</label>
+  <label><input type="checkbox" value="b"> Ein KI-gestützter Authoring- und Portierungs-Skill, der aus der Semantik eine passende Ausspielung vorbereitet.</label>
   <label><input type="checkbox" value="c"> Eine Renderer- oder Komponentenbibliothek, die Aufgaben konsistent ausspielt.</label>
   <label><input type="checkbox" value="d"> Möglichst viele manuell gepflegte Varianten derselben H5P-Aufgabe.</label>
   <button type="button">Prüfen</button>
@@ -242,7 +242,7 @@ Die folgende Mini-Aufgabe zeigt die These im Artikel selbst. Sie ist keine H5P-D
     var result = demo.querySelector('.jr-qx-demo__result');
     var feedback = {
       a: 'Genau: Die Semantik muss portabel sein, nicht an ein konkretes Tool gebunden.',
-      b: 'Richtig: Der Skill kapselt Didaktik, Bewertung, Feedbacklogik und Qualitätssicherung.',
+      b: 'Richtig: Der Skill kennt Formate, Bibliotheken, Best Practices und Qualitätsregeln für Authoring und Portierung.',
       c: 'Richtig: Die Oberfläche wird wiederverwendbar und testbar, statt pro Aufgabe geklickt.',
       d: 'Eher nicht: Genau diese manuelle Variantenpflege ist das Problem.'
     };
@@ -268,11 +268,11 @@ Das neue Modell dreht die Perspektive um:
 
 - H5P ist nicht mehr das Zielsystem.
 - Die semantische Aufgabe ist das eigentliche Asset.
-- Skills sind die ausführbare Logik.
+- KI-Skills unterstützen Authoring, Prüfung und Portierung.
 - Renderer sind austauschbar.
 - KI und Tutor-Systeme greifen über definierte, optionale Schnittstellen zu.
 - Wenn diese Schnittstellen fehlen, bleibt die Aufgabe als normale LMS-/Web-Interaktion lauffähig.
-- Qualitätssicherung passiert auf Daten-, Skill- und Laufzeitebene.
+- Qualitätssicherung passiert auf Daten-, KI-Skill- und Laufzeitebene.
 
 Damit wird H5P nicht zwingend falsch. Es wird optional. Es könnte ein Exportziel bleiben, aber nicht mehr die zentrale Produktionslogik.
 
@@ -295,7 +295,7 @@ Wenn Aufgaben einem semantischen Schema folgen, lassen sie sich automatisch prü
 
 ### 3. Bessere Qualitätssicherung
 
-Skills können Prüfungen erzwingen. Renderer können zentral getestet werden. Tutor-Wrapper können kontrollieren, welche KI-Interaktionen erlaubt sind. Damit entsteht Qualität nicht erst im fertigen Paket, sondern entlang der gesamten Pipeline.
+KI-Skills können Prüfungen erzwingen. Renderer können zentral getestet werden. Tutor-Wrapper können kontrollieren, welche KI-Interaktionen erlaubt sind. Damit entsteht Qualität nicht erst im fertigen Paket, sondern entlang der gesamten Pipeline.
 
 ### 4. Plattformunabhängigkeit
 
@@ -329,7 +329,7 @@ Offene Fragen sind zum Beispiel:
 - Welches semantische Format ist breit genug und trotzdem praktikabel?
 - Wie stark kann man auf QTI, OneEdTech, xAPI, Caliper oder LRMI aufsetzen?
 - Wo braucht es ein eigenes pragmatisches Profil?
-- Wie werden Skills versioniert und zertifiziert?
+- Wie werden KI-Skills versioniert, geprüft und für unterschiedliche Zielsysteme dokumentiert?
 - Wer prüft die Qualität von KI-generierten Aufgaben?
 - Wie werden Datenschutz und KI-Laufzeitinteraktion geregelt?
 - Welche Daten darf ein Tutor-System sehen?
@@ -342,7 +342,7 @@ Diese Fragen sind aber produktiver als die Frage, ob H5P noch ein paar neue Cont
 
 H5P war wichtig, weil es Interaktivität in Lernplattformen gebracht hat. Aber der nächste Schritt besteht darin, Interaktivität wieder aus einzelnen Lernplattform-Tools herauszulösen.
 
-Die Zukunft liegt nicht in noch mehr manuell gepflegten H5P-Paketen. Sie liegt in semantischen Aufgabenformaten, ausführbaren Skills, wiederverwendbaren Renderer-Bibliotheken und kontrollierten Schnittstellen zu KI- und Tutor-Systemen.
+Die Zukunft liegt nicht in noch mehr manuell gepflegten H5P-Paketen. Sie liegt in semantischen Aufgabenformaten, KI-gestützten Authoring- und Portierungs-Skills, wiederverwendbaren Renderer-Bibliotheken und kontrollierten Schnittstellen zu KI- und Tutor-Systemen.
 
 Oder zugespitzt:
 
