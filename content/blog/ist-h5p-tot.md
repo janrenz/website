@@ -261,9 +261,9 @@ Die folgende Mini-Aufgabe zeigt die These im Artikel selbst. Sie ist keine H5P-D
 
 ## Warum das H5P ersetzt — nicht nur ergänzt
 
-Natürlich könnte man versuchen, all das irgendwie in H5P zu integrieren. Man könnte bessere KI-Assistenten für den H5P-Editor bauen, bessere Templates, bessere Imports, bessere Exporte.
+Natürlich könnte man H5P weiterhin im Produktionsprozess nutzen. H5P könnte ein vertrauter Editor bleiben, in dem Autor:innen Aufgaben zusammenstellen, Medien platzieren und Interaktionen grob modellieren. Entscheidend wäre dann aber, was am Ende herausfällt: nicht primär ein H5P-Paket als endgültige Form, sondern ein semantisches Modell, das exportiert, geprüft, portiert und in unterschiedlichen Laufzeiten ausgespielt werden kann.
 
-Aber das würde am Grundproblem wenig ändern: H5P bliebe die zentrale Form, in die Inhalte gebracht werden müssen.
+Das wäre eine andere Rolle für H5P. Nicht mehr Zielsystem und zentrale Produktionslogik, sondern ein mögliches Authoring-Frontend für ein offeneres Aufgabenmodell. Wenn H5P dagegen die Form bleibt, in die alle Inhalte gebracht werden müssen, ändert sich am Grundproblem wenig.
 
 Das neue Modell dreht die Perspektive um:
 
