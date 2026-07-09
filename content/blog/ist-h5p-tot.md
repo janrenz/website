@@ -224,6 +224,8 @@ Kurz gelesen:
 
 Die folgende Mini-Aufgabe zeigt die These im Artikel selbst. Sie ist keine H5P-Datei, sondern eine kleine, eingebettete Demo: semantische Aufgabe, einfache technische Adapterlogik, standardisierte Darstellung. In einer vollständigen Architektur würden KI-Skills vorher beim Authoring, bei der Prüfung und bei der Portierung helfen; derselbe Kern könnte in Moodle mit reduziertem Funktionsumfang laufen oder in einem adaptiven System zusätzlichen Tutor-State exponieren.
 
+Der Code zum Prototyp liegt öffentlich auf GitHub: [janrenz/h5p-ist-tot-prototype](https://github.com/janrenz/h5p-ist-tot-prototype).
+
 <div class="jr-qx-demo" data-qx-demo>
   <div class="jr-qx-demo__meta">Demo · semantische Aufgabe → Adapterlogik → Renderer</div>
   <h3>Was ersetzt H5P in einem modernen Produktionsmodell?</h3>
