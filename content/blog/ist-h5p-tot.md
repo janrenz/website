@@ -61,7 +61,7 @@ Ein einfacher Ausschnitt könnte so aussehen:
   title: &quot;Was ersetzt H5P in einem modernen Produktionsmodell?&quot;,
   stem: &quot;Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?&quot;,
   learningObjective:
-    &quot;Lernende unterscheiden zwischen Austauschformat, KI-gestütztem Authoring-/Portierungs-Skill und Rendering-Bibliothek.&quot;,
+    &quot;Lernende unterscheiden zwischen Austauschformat, KI-gestützter Authoring-/Portierungshilfe und Rendering-Bibliothek.&quot;,
   choices: [
     {
       id: &quot;a&quot;,
@@ -71,9 +71,9 @@ Ein einfacher Ausschnitt könnte so aussehen:
     },
     {
       id: &quot;b&quot;,
-      text: &quot;Ein KI-gestützter Authoring- und Portierungs-Skill, der aus der Semantik eine passende Ausspielung vorbereitet.&quot;,
+      text: &quot;KI-Skills für Authoring, Prüfung und Portierung, die passende Semantik und Ausspielung vorbereiten.&quot;,
       correct: true,
-      feedback: &quot;Richtig: Der Skill kennt Formate, Bibliotheken, Best Practices und Qualitätsregeln für Authoring und Portierung.&quot;
+      feedback: &quot;Richtig: KI-Skills unterstützen vor der Ausspielung — sie sind nicht Teil der Browser-Aufgabe.&quot;
     },
     {
       id: &quot;c&quot;,
@@ -145,14 +145,14 @@ Damit entsteht ein hoher Standardisierungs- und Qualitätssicherungsgrad, ohne d
 
 ### Beispiel: technische Adapterlogik im Prototyp
 
-Im kleinen Prototyp ist diese Idee noch stark vereinfacht. Dort gibt es nur eine technische Adapterlogik, die aus der semantischen Beschreibung eine ausführbare Choice-Aufgabe macht:
+Im kleinen Prototyp ist diese Idee noch stark vereinfacht. Dort gibt es nur eine technische Adapterlogik, die aus der semantischen Beschreibung ein renderbares Multiple-Choice-Modell macht:
 
 <details class="jr-code-details">
   <summary>Mini-Beispiel für die technische Adapterlogik anzeigen</summary>
-  <pre><code class="language-ts">const executableTask = qxChoiceSkill(sampleTask);</code></pre>
+  <pre><code class="language-ts">const renderableTask = qxMultipleChoiceAdapter(sampleTask);</code></pre>
 </details>
 
-Dieser `qxChoiceSkill` ist im Prototyp also kein Skill im KI-Sinne, sondern nur ein Platzhalter für technische Adapterlogik. Er erzeugt Renderer-Typ, Auswahlmodus, normalisierte Optionen, Bewertungsfunktion, Feedbacklogik, QA-Warnungen und die erwartete Lösung. Die eigentlichen KI-Skills würden vorher oder bei der Portierung helfen: beim Entwerfen, Prüfen, Übersetzen in Zielformate und beim Auswählen passender Bibliotheken.
+Dieser `qxMultipleChoiceAdapter` ist kein Skill im KI-Sinne, sondern technische Adapterlogik. Er erzeugt Renderer-Typ, normalisierte Optionen, Bewertungsfunktion, Feedbacklogik, QA-Warnungen und die erwartete Lösung. Die eigentlichen KI-Skills würden vorher oder bei der Portierung helfen: beim Entwerfen, Prüfen, Übersetzen in Zielformate und beim Auswählen passender Bibliotheken.
 
 Für die Blogthese ist wichtig: Die KI-Skills sitzen neben der technischen Ausführung, nicht in ihr. Sie unterstützen Authoring, Prüfung, Portierung und Erweiterung. Die React-Komponente ist nur die spätere Ausspielung.
 
@@ -172,11 +172,13 @@ Die dritte Ebene ist die Darstellung. Dafür braucht es keine monolithischen Aut
 
 Diese Renderer bekommen nicht irgendeinen H5P-Export, sondern eine normalisierte Aufgabe. Dadurch können sie zentral entwickelt, getestet, barrierearm gestaltet und plattformübergreifend eingesetzt werden.
 
+Wichtig ist: Solche Komponenten müssen nicht flach nebeneinander stehen. Sie können verschachtelt sein. Eine Lernseite kann zum Beispiel einen Layout-Renderer enthalten, darin ein Video-Renderer, darin wiederum Timecode-Overlays, Multiple-Choice-Checks oder Reflexionskarten. Die semantische Beschreibung muss deshalb nicht nur einzelne Aufgaben kennen, sondern auch Kompositionen: Welche Komponente enthält welche andere Komponente, welche Events werden nach außen gegeben und welche Teile bleiben austauschbar?
+
 Im Prototyp ist das eine einfache React-Komponente:
 
 <details class="jr-code-details">
   <summary>Mini-Beispiel für die Renderer-Einbettung anzeigen</summary>
-  <pre><code class="language-tsx">&lt;ChoiceTask task={executableTask} /&gt;</code></pre>
+  <pre><code class="language-tsx">&lt;MultipleChoiceTask task={renderableTask} /&gt;</code></pre>
 </details>
 
 Sie rendert Checkboxen, einen Prüfen-Button, Score und Feedback. Die Komponente muss aber nicht wissen, aus welcher Quelle die Aufgabe stammt. Sie könnte dieselbe Struktur aus einem Autorensystem, einem KI-Workflow, einem QTI-Import oder einer Content-API erhalten.
@@ -231,7 +233,7 @@ Der Code zum Prototyp liegt öffentlich auf GitHub: [janrenz/h5p-ist-tot-prototy
   <h3>Was ersetzt H5P in einem modernen Produktionsmodell?</h3>
   <p>Welche Bausteine sind in der These wichtiger als ein einzelnes Autorentool wie H5P?</p>
   <label><input type="checkbox" value="a"> Ein semantisches Austauschformat für Aufgaben, Medien, Feedback und Metadaten.</label>
-  <label><input type="checkbox" value="b"> Ein KI-gestützter Authoring- und Portierungs-Skill, der aus der Semantik eine passende Ausspielung vorbereitet.</label>
+  <label><input type="checkbox" value="b"> KI-Skills für Authoring, Prüfung und Portierung, die passende Semantik und Ausspielung vorbereiten.</label>
   <label><input type="checkbox" value="c"> Eine Renderer- oder Komponentenbibliothek, die Aufgaben konsistent ausspielt.</label>
   <label><input type="checkbox" value="d"> Möglichst viele manuell gepflegte Varianten derselben H5P-Aufgabe.</label>
   <button type="button">Prüfen</button>
@@ -245,7 +247,7 @@ Der Code zum Prototyp liegt öffentlich auf GitHub: [janrenz/h5p-ist-tot-prototy
     var result = demo.querySelector('.jr-qx-demo__result');
     var feedback = {
       a: 'Genau: Die Semantik muss portabel sein, nicht an ein konkretes Tool gebunden.',
-      b: 'Richtig: Der Skill kennt Formate, Bibliotheken, Best Practices und Qualitätsregeln für Authoring und Portierung.',
+      b: 'Richtig: KI-Skills unterstützen vor der Ausspielung — sie sind nicht Teil der Browser-Aufgabe.',
       c: 'Richtig: Die Oberfläche wird wiederverwendbar und testbar, statt pro Aufgabe geklickt.',
       d: 'Eher nicht: Genau diese manuelle Variantenpflege ist das Problem.'
     };
