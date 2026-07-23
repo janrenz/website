@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 768" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Die letzte Meile ist menschlich: vom Verteilerkasten über Schule, Chat und Onboarding bis zur Community</title>
+  <defs>
+    <style>
+      .navy { fill:#0b1f3a; }
+      .red { fill:#d72638; }
+      .blue { fill:#aebbcf; }
+      .bluesoft { fill:#c9d3e0; }
+      .paper { fill:#fbfaf7; }
+      .white { fill:#fbfaf7; }
+      .stroke-navy { stroke:#0b1f3a; }
+      .stroke-blue { stroke:#aebbcf; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1408" height="768" class="paper"/>
+
+  <!-- soft rear blob layer -->
+  <path class="bluesoft" d="M0,340 C120,300 220,330 340,300 C460,270 560,310 680,290
+    C800,270 900,300 1020,280 C1140,260 1240,300 1408,270 L1408,768 L0,768 Z"/>
+
+  <!-- main navy ground / skyline -->
+  <path class="navy" d="M0,400 C110,360 200,380 300,350 C420,315 520,355 630,335
+    C740,315 830,345 940,325 C1050,305 1140,335 1250,315 C1320,303 1370,320 1408,312
+    L1408,768 L0,768 Z"/>
+
+  <!-- ===== last-mile cable path, from distribution box down through the scene ===== -->
+  <path fill="none" class="stroke-blue" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 16"
+    d="M120,150 C220,220 260,300 340,360 C430,428 520,430 610,470 C700,510 760,560 860,585
+       C960,610 1040,600 1130,630 C1220,660 1260,690 1330,700"/>
+
+  <!-- Verteilerkasten (distribution box) -->
+  <g transform="translate(70,90)">
+    <rect x="0" y="0" width="86" height="66" rx="8" class="navy"/>
+    <rect x="10" y="12" width="66" height="8" rx="4" class="blue"/>
+    <rect x="10" y="28" width="66" height="8" rx="4" class="blue"/>
+    <rect x="10" y="44" width="30" height="8" rx="4" class="red"/>
+    <circle cx="78" cy="60" r="5" class="red"/>
+  </g>
+
+  <!-- Wifi / wireless last meters -->
+  <g transform="translate(300,150)">
+    <path fill="none" class="stroke-blue" stroke-width="6" stroke-linecap="round" d="M-34,10 A48,48 0 0 1 34,10"/>
+    <path fill="none" class="stroke-blue" stroke-width="6" stroke-linecap="round" d="M-20,22 A28,28 0 0 1 20,22"/>
+    <circle cx="0" cy="34" r="7" class="red"/>
+  </g>
+
+  <!-- Schulgebäude (school) -->
+  <g transform="translate(430,300)">
+    <polygon points="0,60 70,0 140,60" class="blue"/>
+    <rect x="14" y="60" width="112" height="90" class="blue"/>
+    <rect x="34" y="82" width="24" height="24" class="navy"/>
+    <rect x="82" y="82" width="24" height="24" class="navy"/>
+    <rect x="58" y="118" width="24" height="32" class="red"/>
+  </g>
+
+  <!-- Chat-Sprechblase (AiS.Chat) -->
+  <g transform="translate(650,300)">
+    <path class="red" d="M0,14 a14,14 0 0 1 14,-14 h96 a14,14 0 0 1 14,14 v58 a14,14 0 0 1 -14,14 h-64 l-22,22 v-22 h-10 a14,14 0 0 1 -14,-14 z"/>
+    <circle cx="32" cy="43" r="7" class="paper"/>
+    <circle cx="62" cy="43" r="7" class="paper"/>
+    <circle cx="92" cy="43" r="7" class="paper"/>
+  </g>
+
+  <!-- Onboarding Wegweiser (signpost / last mile marker) -->
+  <g transform="translate(860,360)">
+    <rect x="18" y="20" width="8" height="150" class="blue"/>
+    <path class="blue" d="M26,20 h110 l-16,22 l16,22 h-110 z"/>
+    <path class="red" d="M26,74 h-90 l16,20 l-16,20 h90 z"/>
+  </g>
+
+  <!-- Graduation cap -->
+  <g transform="translate(1010,290)">
+    <polygon points="50,0 100,22 50,44 0,22" class="blue"/>
+    <rect x="30" y="26" width="40" height="18" class="paper"/>
+    <line x1="94" y1="22" x2="94" y2="58" class="stroke-blue" stroke-width="4"/>
+    <circle cx="94" cy="62" r="6" class="red"/>
+  </g>
+
+  <!-- Community netzwerk (network of nodes) -->
+  <g transform="translate(1150,340)">
+    <line x1="0" y1="60" x2="60" y2="0" class="stroke-blue" stroke-width="4"/>
+    <line x1="60" y1="0" x2="120" y2="50" class="stroke-blue" stroke-width="4"/>
+    <line x1="0" y1="60" x2="120" y2="50" class="stroke-blue" stroke-width="4"/>
+    <line x1="60" y1="0" x2="60" y2="90" class="stroke-blue" stroke-width="4"/>
+    <line x1="0" y1="60" x2="60" y2="90" class="stroke-blue" stroke-width="4"/>
+    <line x1="120" y1="50" x2="60" y2="90" class="stroke-blue" stroke-width="4"/>
+    <circle cx="0" cy="60" r="10" class="paper"/>
+    <circle cx="60" cy="0" r="10" class="red"/>
+    <circle cx="120" cy="50" r="10" class="paper"/>
+    <circle cx="60" cy="90" r="10" class="blue"/>
+  </g>
+
+  <!-- Handshake / menschlich accent -->
+  <g transform="translate(1290,470)">
+    <circle cx="0" cy="18" r="16" class="red"/>
+    <circle cx="26" cy="18" r="16" class="paper" stroke="#d72638" stroke-width="3"/>
+  </g>
+
+  <!-- small filler leaves for texture, left area -->
+  <g class="blue">
+    <ellipse cx="200" cy="470" rx="10" ry="26" transform="rotate(-10 200 470)"/>
+    <ellipse cx="230" cy="500" rx="9" ry="22" transform="rotate(8 230 500)"/>
+    <ellipse cx="380" cy="520" rx="10" ry="24" transform="rotate(-6 380 520)"/>
+    <ellipse cx="760" cy="560" rx="9" ry="22" transform="rotate(10 760 560)"/>
+    <ellipse cx="960" cy="540" rx="10" ry="26" transform="rotate(-8 960 540)"/>
+  </g>
+  <g class="bluesoft">
+    <ellipse cx="560" cy="540" rx="11" ry="28" transform="rotate(6 560 540)"/>
+    <ellipse cx="1080" cy="560" rx="10" ry="24" transform="rotate(-4 1080 560)"/>
+    <ellipse cx="1240" cy="580" rx="10" ry="24" transform="rotate(5 1240 580)"/>
+  </g>
+  <g class="red">
+    <circle cx="330" cy="560" r="6"/>
+    <circle cx="700" cy="600" r="6"/>
+    <circle cx="1000" cy="610" r="6"/>
+    <circle cx="150" cy="600" r="6"/>
+  </g>
+</svg>
