@@ -4,6 +4,7 @@ date: 2023-05-25
 description: "Eine Betrachtung der bund.id aus bildungsinfrastruktureller Sich"
 summary: "Einordnung der bund.id für den Bildungssektor und Ableitung von mehreren Handlungsfeldern."
 tags: ["infrastructure", "bundid"]
+translationKey: "bundid-and-education"
 heroImage: "/img/blog/bundid-bildung/hero-bundid-bildung-civic-identity.png"
 heroAlt: "Abstrakte Infografik zu bund.id und Bildung: eine digitale Identitäts- und Wallet-Infrastruktur verbindet öffentliche Verwaltungsdienste mit Bildungsinstitutionen, Datenschutz, Nachweisen und interoperablen Schnittstellen."
 ---
