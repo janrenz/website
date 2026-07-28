@@ -9,7 +9,7 @@ heroImage: "/img/blog/mein-teamkollege-der-agent/hero-teamkollege-agent.svg"
 heroAlt: "Abstract infographic of two isolated developer islands, each with its own AI agent, connected by a central bridge of shared skills and shared context."
 ---
 
-*A personal essay on why my most important teammates are increasingly agents — and why that is an organizational problem, not a technical one.*
+*A personal essay on why some of my important teammates are agents, too — and why that is an organizational problem, not a technical one.*
 
 Even in teams that do not yet consistently work "agentic first," hardly any developer or other team member still works without AI support today. Autocomplete in the editor, the chat for a quick question, the agent that independently prepares a pull request: AI is no longer a special-purpose tool, it is part of the daily routine — whether or not an organization has strategically decided so.
 
