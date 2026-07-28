@@ -43,6 +43,18 @@ For many isolated agents to actually become shared knowledge, two distinct, comp
 
 Both building blocks solve different halves of the same problem. Shared skills prevent everyone from reinventing the same capability. Shared context prevents the same insight from having to be rediscovered over and over. Only together do they produce what was missing at the start: an organization that learns from its agents' experience — not just individual people who happen to use the same agent.
 
+## How organizations set this up in practice
+
+Regardless of which tool a team uses, the path from "everyone keeps their own private collection of prompts and scripts" to "the organization provides vetted capabilities" now tends to follow a similar pattern.
+
+The usual starting point is a marketplace-like admin interface maintained by the organization's administrators — typically the same backend where user accounts, groups, and permissions are already managed. There, a source for skills and plugins gets registered: often a Git repository, whether on GitHub, GitLab, or self-hosted, holding the actual capabilities as versioned packages — comparable to a small app store for agents. From that source, administrators choose which skills, agents, and connections to external tools are available to which groups: the engineering team gets different capabilities than the marketing team, and a department with particular data-protection needs might only get a restricted subset.
+
+Alongside this top-down distribution there is usually a second, more informal path: individuals who have built something useful themselves can share it directly with colleagues without it needing to be rolled out organization-wide first. That creates a cycle: useful one-off solutions move from the personal level to the team level, and from there — once they prove themselves — into the official, organization-wide collection.
+
+Similar mechanisms are now showing up across several providers of AI development tools, not just one product. The underlying principle stays the same: capabilities are no longer assembled from scratch in every editor or chat interface, but defined centrally, given permissions, versioned, and then rolled out into each team member's own tools.
+
+This is pure infrastructure, not an end in itself. An organization that skips this step doesn't lose anything visibly right away — but it pays for it over time, in duplicated work, inconsistent results, and knowledge that leaves the organization with individual people when they change teams.
+
 ## A new approach: Buzz from Block
 
 An exciting new approach is being pursued by **Buzz**, a tool from Block, Jack Dorsey's company. Buzz combines team communication similar to Slack, Git hosting similar to GitHub, and agents as so-called first-class citizens — with their own identities attached to a human team member. Instead of a shared bot token, each agent gets its own cryptographic key pair; a second signature verifiably ties it back to the person operating it. Every message, every code review, every workflow step is stored as a cryptographically signed event on the decentralized Nostr protocol — not as a row in a single vendor's proprietary database.

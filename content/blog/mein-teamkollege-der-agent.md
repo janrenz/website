@@ -43,6 +43,18 @@ Damit aus vielen isolierten Agenten tatsächlich geteiltes Wissen wird, braucht 
 
 Beide Bausteine lösen unterschiedliche Hälften desselben Problems. Shared Skills verhindern, dass jede Person dieselbe Fähigkeit neu erfindet. Shared Context verhindert, dass dieselbe Erkenntnis mehrfach neu gewonnen werden muss. Erst zusammen ergeben sie das, was am Anfang gefehlt hat: eine Organisation, die aus den Erfahrungen ihrer Agenten lernt – und nicht nur einzelne Personen, die zufällig denselben Agenten benutzen.
 
+## Wie Organisationen das heute technisch umsetzen
+
+Ganz gleich, welches Werkzeug ein Team einsetzt: Der Weg von „jede Person hat ihre eigene Sammlung an Prompts und Skripten" zu „die Organisation stellt geprüfte Fähigkeiten bereit" folgt inzwischen einem ähnlichen Muster.
+
+Der übliche Ausgangspunkt ist eine marktplatzartige Verwaltungsoberfläche, die von den Administrator:innen der Organisation gepflegt wird – meist im selben Backend, in dem ohnehin schon Nutzerkonten, Gruppen und Berechtigungen verwaltet werden. Dort wird zunächst eine Quelle für Skills und Plugins hinterlegt: häufig ein Git-Repository, ob auf GitHub, GitLab oder selbst gehostet, das die eigentlichen Fähigkeiten als versionierte Pakete enthält – vergleichbar mit einem eigenen kleinen App Store für Agenten. Aus dieser Quelle wählen Verantwortliche aus, welche Skills, Agenten und Anbindungen an externe Werkzeuge bestimmten Gruppen zur Verfügung stehen: Das Entwicklerteam bekommt andere Fähigkeiten als das Marketingteam, eine Abteilung mit besonderem Schutzbedarf bekommt womöglich nur eine eingeschränkte Auswahl.
+
+Zusätzlich zu dieser Top-down-Verteilung gibt es meist einen zweiten, informelleren Weg: Einzelne Personen, die selbst eine nützliche Fähigkeit gebaut haben, können sie gezielt mit Kolleginnen und Kollegen teilen, ohne dass diese gleich organisationsweit ausgerollt werden muss. So entsteht ein Kreislauf: Brauchbare Einzellösungen wandern von der persönlichen Ebene auf die Team-Ebene und von dort, wenn sie sich bewähren, in die offizielle, organisationsweit gepflegte Sammlung.
+
+Ähnliche Mechanismen finden sich inzwischen bei mehreren Anbietern von KI-Entwicklungswerkzeugen, nicht nur bei einem einzelnen Produkt. Das Prinzip bleibt dabei immer dasselbe: Fähigkeiten werden nicht mehr einzeln in jedem Editor oder jeder Chat-Oberfläche neu zusammengeklickt, sondern zentral definiert, mit Berechtigungen versehen, versioniert – und dann in die jeweiligen Werkzeuge der einzelnen Teammitglieder ausgespielt.
+
+Das ist reine Infrastruktur, kein Selbstzweck. Eine Organisation, die diesen Schritt nicht geht, verliert dadurch nicht sofort sichtbar etwas – sie zahlt aber langfristig mit doppelter Arbeit, uneinheitlichen Ergebnissen und Wissen, das mit einzelnen Personen die Organisation verlässt, sobald sie das Team wechseln.
+
 ## Ein neuer Ansatz: Buzz von Block
 
 Einen spannenden neuen Ansatz verfolgt das Werkzeug **Buzz** von Block, dem Unternehmen von Jack Dorsey. Buzz vereint Teamkommunikation ähnlich wie in Slack, eine Git-Verwaltung ähnlich wie bei GitHub, und Agenten als sogenannte First-Class Citizens – mit eigenen Identitäten, die an ein menschliches Teammitglied angehängt sind. Statt eines geteilten Bot-Tokens erhält jeder Agent ein eigenes kryptografisches Schlüsselpaar; eine zweite Signatur verknüpft ihn nachvollziehbar mit der Person, die ihn betreibt. Jede Nachricht, jede Code-Review, jeder Workflow-Schritt wird als kryptografisch signiertes Ereignis auf dem dezentralen Nostr-Protokoll abgelegt – nicht als Zeile in einer proprietären Datenbank eines einzelnen Anbieters.
