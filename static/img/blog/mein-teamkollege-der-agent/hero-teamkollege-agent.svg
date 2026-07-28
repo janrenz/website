@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 768" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Zwei isolierte Entwickler-Inseln mit eigenen KI-Agenten, verbunden über eine zentrale Brücke aus geteilten Skills und Kontext</title>
+  <defs>
+    <style>
+      .navy { fill:#0b1f3a; }
+      .red { fill:#d72638; }
+      .blue { fill:#aebbcf; }
+      .bluesoft { fill:#c9d3e0; }
+      .paper { fill:#fbfaf7; }
+      .stroke-navy { stroke:#0b1f3a; }
+      .stroke-blue { stroke:#aebbcf; }
+      .stroke-red { stroke:#d72638; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1408" height="768" class="paper"/>
+
+  <!-- soft rear water/blob layer -->
+  <path class="bluesoft" d="M0,460 C160,420 260,460 380,440 C520,418 620,455 760,438
+    C900,420 1000,455 1140,438 C1260,424 1330,450 1408,436 L1408,768 L0,768 Z"/>
+
+  <!-- ===== left island ===== -->
+  <g transform="translate(120,300)">
+    <ellipse cx="0" cy="140" rx="185" ry="46" class="blue" opacity="0.55"/>
+    <!-- developer figure -->
+    <circle cx="-40" cy="18" r="30" class="navy"/>
+    <rect x="-78" y="46" width="76" height="70" rx="18" class="navy"/>
+    <!-- agent bubble tethered to developer -->
+    <path class="red" d="M40,-10 a14,14 0 0 1 14,-14 h64 a14,14 0 0 1 14,14 v42 a14,14 0 0 1 -14,14 h-40 l-16,16 v-16 h-8 a14,14 0 0 1 -14,-14 z"/>
+    <circle cx="70" cy="6" r="5" class="paper"/>
+    <circle cx="92" cy="6" r="5" class="paper"/>
+    <circle cx="114" cy="6" r="5" class="paper"/>
+    <!-- tether line agent-developer: local, closed loop -->
+    <path fill="none" class="stroke-navy" stroke-width="3" stroke-linecap="round" d="M2,10 C20,0 30,-4 42,-8"/>
+    <!-- small closed padlock: private, self-contained memory -->
+    <g transform="translate(10,90)">
+      <rect x="-10" y="-2" width="20" height="16" rx="3" class="navy"/>
+      <path fill="none" class="stroke-navy" stroke-width="4" d="M-6,-2 v-6 a6,6 0 0 1 12,0 v6"/>
+    </g>
+  </g>
+
+  <!-- ===== right island ===== -->
+  <g transform="translate(1140,300)">
+    <ellipse cx="0" cy="140" rx="185" ry="46" class="blue" opacity="0.55"/>
+    <circle cx="-40" cy="18" r="30" class="navy"/>
+    <rect x="-78" y="46" width="76" height="70" rx="18" class="navy"/>
+    <path class="red" d="M40,-10 a14,14 0 0 1 14,-14 h64 a14,14 0 0 1 14,14 v42 a14,14 0 0 1 -14,14 h-40 l-16,16 v-16 h-8 a14,14 0 0 1 -14,-14 z"/>
+    <circle cx="70" cy="6" r="5" class="paper"/>
+    <circle cx="92" cy="6" r="5" class="paper"/>
+    <circle cx="114" cy="6" r="5" class="paper"/>
+    <path fill="none" class="stroke-navy" stroke-width="3" stroke-linecap="round" d="M2,10 C20,0 30,-4 42,-8"/>
+    <g transform="translate(10,90)">
+      <rect x="-10" y="-2" width="20" height="16" rx="3" class="navy"/>
+      <path fill="none" class="stroke-navy" stroke-width="4" d="M-6,-2 v-6 a6,6 0 0 1 12,0 v6"/>
+    </g>
+  </g>
+
+  <!-- ===== central bridge: shared skills + shared context ===== -->
+  <path fill="none" class="stroke-blue" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 16"
+    d="M290,470 C420,420 520,420 640,400 C700,392 708,392 768,400 C888,416 988,420 1118,470"/>
+
+  <!-- central hub node -->
+  <g transform="translate(704,368)">
+    <circle cx="0" cy="0" r="46" class="navy"/>
+    <rect x="-20" y="-24" width="40" height="48" rx="6" class="paper"/>
+    <rect x="-13" y="-15" width="26" height="6" rx="3" class="blue"/>
+    <rect x="-13" y="-3" width="26" height="6" rx="3" class="blue"/>
+    <rect x="-13" y="9" width="16" height="6" rx="3" class="red"/>
+  </g>
+
+  <!-- connecting lines hub to both agent bubbles (shared skills/context flow) -->
+  <path fill="none" class="stroke-red" stroke-width="3" stroke-dasharray="6 8" d="M240,196 C400,240 560,300 664,352"/>
+  <path fill="none" class="stroke-red" stroke-width="3" stroke-dasharray="6 8" d="M1168,196 C1008,240 848,300 744,352"/>
+
+  <!-- small network of shared-context nodes above hub -->
+  <g transform="translate(704,250)">
+    <line x1="-60" y1="30" x2="0" y2="0" class="stroke-blue" stroke-width="4"/>
+    <line x1="60" y1="30" x2="0" y2="0" class="stroke-blue" stroke-width="4"/>
+    <line x1="-60" y1="30" x2="60" y2="30" class="stroke-blue" stroke-width="4"/>
+    <circle cx="0" cy="0" r="9" class="red"/>
+    <circle cx="-60" cy="30" r="9" class="paper" stroke="#0b1f3a" stroke-width="2.5"/>
+    <circle cx="60" cy="30" r="9" class="paper" stroke="#0b1f3a" stroke-width="2.5"/>
+  </g>
+
+  <!-- filler texture -->
+  <g class="blue">
+    <ellipse cx="330" cy="600" rx="10" ry="24" transform="rotate(-8 330 600)"/>
+    <ellipse cx="1060" cy="600" rx="10" ry="24" transform="rotate(8 1060 600)"/>
+  </g>
+  <g class="bluesoft">
+    <ellipse cx="700" cy="640" rx="12" ry="26" transform="rotate(0 700 640)"/>
+  </g>
+  <g class="red">
+    <circle cx="200" cy="640" r="6"/>
+    <circle cx="704" cy="470" r="6"/>
+    <circle cx="1200" cy="640" r="6"/>
+  </g>
+</svg>

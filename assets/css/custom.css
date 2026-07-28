@@ -408,3 +408,41 @@ article + article {
 :is(.dark .prose .jr-qx-demo label) {
   background: rgba(255, 255, 255, 0.055);
 }
+
+.prose .jr-infobox {
+  margin: 1.6rem 0 1.9rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--jr-line);
+  border-left: 4px solid var(--jr-ink);
+  border-radius: 0.9rem;
+  background: rgba(11, 31, 58, 0.035);
+}
+
+.prose .jr-infobox-label {
+  margin: 0 0 0.3rem;
+  color: var(--jr-red);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.prose .jr-infobox strong.jr-infobox-title {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--jr-ink);
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+.prose .jr-infobox p:last-child {
+  margin-bottom: 0;
+}
+
+:is(.dark .prose .jr-infobox) {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+:is(.dark .prose .jr-infobox strong.jr-infobox-title) {
+  color: rgba(255, 255, 255, 0.94);
+}
