@@ -9,7 +9,7 @@ heroImage: "/img/blog/mein-teamkollege-der-agent/hero-teamkollege-agent.svg"
 heroAlt: "Abstrakte Infografik von zwei isolierten Entwickler-Inseln mit jeweils eigenem KI-Agenten, verbunden über eine zentrale Brücke aus geteilten Skills und geteiltem Kontext."
 ---
 
-*Ein persönlicher Beitrag darüber, warum meine wichtigsten Teamkolleg:innen zunehmend Agenten sind – und warum genau das ein Organisationsproblem ist, kein technisches.*
+*Ein persönlicher Beitrag darüber, warum ein Teil meiner wichtigen Teamkollegen auch Agenten sind – und warum genau das ein Organisationsproblem ist, kein technisches.*
 
 Auch wenn ein Team noch nicht konsequent „Agentic First" arbeitet, wird heute kaum eine Entwicklerin, ein Entwickler oder ein anderes Teammitglied noch ohne KI-Unterstützung arbeiten. Das Autocomplete im Editor, der Chat für die schnelle Rückfrage, der Agent, der eigenständig einen Pull Request vorbereitet: KI ist längst kein Sonderwerkzeug mehr, sondern Teil des Alltags – ob eine Organisation das strategisch entschieden hat oder nicht.
 
