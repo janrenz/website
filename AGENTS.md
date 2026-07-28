@@ -21,7 +21,7 @@ oder Secrets für Social-Media-Plattformen — der Agent postet nicht automatisc
 sondern erstellt die Texte als Vorschlag, den der Nutzer manuell (oder über ein
 eigenes Tool) veröffentlicht.
 
-**Bluesky-Account:** `eurosky`
+**Bluesky-Account:** `janrenz.eurosky.social`
 
 ### Inhalt ableiten
 
@@ -42,7 +42,7 @@ Für den Ankündigungstext werden aus dem Frontmatter des Beitrags verwendet:
   anzuregen.
 - Emojis sparsam bis gar nicht einsetzen.
 
-### Bluesky (Account: eurosky)
+### Bluesky (Account: janrenz.eurosky.social)
 
 - Zeichenlimit beachten (300 Zeichen inkl. Link).
 - Kompakter, direkter Ton als bei LinkedIn.
