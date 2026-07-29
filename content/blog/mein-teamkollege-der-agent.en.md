@@ -5,8 +5,8 @@ description: "A personal essay on why AI agents today mostly work as isolated is
 summary: "Hardly anyone still works without AI support — but the agents behind that support usually remain isolated islands, tied to one person and one project. AGENTS.md helps share project knowledge, but only shared skills, shared context, and tools like Buzz from Block turn a collection of individual agents into an actual team."
 tags: ["AI", "agentic AI", "teamwork", "infrastructure", "tools"]
 translationKey: "my-teammate-the-agent"
-heroImage: "/img/blog/mein-teamkollege-der-agent/hero-teamkollege-agent.svg"
-heroAlt: "Abstract infographic of two isolated developer islands, each with its own AI agent, connected by a central bridge of shared skills and shared context."
+heroImage: "/img/blog/mein-teamkollege-der-agent/hero-teamkollege-agent.png"
+heroAlt: "Humans and humanoid AI agents sit together around a round table, collaborating around a glowing, networked knowledge visualization."
 ---
 
 *A personal essay on why some of my important teammates are agents, too — and why that is an organizational problem, not a technical one.*

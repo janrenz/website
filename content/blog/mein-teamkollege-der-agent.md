@@ -5,8 +5,8 @@ description: "Ein persönlicher Beitrag darüber, warum KI-Agenten heute meist i
 summary: "Kaum jemand arbeitet heute noch ohne KI-Unterstützung – aber die Agenten dahinter bleiben oft isolierte Inseln pro Person und pro Projekt. AGENTS.md hilft, projektübergreifendes Wissen zu teilen, doch erst geteilte Skills, geteilter Kontext und Werkzeuge wie Buzz von Block machen aus vielen Einzelagenten ein echtes Team."
 tags: ["KI", "Agentic AI", "Teamarbeit", "Infrastruktur", "Tools"]
 translationKey: "my-teammate-the-agent"
-heroImage: "/img/blog/mein-teamkollege-der-agent/hero-teamkollege-agent.svg"
-heroAlt: "Abstrakte Infografik von zwei isolierten Entwickler-Inseln mit jeweils eigenem KI-Agenten, verbunden über eine zentrale Brücke aus geteilten Skills und geteiltem Kontext."
+heroImage: "/img/blog/mein-teamkollege-der-agent/hero-teamkollege-agent.png"
+heroAlt: "Menschen und humanoide KI-Agenten sitzen gemeinsam an einem runden Tisch um eine leuchtende, vernetzte Wissenslandschaft und arbeiten gemeinsam daran."
 ---
 
 *Ein persönlicher Beitrag darüber, warum ein Teil meiner wichtigen Teamkollegen auch Agenten sind – und warum genau das ein Organisationsproblem ist, kein technisches.*
