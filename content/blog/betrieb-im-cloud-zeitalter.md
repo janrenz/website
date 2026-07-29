@@ -7,7 +7,7 @@ summary: "Cloud verändert, wer Betrieb übernimmt – nicht, ob Betrieb gebrauc
 tags: ["Cloud", "IT-Sicherheit", "Digitale Souveränität", "Infrastruktur", "Betrieb"]
 translationKey: "operations-in-the-cloud-era"
 heroImage: "/img/blog/betrieb-im-cloud-zeitalter/hero-betrieb-fundament.png"
-heroAlt: "Eine Wolke schwebt über vier verbundenen Bausteinen für Sicherheit (Schild mit Häkchen), Governance (Personengruppe), Monitoring (Pulskurve) und Exit-Fähigkeit (Kreispfeile), umgeben von kleinen Netzwerksymbolen."
+heroAlt: "Eine Wolke, verbunden über einen roten Stamm mit vier Bausteinen: Sicherheit (Schild mit Häkchen), Vernetzung (Knotenpunkte), Monitoring (Pulskurve) und Wiederherstellung (Kreispfeil mit Wolke)."
 ---
 
 > These: Cloud verändert nicht, ob jemand Betrieb macht. Cloud verändert nur, wer ihn macht, wie sichtbar er ist – und wie teuer es wird, ihn zu ignorieren.
@@ -47,6 +47,12 @@ Die entscheidende Fähigkeit ist deshalb nicht „möglichst wenige Lücken habe
 
 Ein konkretes Beispiel dafür, wie man Betriebsverantwortung bewusst bündelt, ist das Projekt [PCI – Pädagogische Cloud-Infrastruktur](https://pci.schule/), das ich mit Interesse und vielen Wünschen begleite. Die PCI ist eine länderübergreifende Initiative im Rahmen des DigitalPakt Schule, angeführt von Hamburg, gemeinsam mit Berlin, Bremen, Hessen, Nordrhein-Westfalen und Rheinland-Pfalz. Das Ziel: eine gemeinsame, souveräne Cloud-Betriebsplattform für Bildungsanwendungen, die so leistungsfähig ist wie die Angebote großer Hyperscaler, aber unter gemeinsamer, öffentlicher Kontrolle bleibt.
 
+<figure class="jr-contained-figure jr-schema-figure">
+  <img class="jr-contain-image" src="/img/blog/betrieb-im-cloud-zeitalter/pci-gemeinsamer-zugang.png" alt="Eine Tür öffnet sich zu einem geschwungenen roten Pfad, der zu drei Kindern führt, die gemeinsam an einem Laptop arbeiten; ein roter Bogen aus Punkten und stützende Hände umgeben die Gruppe.">
+</figure>
+
+*Gemeinsamer Betrieb ist kein Selbstzweck – er soll am Ende genau dort ankommen: bei Kindern, die zusammen lernen.*
+
 Technisch bekommen Anwendungen in der PCI eigene, logisch getrennte Umgebungen. Zentrale Dienste wie Cluster-Betrieb, Sicherheitsmechanismen und Monitoring liefert die PCI als gemeinsame Basis, während die Verantwortung für die Fachanwendungen bei den Ländern und Anbietern bleibt. Erstmals wird hier länderübergreifend diskutiert und festgelegt, welche Mindestkriterien für Hyperscaler und andere Cloud-Anbieter gelten sollen. Betriebsumgebungen werden standardisiert und gehärtet – dokumentiert in Abstimmung mit den Landesdatenschutzbehörden. Interoperabilität und die konsequente Vermeidung von Vendor-Lock-in sind dabei keine Kür, sondern erklärtes Ziel.
 
 Was mir an PCI besonders gefällt, ist die Grundhaltung: Föderalismus wird nicht als Ausrede genutzt, jede Redundanz einzeln zu bauen, sondern als Anforderung an intelligentes Design verstanden. Die Länder bleiben im Fahrersitz für landesspezifische Ausgestaltungen – aber bei den immer gleichen Betriebsgrundlagen wird nicht mehr sechzehnmal das Rad neu erfunden. Für mich ist PCI ein direktes Beispiel für die These dieses Beitrags: Man kann Betrieb bündeln, professionalisieren und teilweise an eine gemeinsame Plattform abgeben – aber man kann ihn nicht abschaffen. Jemand betreibt die PCI, und diese Aufgabe braucht genauso viel Sorgfalt wie der Betrieb jeder einzelnen Anwendung vorher. Und die Anwendungen, die auf der PCI laufen, sind damit nicht aus der Betriebsverantwortung entlassen: PCI übernimmt die unteren Schichten – Infrastruktur, Cluster-Betrieb, gemeinsame Sicherheitsmechanismen. Die oberen Schichten aus dem Schichtenmodell weiter unten in diesem Beitrag – von der eigenen Konfiguration bis zu Kosten und Governance – bleiben bei den Fachanwendungen selbst.
@@ -67,10 +73,10 @@ Und hier liegt die eigentliche Gefahr: Kostendruck darf nie dazu führen, dass R
 ## Infobox: Ein ganzheitliches Betriebsmodell
 
 <figure class="jr-contained-figure jr-schema-figure">
-  <img class="jr-contain-image" src="/img/blog/betrieb-im-cloud-zeitalter/betriebsmodell-schichten.svg" alt="Schichtmodell eines ganzheitlichen Cloud-Betriebs: Infrastruktur mit managed Kubernetes als Fundament, darüber Managed Services, Beobachtbarkeit und Wiederherstellbarkeit, Sicherheit und Identität, ganz oben Governance und Kosten.">
+  <img class="jr-contain-image" src="/img/blog/betrieb-im-cloud-zeitalter/betriebsmodell-baukasten.png" alt="Eine Person setzt an einem Tisch aus vielen roten, weißen und dunkelblauen Formen eine große Scheibe zusammen; drei rote Kreise mit Symbolen speisen von oben ein, eine wolkenartige Form rechts speist zusätzliche Stränge von der Seite ein.">
 </figure>
 
-*Fünf Schichten eines ganzheitlichen Betriebsmodells – von unten nach oben wächst der Anteil eigener fachlicher Verantwortung.*
+*Ein ganzheitliches Betriebsmodell entsteht nicht von selbst. Es wird aus einzelnen, bewusst ausgewählten Bausteinen zusammengesetzt – fünf davon beschreibe ich hier, vom Fundament bis zur Governance.*
 
 Ganz unten steht die **Infrastruktur**, im Idealfall als managed Kubernetes statt als selbst gepflegter Cluster. Darauf setzen **Managed Services** auf: Datenbank als Dienst (DBaaS), automatisches Skalieren, Infrastructure as Code, damit Umgebungen reproduzierbar und nicht handgepflegt sind. Die nächste Schicht sorgt für **Beobachtbarkeit und Wiederherstellbarkeit**: Monitoring und Logging, Backup und Restore sowie GitOps-Werkzeuge wie ArgoCD oder Flux, damit ein Zielzustand jederzeit automatisiert wiederhergestellt werden kann. Darüber liegt **Sicherheit und Identität**: Identity- und Access-Management, sauberes Secrets-Management und automatisierte Patch-Rollouts. Ganz oben steht **Governance und Kosten**: FinOps und Cost-Monitoring, Kapazitätsplanung und – nicht zu vergessen – eine dokumentierte Exit-Strategie für den Fall, dass ein Provider- oder Anbieterwechsel nötig wird.
 
