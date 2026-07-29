@@ -1,5 +1,5 @@
 ---
-title: "Betrieb im Cloud-Zeitalter nie unterschätzen"
+title: "Cloud macht Betrieb nicht einfacher – sie macht ihn teilbar"
 date: 2026-07-29
 draft: false
 description: "Warum Betrieb auch im Cloud-Zeitalter das unterschätzte Fundament digitaler Souveränität bleibt: mit einem Blick auf die Lünendonk-Studie 2026, BSI Grundschutz und C5, IT-Sicherheit im KI-Zeitalter, das Projekt PCI und die Tücken von dynamischem Cloud-Pricing."

@@ -1,5 +1,5 @@
 ---
-title: "Never Underestimate Operations in the Cloud Era"
+title: "Cloud Doesn't Make Operations Easier – It Makes It Shareable"
 date: 2026-07-29
 draft: false
 description: "Why operations remains the underrated foundation of digital sovereignty even in the cloud era: a look at the 2026 Lünendonk study, BSI Grundschutz and C5, IT security in the AI age, the PCI project, and the pitfalls of dynamic cloud pricing."
