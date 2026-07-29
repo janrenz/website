@@ -7,7 +7,7 @@ summary: "Cloud changes who runs operations – not whether operations is needed
 tags: ["cloud", "IT security", "digital sovereignty", "infrastructure", "operations"]
 translationKey: "operations-in-the-cloud-era"
 heroImage: "/img/blog/betrieb-im-cloud-zeitalter/hero-betrieb-fundament.png"
-heroAlt: "A cloud floats above four connected blocks for security (a shield with a checkmark), governance (a group of people), monitoring (a pulse line), and exit capability (circular arrows), surrounded by small network icons."
+heroAlt: "A cloud, connected via a red trunk to four blocks: security (a shield with a checkmark), connectivity (a node graph), monitoring (a pulse line), and recovery (a circular arrow with a cloud)."
 ---
 
 > Thesis: Cloud doesn't change whether someone runs operations. It only changes who runs it, how visible it is – and how expensive it gets to ignore it.
@@ -47,6 +47,12 @@ The decisive capability, then, isn't "have as few vulnerabilities as possible" �
 
 A concrete example of deliberately pooling operational responsibility is the [PCI – Pädagogische Cloud-Infrastruktur (Educational Cloud Infrastructure)](https://pci.schule/) project, which I follow with great interest and many hopes for its success. PCI is a cross-state initiative under Germany's DigitalPakt Schule program, led by Hamburg together with Berlin, Bremen, Hesse, North Rhine-Westphalia, and Rhineland-Palatinate. The goal: a shared, sovereign cloud operating platform for educational applications that's as capable as major hyperscaler offerings, but stays under joint, public control.
 
+<figure class="jr-contained-figure jr-schema-figure">
+  <img class="jr-contain-image" src="/img/blog/betrieb-im-cloud-zeitalter/pci-gemeinsamer-zugang.png" alt="A door opens onto a winding red path leading to three children collaborating around a laptop; a red arc of dots and supporting hands surround the group.">
+</figure>
+
+*Shared operations isn't an end in itself – it's meant to arrive exactly here: at children learning together.*
+
 Technically, applications within PCI get their own logically separated environments. Shared services like cluster operations, security mechanisms, and monitoring are provided by PCI as a common base, while responsibility for the actual applications stays with the states and vendors. For the first time, states are jointly discussing and defining minimum criteria for hyperscalers and other cloud providers. Operating environments are standardized and hardened – documented in coordination with state data protection authorities. Interoperability and consistently avoiding vendor lock-in aren't a nice-to-have here – they're an explicit goal.
 
 What I particularly like about PCI is its underlying stance: federalism isn't used as an excuse to build every piece of redundancy separately, but treated as a requirement for intelligent design. States stay in the driver's seat for state-specific decisions – but the same recurring operational groundwork no longer gets reinvented sixteen times over. To me, PCI is a direct example of this post's thesis: you can pool operations, professionalize it, and hand part of it off to a shared platform – but you can't abolish it. Someone operates PCI, and that job needs just as much care as operating every individual application used to. And the applications running on PCI aren't relieved of their own operational responsibility either: PCI takes on the lower layers – infrastructure, cluster operations, shared security mechanisms. The upper layers from the layer model further down in this post – from an application's own configuration to cost and governance – stay with the individual applications.
@@ -67,10 +73,10 @@ And here lies the actual danger: cost pressure must never lead to cutting reach,
 ## Infobox: a holistic operating model
 
 <figure class="jr-contained-figure jr-schema-figure">
-  <img class="jr-contain-image" src="/img/blog/betrieb-im-cloud-zeitalter/betriebsmodell-schichten.svg" alt="Layer model of holistic cloud operations: infrastructure with managed Kubernetes as the foundation, above it managed services, observability and recoverability, security and identity, and at the top governance and cost.">
+  <img class="jr-contain-image" src="/img/blog/betrieb-im-cloud-zeitalter/betriebsmodell-baukasten.png" alt="A person at a table assembles a large disc from many red, white, and navy shapes; three red circles with icons feed in from above, and a cloud-like shape on the right feeds additional strands in from the side.">
 </figure>
 
-*Five layers of a holistic operating model – the share of your own domain responsibility grows from bottom to top.*
+*A holistic operating model doesn't just happen. It's assembled from individual, deliberately chosen building blocks – five of them, described here from the foundation up to governance.*
 
 At the base sits **infrastructure**, ideally managed Kubernetes rather than a self-maintained cluster. On top of that come **managed services**: database as a service (DBaaS), automatic scaling, infrastructure as code, so environments stay reproducible instead of hand-maintained. The next layer provides **observability and recoverability**: monitoring and logging, backup and restore, and GitOps tools like ArgoCD or Flux, so a target state can always be restored automatically. Above that sits **security and identity**: identity and access management, clean secrets management, and automated patch rollouts. At the top sits **governance and cost**: FinOps and cost monitoring, capacity planning, and – not to be forgotten – a documented exit strategy in case a provider switch becomes necessary.
 
