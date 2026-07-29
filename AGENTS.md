@@ -12,6 +12,13 @@ Live-URL: https://janrenz.de
 Blogbeiträge liegen unter `content/blog/`, jeweils als deutsche (`*.md`) und
 englische (`*.en.md`) Version mit gemeinsamem `translationKey` im Frontmatter.
 
+## Schreibstil
+
+Beim Entwerfen oder Überarbeiten von Beiträgen unter `content/blog/` gilt Jans persönlicher
+Schreibstil, dokumentiert im Skill `.claude/skills/janrenz-schreibstil/SKILL.md`: kurze,
+klare Sätze statt Schachtelsätzen, Ich-Perspektive, Thesen-Überschriften, Belege statt vager
+Behauptungen, Nutzende vor Kennzahlen.
+
 ## Social-Media-Veröffentlichung neuer Blogbeiträge
 
 Wenn ein neuer Blogbeitrag unter `content/blog/` hinzugefügt (oder ein bestehender
