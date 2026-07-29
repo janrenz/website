@@ -6,8 +6,8 @@ description: "Warum Betrieb auch im Cloud-Zeitalter das unterschätzte Fundament
 summary: "Cloud verändert, wer Betrieb übernimmt – nicht, ob Betrieb gebraucht wird. Ein Beitrag über Provider-Verantwortung, BSI Grundschutz und C5, schnelle Sicherheits-Rollouts im KI-Zeitalter, das Projekt PCI und warum gute Cloud nie teurer sein darf als eine gleichwertige On-Prem-Lösung."
 tags: ["Cloud", "IT-Sicherheit", "Digitale Souveränität", "Infrastruktur", "Betrieb"]
 translationKey: "operations-in-the-cloud-era"
-heroImage: "/img/blog/betrieb-im-cloud-zeitalter/hero-betrieb-fundament.svg"
-heroAlt: "Eine Cloud schwebt über einem soliden Fundament aus gestapelten Betriebs-Bausteinen; zwei kleine Figuren mit Schraubenschlüssel und Monitoring-Panel halten das Fundament instand."
+heroImage: "/img/blog/betrieb-im-cloud-zeitalter/hero-betrieb-fundament.png"
+heroAlt: "Eine Wolke schwebt über vier verbundenen Bausteinen für Sicherheit (Schild mit Häkchen), Governance (Personengruppe), Monitoring (Pulskurve) und Exit-Fähigkeit (Kreispfeile), umgeben von kleinen Netzwerksymbolen."
 ---
 
 > These: Cloud verändert nicht, ob jemand Betrieb macht. Cloud verändert nur, wer ihn macht, wie sichtbar er ist – und wie teuer es wird, ihn zu ignorieren.

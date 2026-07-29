@@ -6,8 +6,8 @@ description: "Why operations remains the underrated foundation of digital sovere
 summary: "Cloud changes who runs operations – not whether operations is needed at all. A piece on provider responsibility, BSI Grundschutz and C5, fast security rollouts in the AI age, the PCI project, and why good cloud must never cost more than an equivalent on-prem solution."
 tags: ["cloud", "IT security", "digital sovereignty", "infrastructure", "operations"]
 translationKey: "operations-in-the-cloud-era"
-heroImage: "/img/blog/betrieb-im-cloud-zeitalter/hero-betrieb-fundament.svg"
-heroAlt: "A cloud floats above a solid foundation of stacked operating blocks; two small figures with a wrench and a monitoring panel keep the foundation running."
+heroImage: "/img/blog/betrieb-im-cloud-zeitalter/hero-betrieb-fundament.png"
+heroAlt: "A cloud floats above four connected blocks for security (a shield with a checkmark), governance (a group of people), monitoring (a pulse line), and exit capability (circular arrows), surrounded by small network icons."
 ---
 
 > Thesis: Cloud doesn't change whether someone runs operations. It only changes who runs it, how visible it is – and how expensive it gets to ignore it.

@@ -5,8 +5,8 @@ description: "Warum digitale Bildungsinfrastruktur erst dort wirkt, wo Lehrkräf
 summary: "Schnelles Internet, funktionierendes WLAN und genug Endgeräte sind nicht die letzte Meile der Bildungsinfrastruktur. Erst wenn Angebote im Funktionsumfang mithalten, Nutzende onboarden und Communities tragen, kommen sie in der Fläche an."
 tags: ["Bildungsinfrastruktur", "KI", "AiS.Chat", "Onboarding", "Community"]
 translationKey: "last-mile-is-human"
-heroImage: "/img/blog/letzte-meile-menschlich/hero-letzte-meile-menschlich.svg"
-heroAlt: "Abstrakte Infografik zur menschlichen letzten Meile der Bildungsinfrastruktur: Leitungen führen von einem Verteilerkasten zu einem Schulgebäude, einer Chat-Sprechblase, einem Onboarding-Wegweiser und einem Netzwerk aus Community-Knotenpunkten."
+heroImage: "/img/blog/letzte-meile-menschlich/hero-letzte-meile-menschlich.png"
+heroAlt: "Von einem Dokument-Symbol führt eine leuchtende Linie über eine Bergsilhouette hinweg zu einer kleinen Gruppe von Menschen, die vor einem Fenster gemeinsam an einem Strang ziehen."
 ---
 
 *Ein persönlicher Beitrag darüber, warum Bildungsinfrastruktur erst dann etwas bewirkt, wenn sie bei Lehrkräften und Lernenden tatsächlich ankommt — am Beispiel von AiS.Chat.*

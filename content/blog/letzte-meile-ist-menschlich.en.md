@@ -5,8 +5,8 @@ description: "Why digital educational infrastructure only works once it actually
 summary: "Fast internet, working Wi-Fi, and enough devices are not the last mile of educational infrastructure. Offerings only arrive at scale once they keep pace on features, onboard people instead of leaving them alone, and are carried by communities."
 tags: ["educational infrastructure", "AI", "AiS.Chat", "onboarding", "community"]
 translationKey: "last-mile-is-human"
-heroImage: "/img/blog/letzte-meile-menschlich/hero-letzte-meile-menschlich.svg"
-heroAlt: "Abstract infographic of the human last mile of educational infrastructure: lines run from a distribution box to a school building, a chat speech bubble, an onboarding signpost, and a network of community nodes."
+heroImage: "/img/blog/letzte-meile-menschlich/hero-letzte-meile-menschlich.png"
+heroAlt: "A glowing line runs from a document icon across a mountain silhouette to a small group of people in front of a window, pulling together on the same line."
 ---
 
 *A personal essay on why educational infrastructure only starts to matter once it actually reaches teachers and learners — at the example of AiS.Chat.*
