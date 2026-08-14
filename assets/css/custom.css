@@ -409,16 +409,10 @@ article + article {
   background: rgba(255, 255, 255, 0.055);
 }
 
-/* Accessible custom video player */
+/* Video embed (standard HTML5 player) */
 .jr-video-player {
-  margin: 1.5rem 0 2rem;
-  outline: none;
-}
-.jr-video-wrapper {
-  position: relative;
-  width: 100%;
+  margin: 1.5rem auto 2rem;
   max-width: 70rem;
-  margin: 0 auto;
 }
 .jr-video {
   width: 100%;
@@ -428,42 +422,12 @@ article + article {
   box-shadow: 0 18px 45px rgba(11, 31, 58, 0.12);
   background: #000;
 }
-.jr-video-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 0.75rem;
-  margin-top: 0.4rem;
-  border: 1px solid var(--jr-line);
-  border-radius: 0.7rem;
-  background: rgba(11, 31, 58, 0.03);
-}
 .jr-video-note {
   font-size: 0.9rem;
   color: #52637a;
   margin-top: 0.4rem;
 }
-.jr-btn {
-  border: 1px solid var(--jr-line);
-  background: white;
-  color: var(--jr-ink);
-  border-radius: 0.5rem;
-  padding: 0.35rem 0.6rem;
-  cursor: pointer;
-}
-.jr-btn:focus-visible,
-.jr-seek:focus-visible,
-.jr-volume:focus-visible {
-  outline: 3px solid var(--jr-red);
-  outline-offset: 2px;
-}
-.jr-seek {
-  flex: 1 1 auto;
-}
-.jr-volume {
-  width: 7rem;
-}
-:is(.dark .jr-video, .jr-video.dark) {
+:is(.dark .jr-video) {
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.30);
 }
 

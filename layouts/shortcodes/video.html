@@ -1,52 +1,18 @@
 {{/*
-  Accessible custom video player shortcode
+  Standard HTML5 video player shortcode with poster image.
   Usage:
-  {{< video src="/video/hyperslide-demo.mp4" poster="/img/blog/ki-content-production/hero-ki-content-abstract.svg" label="Hyperframes-Demo" note="Video auf Deutsch" >}}
+  {{< video src="/video/hyperslide-demo.mp4" poster="/images/video-posters/hyperslide-demo/poster.webp" label="Hyperframes-Demo" note="Video auf Deutsch" >}}
 */}}
 {{- $src := .Get "src" -}}
 {{- $poster := .Get "poster" -}}
-{{- $label := .Get "label" | default (cond (eq .Page.Lang "de") "Video" "Video") -}}
+{{- $label := .Get "label" | default "Video" -}}
 {{- $note := .Get "note" -}}
-<div class="jr-video-player" data-lang="{{ .Page.Lang }}">
-  <div class="jr-video-wrapper">
-    <video class="jr-video" preload="metadata" playsinline {{ with $poster }}poster="{{ . }}"{{ end }} aria-label="{{ $label }}">
-      <source src="{{ $src | safeURL }}" type="video/mp4" />
-      {{ if eq .Page.Lang "de" }}Ihr Browser unterstützt das Video-Element nicht.{{ else }}Your browser does not support the video element.{{ end }}
-    </video>
-    <div class="jr-video-controls" role="group" aria-label="{{ if eq .Page.Lang "de" }}Videosteuerung{{ else }}Video controls{{ end }}">
-      <button class="jr-btn jr-play" type="button" aria-label="{{ if eq .Page.Lang "de" }}Abspielen/Pausieren{{ else }}Play/Pause{{ end }}">
-        <span aria-hidden="true">▶︎/❚❚</span>
-      </button>
-      <div class="jr-time">
-        <span class="jr-current" aria-label="{{ if eq .Page.Lang "de" }}Aktuelle Zeit{{ else }}Current time{{ end }}">0:00</span>
-        <span class="jr-sep">/</span>
-        <span class="jr-duration" aria-label="{{ if eq .Page.Lang "de" }}Gesamtdauer{{ else }}Duration{{ end }}">0:00</span>
-      </div>
-      <input class="jr-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="{{ if eq .Page.Lang "de" }}Position im Video{{ else }}Video position{{ end }}" />
-      <button class="jr-btn jr-mute" type="button" aria-label="{{ if eq .Page.Lang "de" }}Stumm schalten{{ else }}Mute{{ end }}">
-        <span aria-hidden="true">🔈/🔇</span>
-      </button>
-      <input class="jr-volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="{{ if eq .Page.Lang "de" }}Lautstärke{{ else }}Volume{{ end }}" />
-      <button class="jr-btn jr-fullscreen" type="button" aria-label="{{ if eq .Page.Lang "de" }}Vollbild umschalten{{ else }}Toggle fullscreen{{ end }}">
-        <span aria-hidden="true">⤢</span>
-      </button>
-    </div>
-  </div>
+<div class="jr-video-player">
+  <video class="jr-video" controls preload="metadata" playsinline {{ with $poster }}poster="{{ . }}"{{ end }} aria-label="{{ $label }}">
+    <source src="{{ $src | safeURL }}" type="video/mp4" />
+    {{ if eq .Page.Lang "de" }}Ihr Browser unterstützt das Video-Element nicht.{{ else }}Your browser does not support the video element.{{ end }}
+  </video>
   {{ with $note }}
     <p class="jr-video-note">{{ . }}</p>
   {{ end }}
 </div>
-
-{{/* Include JS via Hugo Pipes */}}
-{{- $vp := resources.Get "js/video-player.js" -}}
-{{- if $vp -}}
-  {{- $vp = $vp | resources.Minify | resources.Fingerprint "sha512" -}}
-  <script src="{{ $vp.RelPermalink }}" defer></script>
-{{- end -}}
-
-<noscript>
-  <p>{{ if eq .Page.Lang "de" }}Hinweis: JavaScript ist deaktiviert. Es wird der native Player verwendet.{{ else }}Note: JavaScript is disabled. Falling back to the native player.{{ end }}</p>
-  <video controls preload="metadata" playsinline {{ with $poster }}poster="{{ . }}"{{ end }}>
-    <source src="{{ $src | safeURL }}" type="video/mp4" />
-  </video>
-</noscript>

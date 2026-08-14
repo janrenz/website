@@ -15,7 +15,7 @@ heroAlt: "Abstrakte Illustration: Idee wird zu strukturiertem Code – ruhige, g
 
 Am HPI haben wir jahrelang Slide‑plus‑Speaker‑Produktionen gebaut. Saubere Foliensätze. Studioaufnahmen. Postproduktion. Qualitätskontrolle. Das Ergebnis war professionell – aber schwerfällig.
 
-Dieses Experiment geht den umgekehrten Weg. Ich spreche frei in die Kamera. Aus der Aufnahme wird ein Transkript, aus dem Transkript strukturierte Abschnitte – kleine HTML‑„Mini‑Filme“, gebaut mit Hyperframes. Am Ende steht wieder ein Video: exportiert aus dem Code, nicht geschnitten im NLE.
+Dieses Experiment geht den umgekehrten Weg. Ich spreche frei in die Kamera. Aus der Aufnahme wird ein Transkript, aus dem Transkript strukturierte Abschnitte – kleine HTML‑„Mini‑Filme“, gebaut mit Hyperframes. Am Ende steht wieder ein Video: exportiert aus dem Code, nicht geschnitten im NLE (klassisches Videoschnittprogramm).
 
 {{< video src="/video/hyperslide-demo.mp4" poster="/images/video-posters/hyperslide-demo/poster.webp" label="Hyperframes‑Demo" >}}
 
