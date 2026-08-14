@@ -5,8 +5,8 @@ description: "An experiment: spoken video → transcript → AI generates HTML m
 summary: "From slide‑plus‑speaker to a production core in code: speak ideas freely, transcribe, structure, generate with Hyperframes, export as video."
 tags: ["Content production", "AI", "Video", "Workflow", "Hyperframes"]
 translationKey: "ki-content-production"
-heroImage: "/img/blog/ki-content-production/hero-ki-content-abstract.svg"
-heroAlt: "Abstract illustration: idea becomes structured code – calm, geometric forms without process graphics"
+heroImage: "/img/blog/ki-content-production/hero-ki-content-production.webp"
+heroAlt: "Editorial content-production scene with microphone and transcript, code workspace, and finished video"
 ---
 
 > Thesis: Video is best treated as a universal output – not necessarily the production format. Produce in text and code; export video at the end.

@@ -5,8 +5,8 @@ description: "Ein Experiment: frei gesprochenes Video → Transkript → KI erze
 summary: "Vom alten Slide‑plus‑Speaker‑Workflow zum Produktionskern in Code: Ideen frei sprechen, transkribieren, strukturieren, mit Hyperframes generieren und als Video ausspielen."
 tags: ["Content-Produktion", "KI", "Video", "Workflow", "Hyperframes"]
 translationKey: "ki-content-production"
-heroImage: "/img/blog/ki-content-production/hero-ki-content-abstract.svg"
-heroAlt: "Abstrakte Illustration: Idee wird zu strukturiertem Code – ruhige, geometrische Formen ohne Prozessgrafik"
+heroImage: "/img/blog/ki-content-production/hero-ki-content-production.webp"
+heroAlt: "Editorial-Szene einer Content-Produktion: Mikrofon und Transkript, Code-Arbeitsfläche und fertiges Video"
 ---
 
 > These: Video lohnt sich als universelles Ausgabeformat – nicht zwingend als Produktionsformat. Produziert wird in Text und Code, ausgespielt wird als Video.
