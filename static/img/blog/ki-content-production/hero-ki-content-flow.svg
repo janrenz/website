@@ -1,0 +1,78 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Editorial illustration: From spoken idea and transcript to structured, generated visual content via code and slides">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbfaf7"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="inkfade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0b1f3a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0b1f3a" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+      <feOffset dy="12" result="off"/>
+      <feComposite in="off" in2="blur" operator="over" result="shad"/>
+      <feColorMatrix in="shad" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0.16 0"/>
+    </filter>
+    <style>
+      .ink { fill: #0b1f3a; }
+      .red { fill: #d72638; }
+      .stroke { stroke: rgba(11,31,58,0.18); stroke-width: 2; }
+      .label { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; fill: #0b1f3a; font-size: 22px; font-weight: 700; letter-spacing: .02em; }
+      .small { font-size: 18px; font-weight: 600; fill: #52637a; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#paper)"/>
+
+  <!-- Left: speech waveform and transcript card -->
+  <g transform="translate(80,140)">
+    <rect x="0" y="0" width="520" height="420" rx="22" fill="#ffffff" class="stroke" filter="url(#soft)"/>
+    <path d="M40 210 h20 v-60 h20 v120 h20 v-160 h20 v180 h20 v-120 h20 v80 h20 v-200 h20 v220 h20 v-100 h20 v140 h20 v-60 h20 v-40 h20 v-40 h20 v120 h20 v-80 h20 v-100 h20 v180 h20 v-60 h20" fill="none" stroke="url(#inkfade)" stroke-width="6" stroke-linecap="round"/>
+    <rect x="40" y="300" width="440" height="84" rx="12" fill="#fbfaf7" class="stroke"/>
+    <text x="60" y="330" class="small">Transkript</text>
+    <text x="60" y="360" class="small" fill="#0b1f3a">»Frei gesprochenes Video über KI-gestützte Produktion…«</text>
+    <circle cx="480" cy="60" r="10" class="red"/>
+  </g>
+
+  <!-- Middle: transformation arrows to code and slides -->
+  <g transform="translate(640,220)">
+    <path d="M0 60 C 120 60, 120 -40, 240 -40" fill="none" stroke="#d72638" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M0 160 C 120 160, 120 260, 240 260" fill="none" stroke="#0b1f3a" stroke-opacity="0.6" stroke-width="5" marker-end="url(#arrow)"/>
+  </g>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d72638" />
+    </marker>
+  </defs>
+
+  <!-- Right top: code/HTML card (Hyperslide) -->
+  <g transform="translate(920,80)">
+    <rect x="0" y="0" width="560" height="300" rx="18" fill="#ffffff" class="stroke" filter="url(#soft)"/>
+    <rect x="24" y="24" width="512" height="36" rx="9" fill="#fbfaf7" class="stroke"/>
+    <circle cx="44" cy="42" r="6" fill="#d72638"/>
+    <circle cx="64" cy="42" r="6" fill="#ffb703"/>
+    <circle cx="84" cy="42" r="6" fill="#2a9d8f"/>
+    <text x="110" y="48" class="small">hyperslide.mdx</text>
+    <text x="36" y="92" class="label">HTML/Code</text>
+    <text x="36" y="130" class="small" fill="#0b1f3a">section "These"</text>
+    <text x="36" y="160" class="small" fill="#0b1f3a">slide: layout="two-up"</text>
+    <text x="36" y="190" class="small" fill="#0b1f3a">asset: transcript.json</text>
+    <text x="36" y="220" class="small" fill="#0b1f3a">render: mini-film</text>
+  </g>
+
+  <!-- Right bottom: generated slides / mini-film frames -->
+  <g transform="translate(920,430)">
+    <rect x="0" y="0" width="560" height="300" rx="18" fill="#ffffff" class="stroke" filter="url(#soft)"/>
+    <text x="24" y="44" class="label">Folien / Mini-Film</text>
+    <rect x="24" y="68" width="160" height="100" rx="12" fill="#e6f1ff" class="stroke"/>
+    <rect x="204" y="68" width="160" height="100" rx="12" fill="#ffe6ea" class="stroke"/>
+    <rect x="384" y="68" width="160" height="100" rx="12" fill="#e9f8ef" class="stroke"/>
+    <rect x="24" y="188" width="520" height="12" rx="6" fill="#d72638"/>
+    <circle cx="60" cy="194" r="10" fill="#ffffff" class="stroke"/>
+    <circle cx="220" cy="194" r="10" fill="#ffffff" class="stroke"/>
+    <circle cx="420" cy="194" r="10" fill="#ffffff" class="stroke"/>
+  </g>
+
+  <!-- Caption -->
+  <text x="80" y="820" class="small">Von gesprochenen Ideen und Transkript → strukturierte Inhalte → generierte Folien/HTML → Videoexport</text>
+</svg>
