@@ -15,7 +15,7 @@ heroAlt: "Abstract illustration: idea becomes structured code – calm, geometri
 
 At HPI, we produced slide‑plus‑speaker courses for years. Polished decks. Studio recordings. Post‑production. Quality control. The result was professional – but heavy.
 
-This experiment goes the other way. I speak freely on camera. The recording becomes a transcript, the transcript becomes structured sections – small HTML “mini‑films,” built with Hyperframes. At the end there’s a video again: exported from code, not cut in an editing suite.
+This experiment goes the other way. I speak freely on camera. The recording becomes a transcript, the transcript becomes structured sections – small HTML “mini‑films,” built with Hyperframes. At the end there’s a video again: exported from code, not cut in an NLE (non-linear editing suite).
 
 {{< video src="/video/hyperslide-demo.mp4" poster="/images/video-posters/hyperslide-demo/poster.webp" label="Hyperframes demo" note="Video in German" >}}
 
