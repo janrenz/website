@@ -4,3 +4,6 @@
 # Local Hugo cache/lock files
 .hugo_build.lock
 resources/_gen/
+
+# Vendored Hugo modules (regenerate with `hugo mod vendor`)
+_vendor/

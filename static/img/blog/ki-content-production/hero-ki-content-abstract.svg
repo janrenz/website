@@ -1,0 +1,73 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstrakte Illustration: Idee wird zu strukturiertem Code – ruhige, geometrische Formen ohne Prozessgrafik" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EEF3F8"/>
+      <stop offset="100%" stop-color="#E7F0FF"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#315CA8"/>
+      <stop offset="100%" stop-color="#5B82D6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.15" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="roundedFrame">
+      <rect x="0" y="0" width="1600" height="900" rx="28" ry="28"/>
+    </clipPath>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D6E2F2" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#roundedFrame)">
+    <!-- Background -->
+    <rect width="1600" height="900" fill="url(#bgGrad)"/>
+    <rect width="1600" height="900" fill="url(#glow)"/>
+    <rect width="1600" height="900" fill="url(#grid)" opacity="0.25"/>
+
+    <!-- Left: soft idea circle -->
+    <g transform="translate(240,280)">
+      <circle cx="0" cy="0" r="180" fill="#FFFFFF" opacity="0.7"/>
+      <circle cx="0" cy="0" r="140" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="0" cy="0" r="100" fill="#FFFFFF" opacity="0.5"/>
+      <circle cx="0" cy="0" r="6" fill="#315CA8"/>
+    </g>
+
+    <!-- Center: conversion band (idea → structure) -->
+    <g transform="translate(520,420)">
+      <rect x="0" y="-22" width="560" height="44" rx="22" fill="url(#accentGrad)" opacity="0.15"/>
+      <rect x="0" y="-8" width="560" height="16" rx="8" fill="url(#accentGrad)"/>
+      <!-- subtle ticks suggesting structure, not code -->
+      <g fill="#EAF1FD">
+        <rect x="40" y="-16" width="4" height="32" rx="2"/>
+        <rect x="120" y="-16" width="4" height="32" rx="2"/>
+        <rect x="200" y="-16" width="4" height="32" rx="2"/>
+        <rect x="280" y="-16" width="4" height="32" rx="2"/>
+        <rect x="360" y="-16" width="4" height="32" rx="2"/>
+        <rect x="440" y="-16" width="4" height="32" rx="2"/>
+      </g>
+    </g>
+
+    <!-- Right: calm blocks (structured units) -->
+    <g transform="translate(1140,300)">
+      <rect x="-40" y="-40" width="120" height="80" rx="14" fill="#FFFFFF" stroke="#BFD0EA"/>
+      <rect x="-10" y="70" width="110" height="66" rx="14" fill="#FFFFFF" stroke="#BFD0EA"/>
+      <rect x="-120" y="20" width="98" height="72" rx="14" fill="#FFFFFF" stroke="#BFD0EA"/>
+      <rect x="60" y="-10" width="88" height="58" rx="12" fill="#FFFFFF" stroke="#BFD0EA"/>
+      <g fill="#5B82D6" opacity="0.25">
+        <rect x="-18" y="-12" width="68" height="6" rx="3"/>
+        <rect x="-18" y="2" width="52" height="6" rx="3"/>
+        <rect x="-18" y="16" width="60" height="6" rx="3"/>
+      </g>
+    </g>
+
+    <!-- Subtle accent dots -->
+    <g fill="#315CA8" opacity="0.25">
+      <circle cx="250" cy="610" r="4"/>
+      <circle cx="310" cy="650" r="3"/>
+      <circle cx="1360" cy="520" r="4"/>
+      <circle cx="1280" cy="620" r="3"/>
+    </g>
+  </g>
+</svg>
