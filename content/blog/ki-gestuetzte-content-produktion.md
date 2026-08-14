@@ -17,7 +17,7 @@ Am HPI haben wir jahrelang Slide‑plus‑Speaker‑Produktionen gebaut. Saubere
 
 Dieses Experiment geht den umgekehrten Weg. Ich spreche frei in die Kamera. Aus der Aufnahme wird ein Transkript, aus dem Transkript strukturierte Abschnitte – kleine HTML‑„Mini‑Filme“, gebaut mit Hyperframes. Am Ende steht wieder ein Video: exportiert aus dem Code, nicht geschnitten im NLE.
 
-{{< video src="/video/hyperslide-demo.mp4" poster="/img/blog/ki-content-production/hero-ki-content-abstract.svg" label="Hyperframes‑Demo" >}}
+{{< video src="/video/hyperslide-demo.mp4" poster="/images/video-posters/hyperslide-demo/poster.webp" label="Hyperframes‑Demo" >}}
 
 ## Warum Code/HTML das bessere Produktionsformat ist
 

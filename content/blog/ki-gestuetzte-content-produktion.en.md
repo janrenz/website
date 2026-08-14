@@ -17,7 +17,7 @@ At HPI, we produced slide‑plus‑speaker courses for years. Polished decks. St
 
 This experiment goes the other way. I speak freely on camera. The recording becomes a transcript, the transcript becomes structured sections – small HTML “mini‑films,” built with Hyperframes. At the end there’s a video again: exported from code, not cut in an editing suite.
 
-{{< video src="/video/hyperslide-demo.mp4" poster="/img/blog/ki-content-production/hero-ki-content-abstract.svg" label="Hyperframes demo" note="Video in German" >}}
+{{< video src="/video/hyperslide-demo.mp4" poster="/images/video-posters/hyperslide-demo/poster.webp" label="Hyperframes demo" note="Video in German" >}}
 
 ## Why code/HTML is the better production format
 
