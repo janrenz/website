@@ -1,7 +1,7 @@
 ---
 title: "Was ein Prompt wirklich kostet"
 date: 2026-08-18
-draft: true
+draft: false
 description: "KI schlechtzureden hilft niemandem. Aber wer sie nutzt, sollte wissen, welche Ressourcen ein Prompt tatsächlich braucht – und wie man Tokens spart, ohne auf KI zu verzichten."
 summary: "Jede KI-Anfrage verbraucht Strom, Wasser und Rechenzeit – wie viel, hängt stark von Modell, Anbieter und Nutzung ab. Ein Überblick über die Studienlage, warum Agenten-Workflows besonders viele Tokens verbrauchen, konkrete Wege, Tokens zu sparen, warum Modelle und Anbieter sich deutlich unterscheiden, und wann lokale Modelle mit eigenem Ökostrom die bessere Wahl sind."
 tags: ["KI", "Nachhaltigkeit", "Klimaschutz", "Agentic AI", "Infrastruktur", "Digitale Souveränität"]
