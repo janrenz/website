@@ -1,7 +1,7 @@
 ---
 title: "What a Prompt Really Costs"
 date: 2026-08-18
-draft: true
+draft: false
 description: "Trashing AI doesn't help anyone. But if you use it, you should know what resources a prompt actually takes — and how to save tokens without giving AI up."
 summary: "Every AI request consumes electricity, water, and compute time — how much depends heavily on model, provider, and usage. An overview of what the research shows, why agentic workflows are especially token-hungry, concrete ways to save tokens, why models and providers differ, and when local models running on your own renewable power are the better choice."
 tags: ["AI", "sustainability", "climate protection", "agentic AI", "infrastructure", "digital sovereignty"]
