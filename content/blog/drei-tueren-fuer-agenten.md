@@ -1,7 +1,7 @@
 ---
 title: "Drei Türen für Agenten"
 date: 2026-09-09
-draft: true
+draft: false
 description: "Wenn eine Lehrkraft eine Recherche an einen KI-Assistenten delegiert, greift nicht sie auf das Portal zu, sondern Software in ihrem Auftrag. Der Beitrag geht der Frage nach, welche Zugangswege eine Web-Anwendung dafür überhaupt anbietet – und was es kostet, wenn sie keinen anbietet."
 summary: "Automatisierte Zugriffe machen inzwischen die Mehrheit des HTML-Traffics aus, und ein wachsender Teil davon entsteht, während ein Mensch auf eine Antwort wartet. Der Beitrag unterscheidet drei Zugangswege für solche Agenten – eine Werkzeugschnittstelle über MCP, ein maschinenlesbares Ausgabeformat und die Bedienoberfläche selbst –, prüft am Portal mundo.schule, welche davon tatsächlich existieren, diskutiert, wann eine klassische API die bessere Wahl bleibt als ein MCP-Server, und schließt mit einer Checkliste zum Selbstprüfen."
 tags: ["KI", "MCP", "Agentic AI", "Web", "Barrierefreiheit", "Metadaten", "OER", "Infrastruktur"]
