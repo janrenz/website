@@ -468,3 +468,114 @@ article + article {
 :is(.dark .prose .jr-infobox strong.jr-infobox-title) {
   color: rgba(255, 255, 255, 0.94);
 }
+
+/* -- Diagramme in Beiträgen -------------------------------------------- */
+.jr-chart {
+  --jr-chart-surface: #fcfcfb;
+  --jr-chart-ink: #0b0b0b;
+  --jr-chart-ink-2: #52514e;
+  --jr-chart-muted: #898781;
+  --jr-chart-rule: #e1e0d9;
+  --jr-chart-axis: #c3c2b7;
+  --jr-chart-accent: #2a78d6;
+  --jr-chart-accent-soft: #86b6ef;
+  --jr-chart-neutral: #c3c2b7;
+  margin: 2.5rem 0;
+  padding: 1.35rem 1.35rem 1.1rem;
+  background: var(--jr-chart-surface);
+  border: 1px solid var(--jr-line);
+  border-radius: 12px;
+}
+
+:is(.dark .jr-chart, .jr-chart.dark) {
+  --jr-chart-surface: #121829;
+  --jr-chart-ink: #ffffff;
+  --jr-chart-ink-2: #c3c2b7;
+  --jr-chart-muted: #898781;
+  --jr-chart-rule: #2c2c2a;
+  --jr-chart-axis: #383835;
+  --jr-chart-accent: #3987e5;
+  --jr-chart-accent-soft: #184f95;
+  --jr-chart-neutral: #898781;
+}
+
+.prose .jr-chart .jr-chart-panel-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--jr-chart-ink-2);
+}
+
+.prose .jr-chart .jr-chart-panel + .jr-chart-panel {
+  margin-top: 1.75rem;
+}
+
+.jr-chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.prose .jr-chart .jr-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.76rem;
+  color: var(--jr-chart-ink-2);
+}
+
+.prose .jr-chart .jr-chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.jr-chart-swatch {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 3px;
+  flex: none;
+}
+
+.prose .jr-chart table {
+  width: 100%;
+  margin: 1.35rem 0 0;
+  border-collapse: collapse;
+  font-size: 0.76rem;
+}
+
+.prose .jr-chart th,
+.prose .jr-chart td {
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--jr-chart-rule);
+  color: var(--jr-chart-ink-2);
+}
+
+.prose .jr-chart th {
+  font-weight: 600;
+  color: var(--jr-chart-ink);
+}
+
+.prose .jr-chart td:last-child,
+.prose .jr-chart th:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.prose .jr-chart figcaption {
+  margin: 0.9rem 0 0;
+  font-size: 0.73rem;
+  line-height: 1.5;
+  color: var(--jr-chart-muted);
+}
