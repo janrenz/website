@@ -1,0 +1,7 @@
+# Pin the toolchain to what this site actually builds with.
+# The Congo theme is pinned to v2.4.0 in go.mod, and that version only builds
+# on Hugo < ~0.146 (newer Hugo removed the internal figure shortcode it uses).
+# Keep this in sync with HUGO_VERSION in .github/workflows/hugo.yml.
+[tools]
+hugo = "0.102.3"
+go = "1.25"
