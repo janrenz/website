@@ -7,3 +7,11 @@ resources/_gen/
 
 # Vendored Hugo modules (regenerate with `hugo mod vendor`)
 _vendor/
+
+# Credentials must never live in this repo (it is public).
+# Real location: ~/.secrets/, referenced via ~/.config/janrenz/gemini.env
+*-sa.json
+*service-account*.json
+*credentials*.json
+.env
+.env.*
