@@ -1,7 +1,7 @@
 ---
 title: "Three Doors for Agents"
 date: 2026-09-09
-draft: true
+draft: false
 description: "When a teacher delegates a search to an AI assistant, the portal is not visited by them but by software acting on their behalf. This piece asks which routes a web application actually offers for that — and what it costs when it offers none."
 summary: "Automated requests now make up the majority of HTML traffic, and a growing share of them happens while a person is waiting for an answer. The piece distinguishes three routes such agents can take — a tool interface via MCP, a machine-readable output format, and the user interface itself — checks which of them the mundo.schule portal actually offers, discusses when a conventional API remains the better choice than an MCP server, and closes with a checklist to run yourself."
 tags: ["AI", "MCP", "agentic AI", "web", "accessibility", "metadata", "OER", "infrastructure"]

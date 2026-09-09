@@ -579,3 +579,157 @@ article + article {
   line-height: 1.5;
   color: var(--jr-chart-muted);
 }
+
+/* -- Dark Mode: Greek Noir ---------------------------------------------
+   Congos "ocean"-Schema ist in beiden Modi blau. Im Dark Mode ersetzen wir
+   Rampen und Flaechen durch die Farben des Omarchy-Themes Greek Noir:
+   naheres Schwarz statt Marineblau, Orange statt Blau als Akzent.
+   Alles unter html.dark gescopet - der Light Mode bleibt unveraendert. */
+html.dark {
+  /* Neutral: warm-neutrale Graustufen statt blaustichigem Slate */
+  --color-neutral-50: 250, 250, 249;
+  --color-neutral-100: 244, 244, 242;
+  --color-neutral-200: 231, 231, 228;
+  --color-neutral-300: 204, 208, 207;
+  --color-neutral-400: 168, 168, 163;
+  --color-neutral-500: 122, 122, 118;
+  --color-neutral-600: 82, 82, 82;
+  --color-neutral-700: 38, 38, 37;
+  --color-neutral-800: 23, 23, 23;
+  --color-neutral-900: 23, 23, 23;
+
+  /* Primary: Orange um #F25623 */
+  --color-primary-50: 254, 241, 235;
+  --color-primary-100: 253, 226, 214;
+  --color-primary-200: 251, 194, 170;
+  --color-primary-300: 248, 158, 124;
+  --color-primary-400: 245, 122, 82;
+  --color-primary-500: 242, 86, 35;
+  --color-primary-600: 214, 70, 24;
+  --color-primary-700: 176, 55, 18;
+  --color-primary-800: 138, 44, 15;
+  --color-primary-900: 105, 34, 12;
+
+  /* Secondary: Salbeigruen aus Greek Noir statt Cyan */
+  --color-secondary-50: 242, 246, 240;
+  --color-secondary-100: 229, 236, 226;
+  --color-secondary-200: 205, 219, 199;
+  --color-secondary-300: 176, 197, 167;
+  --color-secondary-400: 152, 179, 141;
+  --color-secondary-500: 136, 165, 125;
+  --color-secondary-600: 112, 139, 102;
+  --color-secondary-700: 90, 112, 82;
+  --color-secondary-800: 70, 87, 64;
+  --color-secondary-900: 54, 67, 50;
+}
+
+:is(html.dark body, body.dark) {
+  --jr-red: #f25623;
+  --jr-line: rgba(255, 255, 255, 0.14);
+  /* Nur ein sehr zurueckhaltender Schimmer oben links. Kein zweiter Verlauf:
+     die Grundfarbe stellt Tailwind ueber dark:bg-neutral-800, ein eigenes Band
+     darueber erzeugt sonst eine sichtbare Kante quer durch die Seite. */
+  background-image: radial-gradient(circle at top left, rgba(242, 86, 35, 0.07), transparent 32rem);
+  background-repeat: no-repeat;
+  background-size: 46rem 46rem;
+  background-position: top left;
+}
+
+/* Diagramme: Akzent und Flaechen im Dark Mode auf Greek Noir umstellen.
+   Werte gegen den Palette-Validator geprueft (Flaeche #1f1f1e):
+   Akzent/Grau CVD dE 11.7, normal 19.9, Kontrast beide >= 3:1;
+   Ordinalrampe #A34018 -> #F25623 besteht alle Checks. */
+:is(html.dark .jr-chart, .jr-chart.dark) {
+  --jr-chart-surface: #1f1f1e;
+  --jr-chart-ink: #e8e8e4;
+  --jr-chart-ink-2: #b4b4ae;
+  --jr-chart-muted: #898781;
+  --jr-chart-rule: #383835;
+  --jr-chart-axis: #4a4a46;
+  --jr-chart-accent: #f25623;
+  --jr-chart-accent-soft: #a34018;
+  --jr-chart-neutral: #898781;
+}
+
+/* -- Erscheinungsbild-Schalter (Auto / Hell / Dunkel) -------------------- */
+.jr-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.jr-theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin: 1.25rem auto 0;
+  padding: 0.15rem;
+  border: 1px solid var(--jr-line);
+  border-radius: 999px;
+}
+
+.jr-theme-switch button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 1.8rem;
+  padding: 0 0.55rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1;
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.jr-theme-switch button:hover {
+  opacity: 0.9;
+}
+
+.jr-theme-switch button[aria-pressed="true"] {
+  opacity: 1;
+  background: rgba(11, 31, 58, 0.08);
+}
+
+.jr-theme-switch button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+:is(html.dark .jr-theme-switch button[aria-pressed="true"], .dark .jr-theme-switch button[aria-pressed="true"]) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* -- Dark Mode: Reste, die noch die helle Tinte benutzten ---------------- */
+:is(html.dark body, body.dark) {
+  --jr-ink: #e8e8e4;
+}
+
+/* Diese Flaechen waren als heller Tinten-Hauch gedacht und sind auf dunklem
+   Grund unsichtbar - im Dark Mode als weisser Hauch. */
+:is(html.dark .jr-toc a.jr-toc-active, .dark .jr-toc a.jr-toc-active) {
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: var(--jr-red);
+  color: #f6f6f3;
+}
+
+:is(html.dark .jr-transparency-note, .dark .jr-transparency-note) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Der Knopf der Demo nutzt --jr-ink als Flaeche mit weisser Schrift. Im Dark
+   Mode ist die Tinte hell, also braucht er eine eigene Regel. */
+:is(html.dark .prose .jr-qx-demo button, .dark .prose .jr-qx-demo button) {
+  background: var(--jr-red);
+  color: #171717;
+}

@@ -1,0 +1,77 @@
+{{/* Dreistufiger Erscheinungsbild-Schalter: Auto, Hell, Dunkel.
+
+     Congos eingebauter Schalter kennt nur zwei Zustaende; "Auto" ist dort nur
+     der Zustand ohne gespeicherte Wahl und laesst sich allein per Rechtsklick
+     wiederherstellen. Deshalb ein eigenes Element mit eigener id, damit der
+     Klick-Handler des Themes (der auf #appearance-switcher hoert) nicht
+     mitfeuert. Der localStorage-Key ist derselbe wie im Theme ("appearance"),
+     die Zustaende bleiben also kompatibel: "light", "dark", oder kein Eintrag
+     fuer Auto. */}}
+<div class="jr-theme-switch" role="group" aria-label="Erscheinungsbild">
+  <button type="button" data-jr-appearance="auto" title="Systemeinstellung folgen">Auto</button>
+  <button type="button" data-jr-appearance="light" title="Immer hell">
+    {{ partial "icon.html" "sun" }}
+    <span class="jr-sr-only">Hell</span>
+  </button>
+  <button type="button" data-jr-appearance="dark" title="Immer dunkel">
+    {{ partial "icon.html" "moon" }}
+    <span class="jr-sr-only">Dunkel</span>
+  </button>
+</div>
+<script>
+  (function () {
+    var KEY = "appearance";
+    var root = document.documentElement;
+    var mq = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+    function stored() {
+      try {
+        var v = localStorage.getItem(KEY);
+        return v === "light" || v === "dark" ? v : "auto";
+      } catch (e) {
+        return "auto";
+      }
+    }
+
+    function apply(mode) {
+      var dark = mode === "dark" || (mode === "auto" && mq && mq.matches);
+      root.classList.toggle("dark", dark);
+      var buttons = document.querySelectorAll(".jr-theme-switch [data-jr-appearance]");
+      for (var i = 0; i < buttons.length; i++) {
+        var active = buttons[i].getAttribute("data-jr-appearance") === mode;
+        buttons[i].setAttribute("aria-pressed", active ? "true" : "false");
+      }
+    }
+
+    function set(mode) {
+      try {
+        if (mode === "auto") localStorage.removeItem(KEY);
+        else localStorage.setItem(KEY, mode);
+      } catch (e) {
+        /* Privater Modus o.ae.: Auswahl gilt dann nur fuer diese Seite. */
+      }
+      apply(mode);
+    }
+
+    var group = document.querySelector(".jr-theme-switch");
+    if (group) {
+      group.addEventListener("click", function (event) {
+        var btn = event.target.closest("[data-jr-appearance]");
+        if (btn) set(btn.getAttribute("data-jr-appearance"));
+      });
+    }
+
+    /* Das Theme haengt selbst einen matchMedia-Listener an, der .dark auch dann
+       umschaltet, wenn eine ausdrueckliche Wahl gespeichert ist. Wir laufen
+       danach und stellen den gewaehlten Zustand wieder her. */
+    if (mq) {
+      var onChange = function () {
+        apply(stored());
+      };
+      if (mq.addEventListener) mq.addEventListener("change", onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    }
+
+    apply(stored());
+  })();
+</script>
