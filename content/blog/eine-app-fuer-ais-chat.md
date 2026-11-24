@@ -1,7 +1,7 @@
 ---
 title: "Eine App für AIS.chat"
 date: 2026-11-24
-draft: true
+draft: false
 description: "AIS.chat läuft im Browser. Was passiert, wenn man daneben ein eigenes, natives Programm stellt, das dieselben Konten nutzt? Ein Experiment über das, was ein Client lokal leisten kann – und über die Grenzen, die ein Webdienst ohne Schnittstelle für seine Nutzerinnen und Nutzer setzt."
 summary: "In zwei Tagen ist mit KI-Agenten ein nativer Client für AIS.chat entstanden: AIS.ChatCraft. Der Beitrag zeigt, was ein solcher Client auf dem eigenen Rechner zusätzlich kann – durchsuchbarer Verlauf, Dokumente, Arbeitsblätter und H5P-Quiz, Word- und PDF-Export, Schülernamen, die das Gerät gar nicht erst verlassen –, und benennt die Grenzen: keine Schnittstelle für Lehrkräfte, keine Werkzeugaufrufe, Token-Punkte und die Frage, was das Gerät verlassen darf."
 tags: ["KI", "AIS", "AIS.chat", "Schule", "Datenschutz", "Agentic AI", "Open Source"]

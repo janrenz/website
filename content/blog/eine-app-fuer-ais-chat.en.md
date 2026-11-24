@@ -1,7 +1,7 @@
 ---
 title: "An App for AIS.chat"
 date: 2026-11-24
-draft: true
+draft: false
 description: "AIS.chat runs in the browser. What happens when you put a native program next to it that uses the same accounts? An experiment about what a client can do locally – and about the limits a web service without an interface for its users sets."
 summary: "In two days, AI agents built a native client for AIS.chat: AIS.ChatCraft. The post shows what such a client can add on one's own computer – searchable history, documents, worksheets and H5P quizzes, Word and PDF export, pupils' names that never leave the device – and names the limits: no interface for teachers, no tool calls, token points, and the question of what may leave the device."
 tags: ["AI", "AIS", "AIS.chat", "School", "Privacy", "Agentic AI", "Open Source"]
