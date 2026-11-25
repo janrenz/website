@@ -3,7 +3,7 @@ title: "Eine App für AIS.chat"
 date: 2026-11-24
 draft: false
 description: "AIS.chat läuft im Browser. Was passiert, wenn man daneben ein eigenes, natives Programm stellt, das dieselben Konten nutzt? Ein Experiment über das, was ein Client lokal leisten kann – und über die Grenzen, die ein Webdienst ohne Schnittstelle für seine Nutzerinnen und Nutzer setzt."
-summary: "In zwei Tagen ist mit KI-Agenten ein nativer Client für AIS.chat entstanden: AIS.ChatCraft. Der Beitrag zeigt, was ein solcher Client auf dem eigenen Rechner zusätzlich kann – durchsuchbarer Verlauf, Dokumente, Arbeitsblätter und H5P-Quiz, Word- und PDF-Export, Schülernamen, die das Gerät gar nicht erst verlassen –, und benennt die Grenzen: keine Schnittstelle für Lehrkräfte, keine Werkzeugaufrufe, Token-Punkte und die Frage, was das Gerät verlassen darf."
+summary: "In drei Tagen ist mit KI-Agenten ein nativer Client für AIS.chat entstanden: AIS.ChatCraft. Der Beitrag zeigt, was ein solcher Client auf dem eigenen Rechner zusätzlich kann – durchsuchbarer Verlauf, Dokumente, Arbeitsblätter und H5P-Quiz, Word-, PDF-, Excel- und Kalender-Export, Freigaben mit Vertrauensprüfung, Schülernamen, die das Gerät gar nicht erst verlassen –, und benennt die Grenzen: keine Schnittstelle für Lehrkräfte, keine Werkzeugaufrufe, Token-Punkte und die Frage, was das Gerät verlassen darf."
 tags: ["KI", "AIS", "AIS.chat", "Schule", "Datenschutz", "Agentic AI", "Open Source"]
 translationKey: "an-app-for-ais-chat"
 heroImage: "/img/blog/eine-app-fuer-ais-chat/hero-eine-app-fuer-ais-chat.png"
@@ -24,7 +24,7 @@ AIS.ChatCraft ist ein natives Programm für AIS.chat und andere KI-Dienste. Es l
 
 Wichtig vorab: AIS.ChatCraft ist kein offizielles Werkzeug des AIS.chat-Teams und kein Produkt des FWU, sondern ein Community-Experiment. So steht es auch beim ersten Start im Programm. Es soll zeigen, was möglich ist, damit wir über die richtigen Dinge diskutieren.
 
-Bemerkenswert finde ich weniger das Programm als seine Entstehung. Der erste Commit ist vom 23. November. Zwei Tage später stehen rund 57.000 Zeilen Rust, über 120 Befehle, 363 automatische Tests und eine CI-Pipeline, die auf drei Betriebssystemen baut und testet. Über 30 Issues sind erledigt. Geschrieben haben den Code im Wesentlichen KI-Agenten, die parallel an GitHub-Issues arbeiten. Meine Rolle: Ziele setzen, Ergebnisse ansehen, Entscheidungen treffen.
+Bemerkenswert finde ich weniger das Programm als seine Entstehung. Der erste Commit ist vom 23. November. Drei Tage später stehen rund 64.000 Zeilen Rust, über 440 automatische Tests und eine CI-Pipeline, die auf drei Betriebssystemen baut und testet. 50 Issues sind erledigt. Geschrieben haben den Code im Wesentlichen KI-Agenten, die parallel an GitHub-Issues arbeiten. Meine Rolle: Ziele setzen, Ergebnisse ansehen, Entscheidungen treffen.
 
 Damit das nicht im Blindflug passiert, hat das Projekt sogenannte Quality Gates: Tests, die eine Eigenschaft festhalten, die mir wichtig ist. Einer prüft, dass kein Name aus der Klassenliste in einer Anfrage an den Dienst landet. Ein anderer zählt, wie viele Dateien das Programm beim Start nachlädt. Als die Favoriten fast eine Minute brauchten, kam der Fix zusammen mit so einem Test – jetzt sind es drei Sekunden. Wie sich diese Art zu arbeiten anfühlt, wäre einen eigenen Beitrag wert.
 
@@ -95,7 +95,7 @@ Moderne KI-Assistenten rufen Werkzeuge auf. Claude liest eine Datei, durchsucht 
 
 Mein erster Gedanke war eine Umgehung: Man erklärt dem Modell im Prompt, dass es Aktionen anfordern darf. Der Client führt sie aus und schickt das Ergebnis zurück. Ich habe das prüfen lassen und mich dagegen entschieden. Jede Runde kostet Token-Punkte. Die Modelle halten das Format nicht zuverlässig ein und erfinden im Zweifel Ergebnisse. Und was der Client zurückschickt, steht im Verlauf, als hätte es die Lehrkraft geschrieben.
 
-Was dagegen gut funktioniert, ist ein Ausgabeformat. Der Client beschreibt im Prompt kurz, wie etwa ein Arbeitsblatt oder ein H5P-Quiz aussieht. Das Modell antwortet in *einer* Runde mit einem markierten Block, der Client macht daraus ein bearbeitbares Objekt. Keine Schleife, keine Rückgabe, kein Mehraufwand. Auf diesem Weg entstehen in AIS.ChatCraft die Diagramme, Lern-Apps, Arbeitsblätter und H5P-Quiz aus AIS.chat. Die Formatbeschreibung steht im Chat eingeklappt unter der Frage, damit der Verlauf lesbar bleibt.
+Was dagegen gut funktioniert, ist ein Ausgabeformat. Der Client beschreibt im Prompt kurz, wie etwa ein Arbeitsblatt oder ein H5P-Quiz aussieht. Das Modell antwortet in *einer* Runde mit einem markierten Block, der Client macht daraus ein bearbeitbares Objekt. Keine Schleife, keine Rückgabe, kein Mehraufwand. Auf diesem Weg entstehen in AIS.ChatCraft die Diagramme, Lern-Apps, Arbeitsblätter, H5P-Quiz, Whiteboards und Kalenderdateien aus AIS.chat. Die Formatbeschreibung steht im Chat eingeklappt unter der Frage, damit der Verlauf lesbar bleibt.
 
 ## Die dritte Grenze: Lokal ist nicht automatisch privat
 
@@ -105,9 +105,79 @@ Was an AIS.chat geht, verarbeitet AIS.chat – zu dessen Regeln. Verantwortlich 
 
 Und er bringt eigene Fragen mit. Chats als Datei auf dem eigenen Rechner zu speichern, sieht AIS.chat selbst vor – es gibt dafür einen Export. Eine lokale Datenbank ist im Kern dasselbe, nur dauerhaft und durchsuchbar. Damit gelten für sie die Regeln der Schule für Dienst- und Privatgeräte. Was passiert, wenn derselbe Client auch an Claude oder einen anderen Anbieter schickt? Dann gelten dort andere Verträge, und die Entscheidung liegt bei der Lehrkraft und ihrer Schule. AIS.ChatCraft legt Zugangsdaten deshalb in den Schlüsselbund des Betriebssystems, nie in die Datenbank. Und jede Aktion, die etwas verändert, braucht ein ausdrückliches Ja.
 
-Eine Pflicht aus den Nutzungsbedingungen kann ein Client sogar leichter machen: Ausgaben, die weiterverwendet werden, müssen als KI-generiert gekennzeichnet werden, der Prompt soll mit angegeben werden. Beim Export nach Word oder PDF kann das Programm beides automatisch mitschreiben.
+Eine Pflicht aus den Nutzungsbedingungen kann ein Client sogar leichter machen: Ausgaben, die weiterverwendet werden, müssen als KI-generiert gekennzeichnet werden, der Prompt soll mit angegeben werden. AIS.ChatCraft schreibt deshalb beim Speichern automatisch „Erstellt mit KI (AIS.chat, Modell …), Datum“ unter Word, PDF, Excel, Arbeitsblätter, H5P und Kalenderdateien – auf Wunsch mit dem Prompt.
 
 Ehrlich gesagt ist das der Teil, bei dem ich am meisten Diskussion erwarte und auch brauche. Ein Client verschiebt Verantwortung von einem betriebenen Dienst auf ein Gerät. Für eine einzelne Lehrkraft kann das ein Gewinn sein. Für eine Schule mit verwalteten Geräten sieht die Rechnung anders aus.
+
+## Ein Rundgang: Was das Programm heute kann
+
+Bisher ging es um Ideen. Hier der Stand vom 25. November, Funktion für Funktion. Alles läuft mit AIS.chat, wo nichts anderes steht. Einiges geht nur mit Diensten, die Werkzeuge kennen – Claude oder ein OpenAI-kompatibler Server. Das sage ich jeweils dazu.
+
+### Ankommen und chatten
+
+- **Startseite.** Ohne offenen Chat zeigt das Programm eine Startseite: Eingabefeld oben, darunter Vorschläge wie „Stundenentwurf“ oder „Elternbrief“, die zuletzt bearbeiteten Dinge, Favoriten, anstehende Zeitpläne und das verbleibende Kontingent an Token-Punkten.
+- **Assistenten und Lernszenarien.** „Entdecken“ zeigt alles, was AIS.chat anbietet – eigene, an der Schule geteilte und offizielle Einträge. Ein Stern macht einen Eintrag zum Favoriten. Der gilt auch im Browser.
+- **Mehrere Dienste.** Neben AIS.chat lassen sich Claude, OpenAI oder ein Modell auf dem eigenen Rechner (Ollama, LM Studio) eintragen. Das Modell wechselt man mitten im Chat.
+- **Fassungen.** Bearbeiten und „Neu erzeugen“ überschreiben nichts. Mit ‹ 1/2 › blättert man zwischen den Antworten.
+- **Nachdenken.** Modelle, die vor der Antwort nachdenken, zeigen eine Zusammenfassung davon zugeklappt über der Antwort. Bei AIS.chat stehen dort die Analyseschritte.
+- **Antwortstil.** Pro Chat: Normal, Knapp, Erklärend, Formell – oder ein eigener Stil nach einem Beispieltext, etwa dem letzten Elternbrief. Übernommen wird nur der Ton, nicht der Inhalt.
+- **Vorübergehender Chat.** Ein Chat, der nur im Arbeitsspeicher liegt. Er erscheint in keiner Liste, keiner Suche und keinem Gedächtnis. Schließt man ihn, ist er weg. Bei AIS.chat selbst steht er trotzdem im Verlauf – das sagt das Programm auch.
+- **Schnelleingabe.** Ein Tastenkürzel des Desktops ruft `aiscraft --quick` auf. Das Fenster kommt mit einem leeren Chat nach vorn, auf Wunsch mit einem Bildschirmfoto als Anhang. Das Programm liest dafür keine Tasten mit.
+- **Diktieren und Vorlesen.** Gesprochenes landet als Text im Eingabefeld (dafür braucht es einen Dienst mit Spracherkennung). Antworten liest AIS.chat auf Wunsch vor.
+
+### Mit Antworten weiterarbeiten
+
+- **Speichern als.** Jede Antwort geht mit einem Klick als Word, PDF oder Markdown auf die Festplatte. Excel nimmt die Tabellen der Antwort, eine pro Blatt, und Zahlen bleiben Zahlen.
+- **Termine.** Stehen Daten in der Antwort – als Kalenderblock oder als Tabelle mit Datum –, speichert das Programm sie als `.ics`-Datei für Outlook, Thunderbird oder das iPad.
+- **Lesbarkeit.** Unter jeder Antwort auf Wunsch: Wortzahl, Flesch-Wert, LIX, etwa welche Klassenstufe und welche Sätze zu lang sind. Gerechnet wird auf dem Rechner. Für Differenzierung und Leichte Sprache ist das ein schneller Blick, ob der Text passt.
+- **Dokumente und Whiteboards.** Aus einer Antwort wird ein bearbeitbares Dokument oder ein Whiteboard. „Mit KI überarbeiten“ legt eine neue Fassung an, die alte bleibt. Aus einer Gliederung wird eine Mindmap.
+- **Whiteboards direkt aus AIS.chat.** „Erstellen › Whiteboard“ bittet um eine Mindmap, einen Cluster, einen Ablauf oder eine Zeitleiste. AIS.chat liefert die Inhalte, das Programm ordnet sie an.
+- **Formeln und Diagramme** erscheinen gezeichnet statt als Quelltext.
+- **Links prüfen.** Ein Klick fragt jede Adresse in einer Antwort einmal an und streicht tote Links durch. Erfundene Quellen fallen so schneller auf.
+- **Belege.** Mit Claude gehen angehängte Dateien als Dokumente mit. Die Antwort nennt dann, welche Stelle welche Aussage belegt. Ein Klick zeigt die Stelle in der Datei.
+- **Gemeinsam bearbeiten.** Dokumente und Whiteboards lassen sich live mit Kolleginnen und Kollegen teilen, über einen Server, den etwa der Schulträger betreibt. Ohne Server bleibt alles lokal.
+
+### Unterrichtsmaterial
+
+- **Arbeitsblätter** mit neun Aufgabentypen: Auswahl, richtig oder falsch, Lückentext, Zuordnen, Reihenfolge, kurze Antwort, Zahl mit Toleranz, freier Text und Info-Text. Man löst sie am Rechner, prüft sie und druckt sie als Arbeits- und Lösungsblatt, mit Druckvorschau. Punkte lassen sich abschalten, global und pro Blatt.
+- **Lern-Apps** sind kleine interaktive Programme in einer einzigen HTML-Datei, etwa ein Bruch-Trainer. Sie laufen in einem abgeschotteten Fenster, das keine Verbindung nach außen erlaubt. Gespeichert laufen sie offline in jedem Browser.
+- **H5P-Quiz** entstehen als eigene Inhalte und gehen als `.h5p`-Datei in Moodle, Mebis oder ByCS. Vorhandene `.h5p`-Dateien lassen sich öffnen und bearbeiten.
+
+### Ordnen, suchen, erinnern
+
+- **Suche.** Strg+F sucht im offenen Chat und springt von Treffer zu Treffer. Die Suche über alle Chats findet zuerst Titel, dann Inhalte.
+- **Projekte** bündeln Chats mit gemeinsamen Anweisungen.
+- **Gedächtnis.** Notizen entstehen nur aus den eigenen Worten („Merke dir: …“). Jede Notiz zeigt, woher sie stammt.
+- **Erinnern.** Passende Ausschnitte früherer Chats gehen auf Wunsch als Kontext mit. Unter der Nachricht steht, was mitging.
+- **Quellen pro Chat.** Ein Menü legt fest, was ein Chat nutzen darf: Gedächtnis, Projektanweisungen, frühere Chats, Websuche, Konnektoren. Chats mit Claude erreichen AIS.chat nicht ungefragt.
+
+### Dateien vorbereiten
+
+- **Umwandeln.** `.doc`, `.xls`, `.ppt`, RTF, E-Books, E-Mails und iPhone-Fotos wandelt das Programm vor dem Hochladen in Formate um, die AIS.chat annimmt.
+- **Teilweise senden.** „Nur Seiten 3–7“, „Nur Blatt Noten“, „Nur Folien 2–5“ – auf dem Anhang eingetragen.
+- **Metadaten entfernen.** Standort und Kameradaten bleiben auf dem Gerät.
+
+### Schützen und kontrollieren
+
+- **Namen schützen** – siehe oben.
+- **KI-Kennzeichnung.** Was man aus einer AIS.chat-Antwort speichert, trägt den Hinweis „Erstellt mit KI“, wie es die Nutzungsbedingungen verlangen. Kopieren bleibt unverändert. Ein Rechtsklick bietet „Mit Kennzeichnung kopieren“.
+- **Verbrauch.** Token-Punkte von AIS.chat, Tokens pro Dienst und Monat, bei Claude die Kosten, dazu eine Monatsgrenze, ab der das Programm vor dem Senden nachfragt.
+- **Tresor.** Zugangsdaten für Konnektoren setzt das Programm selbst ein. Das Modell sieht nur Platzhalter.
+
+### Werkzeuge und Automatisierung (mit Claude oder OpenAI-kompatiblen Diensten)
+
+- **Konnektoren** sind MCP-Server, etwa für den Obsidian-Tresor oder lokale Dateien. Modelle rufen ihre Werkzeuge auf.
+- **Freigaben und Vertrauensprüfung.** Was nur liest, läuft direkt. Alles andere läuft nur, wenn man darum gebeten hat. Sonst fragt das Programm – mit genau den Angaben, die ausgeführt würden, Empfänger und Datum fett. Eine Bitte deckt alle Schritte, die sie braucht. Eine Freigabe läuft nie zweimal, auch nicht nach einem Absturz.
+- **Eigene Regeln.** „Termine immer eintragen“ erlaubt, „Nie Mails an Eltern senden“ verbietet. Verbote gewinnen immer.
+- **Aktionsprotokoll.** Jede Aktion steht mit Ziel und Begründung in einem Protokoll: „Nur lesen“, „Deine Bitte“ mit den eigenen Worten, „Deine Regel“ oder „Deine Freigabe“. Es lässt sich als Tabelle exportieren.
+- **Zeitpläne und Aufgaben.** Ein Auftrag läuft wiederkehrend, etwa werktags um sieben. Aufgaben laufen im Hintergrund, während man weiterchattet. Beides führt nie etwas aus, das eine Freigabe braucht.
+- **Dateien vom Modell.** Excel mit Formeln, PowerPoint mit Sprechernotizen, Word und PDF – ohne dass das Programm Code des Modells ausführt.
+
+### Aussehen
+
+Drei Looks: „Modern“, „Glas“ und „Omarchy“, das die Farben des Desktops übernimmt. Dazu hell, dunkel oder wie das System. Beim ersten Start fragt das Programm danach – und weist darauf hin, dass es ein Community-Experiment ist.
+
+Die Liste ist lang. Und gerade das zeigt für mich die eigentliche Pointe: Fast nichts davon braucht etwas Neues von AIS.chat. Es braucht nur einen Ort auf dem Rechner der Lehrkraft.
 
 ## Was ich daraus mitnehme
 
@@ -117,4 +187,4 @@ Die Grenzen liegen nicht im Client. Sie liegen in der Schnittstelle. Solange AIS
 
 Wer mitdiskutieren oder mitbauen will: Das [Projekt ist offen](https://github.com/FWU-DE/aiscraft/blob/main/CONTRIBUTING.md), Ideen und Fehlerberichte sind als Issues willkommen.
 
-<p class="jr-transparency-note"><strong>Transparenz:</strong> Die Zahlen zum Projekt habe ich am 24. November 2026 im Repository nachgezählt. Die Bildschirmfotos zeigen Demo-Daten mit erfundenen Namen. KI hat beim Entwerfen und Strukturieren dieses Beitrags geholfen. Verantwortung und Freigabe liegen bei mir.</p>
+<p class="jr-transparency-note"><strong>Transparenz:</strong> Die Zahlen zum Projekt habe ich am 25. November 2026 im Repository nachgezählt. Die Bildschirmfotos zeigen Demo-Daten mit erfundenen Namen. KI hat beim Entwerfen und Strukturieren dieses Beitrags geholfen. Verantwortung und Freigabe liegen bei mir.</p>

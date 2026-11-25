@@ -3,7 +3,7 @@ title: "An App for AIS.chat"
 date: 2026-11-24
 draft: false
 description: "AIS.chat runs in the browser. What happens when you put a native program next to it that uses the same accounts? An experiment about what a client can do locally – and about the limits a web service without an interface for its users sets."
-summary: "In two days, AI agents built a native client for AIS.chat: AIS.ChatCraft. The post shows what such a client can add on one's own computer – searchable history, documents, worksheets and H5P quizzes, Word and PDF export, pupils' names that never leave the device – and names the limits: no interface for teachers, no tool calls, token points, and the question of what may leave the device."
+summary: "In three days, AI agents built a native client for AIS.chat: AIS.ChatCraft. The post shows what such a client can add on one's own computer – searchable history, documents, worksheets and H5P quizzes, Word, PDF, Excel and calendar export, approvals with a trust check, pupils' names that never leave the device – and names the limits: no interface for teachers, no tool calls, token points, and the question of what may leave the device."
 tags: ["AI", "AIS", "AIS.chat", "School", "Privacy", "Agentic AI", "Open Source"]
 translationKey: "an-app-for-ais-chat"
 heroImage: "/img/blog/eine-app-fuer-ais-chat/hero-eine-app-fuer-ais-chat.png"
@@ -24,7 +24,7 @@ AIS.ChatCraft is a native program for AIS.chat and other AI services. It runs on
 
 One thing up front: AIS.ChatCraft is not an official tool of the AIS.chat team and not an FWU product, but a community experiment. The program says so on first start, too. It's meant to show what's possible, so that we discuss the right things.
 
-What I find remarkable is less the program than how it came about. The first commit is from 23 November. Two days later there are some 57,000 lines of Rust, more than 120 commands, 363 automated tests and a CI pipeline that builds and tests on three operating systems. More than 30 issues are done. The code was essentially written by AI agents working on GitHub issues in parallel. My role: set goals, look at results, make decisions.
+What I find remarkable is less the program than how it came about. The first commit is from 23 November. Three days later there are some 64,000 lines of Rust, more than 440 automated tests and a CI pipeline that builds and tests on three operating systems. 50 issues are done. The code was essentially written by AI agents working on GitHub issues in parallel. My role: set goals, look at results, make decisions.
 
 So that this doesn't happen blind, the project has quality gates: tests that pin down a property I care about. One checks that no name from the class list ends up in a request to the service. Another counts how many files the program loads at start-up. When the favourites took almost a minute, the fix came together with such a test – now it's three seconds. What this way of working feels like would be worth a post of its own.
 
@@ -95,7 +95,7 @@ Modern AI assistants call tools. Claude reads a file, searches a calendar or cre
 
 My first idea was a workaround: tell the model in the prompt that it may request actions. The client runs them and sends the result back. I had that examined and decided against it. Every round costs token points. The models don't follow the format reliably and, when in doubt, invent results. And whatever the client sends back appears in the history as if the teacher had written it.
 
-What does work well is an output format. The client briefly describes in the prompt what, say, a worksheet or an H5P quiz looks like. The model answers in *one* round with a marked block, and the client turns it into an editable object. No loop, no return trip, no extra cost. That's how the diagrams, learning apps, worksheets and H5P quizzes from AIS.chat come about in AIS.ChatCraft. The format description sits collapsed under the question in the chat, so the history stays readable.
+What does work well is an output format. The client briefly describes in the prompt what, say, a worksheet or an H5P quiz looks like. The model answers in *one* round with a marked block, and the client turns it into an editable object. No loop, no return trip, no extra cost. That's how the diagrams, learning apps, worksheets, H5P quizzes, whiteboards and calendar files from AIS.chat come about in AIS.ChatCraft. The format description sits collapsed under the question in the chat, so the history stays readable.
 
 ## The third limit: local doesn't automatically mean private
 
@@ -105,9 +105,79 @@ Whatever goes to AIS.chat is processed by AIS.chat – under its rules. Accordin
 
 And it brings questions of its own. AIS.chat itself provides for saving chats as a file on one's own computer – there's an export for that. A local database is essentially the same thing, only permanent and searchable. So the school's rules for official and private devices apply to it. What happens when the same client also sends to Claude or another provider? Then different contracts apply, and the decision lies with the teacher and her school. That's why AIS.ChatCraft keeps credentials in the operating system's keychain, never in the database. And every action that changes something needs an explicit yes.
 
-One obligation from the terms of use a client can even make easier: outputs that are reused must be labelled as AI-generated, and the prompt should be stated. When exporting to Word or PDF, the program can add both automatically.
+One obligation from the terms of use a client can even make easier: outputs that are reused must be labelled as AI-generated, and the prompt should be stated. So when saving, AIS.ChatCraft automatically adds "Created with AI (AIS.chat, model …), date" to Word, PDF, Excel, worksheets, H5P and calendar files – and the prompt, if you want.
 
 Honestly, this is the part where I expect – and need – the most discussion. A client shifts responsibility from an operated service to a device. For an individual teacher that can be a gain. For a school with managed devices, the calculation looks different.
+
+## A tour: what the program can do today
+
+So far this has been about ideas. Here is the state as of 25 November, feature by feature. Everything works with AIS.chat unless I say otherwise. Some things only work with services that support tools – Claude or an OpenAI-compatible server. I mark those.
+
+### Getting started and chatting
+
+- **Start page.** With no chat open, the program shows a start page: the input field at the top, below it suggestions such as "lesson plan" or "letter to parents", recently edited items, favourites, upcoming schedules and the remaining token points.
+- **Assistants and learning scenarios.** "Entdecken" shows everything AIS.chat offers – your own, shared within the school, and official entries. A star makes an entry a favourite. That carries over to the browser.
+- **Several services.** Besides AIS.chat you can add Claude, OpenAI or a model on your own computer (Ollama, LM Studio). You can switch models in the middle of a chat.
+- **Versions.** Editing and "regenerate" overwrite nothing. ‹ 1/2 › flips between answers.
+- **Thinking.** Models that think before answering show a collapsed summary of it above the answer. With AIS.chat, the analysis steps appear there.
+- **Answer style.** Per chat: normal, concise, explanatory, formal – or your own style based on a sample text, such as last term's letter to parents. Only the tone is taken over, not the content.
+- **Temporary chat.** A chat that lives only in memory. It shows up in no list, no search and no memory. Close it and it's gone. AIS.chat itself still keeps it in its history – and the program says so.
+- **Quick entry.** A desktop shortcut calls `aiscraft --quick`. The window comes to the front with an empty chat, optionally with a screenshot attached. The program doesn't listen to your keyboard for this.
+- **Dictation and read-aloud.** Speech lands as text in the input field (this needs a service with speech recognition). AIS.chat reads answers aloud on request.
+
+### Working with answers
+
+- **Save as.** Any answer goes to disk as Word, PDF or Markdown with one click. Excel takes the answer's tables, one per sheet, and numbers stay numbers.
+- **Dates.** If an answer contains dates – as a calendar block or a table with a date column – the program saves them as an `.ics` file for Outlook, Thunderbird or the iPad.
+- **Readability.** On request under each answer: word count, Flesch score, LIX, roughly which grade, and which sentences are too long. It's computed on the computer. For differentiation and plain language, it's a quick check whether the text fits.
+- **Documents and whiteboards.** An answer becomes an editable document or a whiteboard. "Revise with AI" creates a new version and keeps the old one. An outline becomes a mind map.
+- **Whiteboards straight from AIS.chat.** "Erstellen › Whiteboard" asks for a mind map, cluster, flow or timeline. AIS.chat supplies the content, the program lays it out.
+- **Formulas and diagrams** are drawn instead of shown as source.
+- **Check links.** One click requests each address in an answer once and strikes out dead links. Invented sources stand out faster.
+- **Citations.** With Claude, attached files go along as documents. The answer then says which passage backs which statement. A click shows the passage in the file.
+- **Co-editing.** Documents and whiteboards can be shared live with colleagues, via a server run by, say, the school's maintaining body. Without a server everything stays local.
+
+### Teaching material
+
+- **Worksheets** with nine task types: multiple choice, true or false, cloze, matching, ordering, short answer, number with tolerance, free text and info text. Pupils solve them on the computer, you check them, and you print a worksheet and an answer sheet, with print preview. Points can be switched off, globally and per sheet.
+- **Learning apps** are small interactive programs in a single HTML file, such as a fractions trainer. They run in an isolated window that allows no outside connections. Saved, they run offline in any browser.
+- **H5P quizzes** are their own kind of content and go into Moodle, Mebis or ByCS as an `.h5p` file. Existing `.h5p` files can be opened and edited.
+
+### Organising, searching, remembering
+
+- **Search.** Ctrl+F searches the open chat and jumps from hit to hit. Searching all chats finds titles first, then content.
+- **Projects** group chats with shared instructions.
+- **Memory.** Notes come only from your own words ("Remember: …"). Each note shows where it came from.
+- **Recall.** Matching excerpts from earlier chats can go along as context. Below the message it says what went along.
+- **Sources per chat.** A menu sets what a chat may use: memory, project instructions, earlier chats, web search, connectors. Chats with Claude don't reach AIS.chat unasked.
+
+### Preparing files
+
+- **Converting.** `.doc`, `.xls`, `.ppt`, RTF, e-books, e-mails and iPhone photos are converted before upload into formats AIS.chat accepts.
+- **Sending part of a file.** "Only pages 3–7", "only the sheet Grades", "only slides 2–5" – entered on the attachment.
+- **Removing metadata.** Location and camera data stay on the device.
+
+### Protecting and staying in control
+
+- **Protect names** – see above.
+- **AI label.** Whatever you save from an AIS.chat answer carries the note "Created with AI", as the terms of use require. Copying stays unchanged. A right-click offers "copy with label".
+- **Usage.** AIS.chat token points, tokens per service and month, costs for Claude, plus a monthly limit after which the program asks before sending.
+- **Vault.** The program fills in credentials for connectors itself. The model only sees placeholders.
+
+### Tools and automation (with Claude or OpenAI-compatible services)
+
+- **Connectors** are MCP servers, for example for an Obsidian vault or local files. Models call their tools.
+- **Approvals and trust check.** Anything that only reads runs directly. Everything else runs only if you asked for it. Otherwise the program asks – with exactly the details that would be executed, recipient and date in bold. One request covers all the steps it needs. An approval never runs twice, not even after a crash.
+- **Own rules.** "Always add appointments" allows, "never send e-mails to parents" forbids. Prohibitions always win.
+- **Action log.** Every action is logged with its target and reason: "read only", "your request" with your own words, "your rule" or "your approval". It can be exported as a spreadsheet.
+- **Schedules and tasks.** A job runs on a schedule, say weekdays at seven. Tasks run in the background while you keep chatting. Neither ever runs anything that needs an approval.
+- **Files from the model.** Excel with formulas, PowerPoint with speaker notes, Word and PDF – without the program running any of the model's code.
+
+### Looks
+
+Three looks: "Modern", "Glas" and "Omarchy", which takes the desktop's colours. Plus light, dark or follow the system. On first start the program asks – and points out that it is a community experiment.
+
+The list is long. And that, for me, is the real point: almost none of it needs anything new from AIS.chat. It only needs a place on the teacher's computer.
 
 ## What I take from this
 
@@ -117,4 +187,4 @@ The limits aren't in the client. They're in the interface. As long as AIS.chat d
 
 Anyone who wants to join the discussion or help build: the [project is open](https://github.com/FWU-DE/aiscraft/blob/main/CONTRIBUTING.md), and ideas and bug reports are welcome as issues.
 
-<p class="jr-transparency-note"><strong>Transparency:</strong> I counted the project figures in the repository on 24 November 2026. The screenshots show demo data with made-up names. AI assisted with drafting and structuring this post. Responsibility and approval remain with me.</p>
+<p class="jr-transparency-note"><strong>Transparency:</strong> I counted the project figures in the repository on 25 November 2026. The screenshots show demo data with made-up names. AI assisted with drafting and structuring this post. Responsibility and approval remain with me.</p>
